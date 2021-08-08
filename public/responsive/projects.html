@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--web design by squidee_-->
+	<meta charset="utf-8">
+	<meta name="theme-color" content="#2D90DE">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<link href="../responsive/index.css?v=1" rel="stylesheet">
+	<link href="../responsive/favicon.png?v=2" rel="icon" type="image/x-icon">
+	<script src="/__/firebase/7.21.1/firebase-app.js"></script>
+	<script src="/__/firebase/init.js"></script>
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<meta name="google-signin-client_id" content="260399017237-pl4dspt90e2ame4h6r34r0hv40lujps6.apps.googleusercontent.com">
+	<title>triangle100</title>
+</head>
+<body onload="main()">
+	<div class="header noselect">
+		<h2>triangle100</h2>
+		<div class="navbar">
+			<a href="../responsive/index.html">home</a>
+			<a class="active">projects</a>
+			<a href="../responsive/about.html">about</a>
+			<a id="modalBtn">Sign in</a>
+			<div id="navProfileContainer">
+				<span id="usernameText"></span>
+				<a id="pfpBtn"><img id="pfpImg"></img></a>
+			</div>
+		</div>
+		<hr class="headerdivider" />
+	</div>
+	<div id="bodyContainer">
+		<h3>My projects!</h3>
+		<a style="text-decoration: none; color: #0040ff;" href="../responsive/projects/idleCursor.html">idleCursor</a><br>
+		<a style="text-decoration: none; color: #0040ff;" href="../responsive/projects/theme-test.html">theme-test</a><br>
+		<a style="text-decoration: none; color: #0040ff;" href="../responsive/projects/randomImageTest.html">randomImageTest</a>
+	</div>
+	<div id="modalContainer">
+		<div class="signInModal">
+			<h2 style="padding: 15px 0px 40px 0px;">Sign in to triangle100</h2><br />
+			<div id="my-signin2" class="signInBtnContainer" data-onsuccess="onSignIn"></div>
+			<p style="padding-top: 50px; margin: 0px;">Don't have an account? </p><span class="close"><a href="https://accounts.google.com/signup" target="_blank" style="text-decoration: none; color: #FFFFFF; font-weight: bold;">Sign up!</a></span>
+		</div>
+	</div>
+	<script src='../responsive/js/index.js?v=1'></script>
+	<script src='../responsive/js/modal.js?v=1'></script>
+	<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+</body>
+</html>

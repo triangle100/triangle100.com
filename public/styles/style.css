@@ -1,0 +1,319 @@
+:root {
+    --dark-primary: #F0F6FC;
+    --dark-secondary: #C9D1D9;
+    --dark-tertiary: #212936;
+    --dark-quaternary: #394353;
+    --dark-background: #0D1117;
+    --dark-highlight: #4168a3;
+
+    --light-primary: #0D1117;
+    --light-secondary: #1c1e20;
+    --light-tertiary: #ced5db;
+    --light-quaternary: #b9c5ce;
+    --light-background: #F0F6FC;
+    --light-highlight: #6a8ab9;
+
+    --primary: var(--dark-primary);
+    --secondary: var(--dark-secondary);
+    --tertiary: var(--dark-background);
+    --quaternary: var(--dark-background);
+    --background: var(--dark-background);
+    --highlight: var(--dark-highlight);
+}
+
+.dark {
+    --primary: var(--dark-primary);
+    --secondary: var(--dark-secondary);
+    --tertiary: var(--dark-tertiary);
+    --quaternary: var(--dark-quaternary);
+    --background: var(--dark-background);
+    --highlight: var(--dark-highlight);
+}
+
+.light {
+    --primary: var(--light-primary);
+    --secondary: var(--light-secondary);
+    --tertiary: var(--light-tertiary);
+    --quaternary: var(--light-quaternary);
+    --background: var(--light-background);
+    --highlight: var(--light-highlight);
+}
+
+body  {
+	text-align: center;
+    background-color: var(--background);
+    color: var(--primary)!important;
+    font-family: 'Inconsolata', serif;
+    cursor: default;
+
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+h1 {
+    font-size: 3.25em;
+    margin: 10px;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 2.625em;
+    margin: 10px;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 1.75em;
+    margin: 10px;
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 1.375em;
+    margin: 10px;
+    font-weight: 300;
+}
+
+#lightbtn, #darkbtn {
+    color: var(--primary);
+    text-decoration: none;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: 7px;
+    display: none;
+    cursor: pointer;
+}
+
+.divider {
+    color: var(--primary);
+}
+
+.buttontype1 {
+    text-decoration: none;
+    color: var(--highlight);
+}
+
+#homebtn {
+    color: #D17484;
+    cursor: pointer;
+}
+
+#projectsbtn {
+    color: #8CC3A0;
+    cursor: pointer;
+}
+
+#aboutbtn {
+    color: #6D97C9;
+    cursor: pointer;
+}
+
+#home, #projects, #about {
+    display: none;
+}
+
+.aboutcard {
+    position: relative;
+    width: 750px;
+    height: 250px;
+    background-color: var(--tertiary);
+    margin: 30px auto;
+    box-shadow: 0 0 10px 5px var(--highlight);
+    text-align: left;
+}
+
+.aboutcard img {
+    height: 100%;
+    padding: 0px 10px 0px 0px;
+    float: left;
+}
+
+.aboutcard h3, .aboutcard h4 {
+    padding: 5px;
+    margin: 0px;
+    display: block;
+}
+
+.socialscontainer {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    background-color: var(--quaternary);
+    padding: 5px;
+    border-radius: 10px 0px 0px 0px;
+}
+
+.socialscontainer a {
+    text-decoration: none;
+    margin: 0px 2px;
+}
+
+.fa-reddit, .fa-discord {
+    /* A super hacky way of cropping a background color to size using a radial gradient. Generator can be found here: https://cssgradient.io/ */
+    background: rgb(255,255,255);
+    background: -moz-radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 50%);
+    background: -webkit-radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 50%);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 50%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+    cursor: pointer;
+}
+
+.projectcontainer {
+    margin-left: auto;
+    margin-right: auto;
+    height: 600px;
+    width: 80vw;
+    text-align: center;
+    padding-bottom: 500px;
+}
+
+.projectbox {
+    display: inline-block;
+    background-color: var(--quaternary);
+    overflow: hidden;
+    width: 410px;
+    height: 275px;
+    margin: 1.1% 1%;
+    text-align: center;
+    position: relative;
+    border: var(--tertiary) solid 7px;
+}
+
+.link {
+    outline: #148585 solid 2px!important;
+}
+
+.link a, h4 {
+    text-decoration: none;
+    color: inherit!important;
+}
+
+.projectbox img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin: auto;
+    max-height: 105%;
+    object-fit: cover;
+}
+
+.centeredimg {
+    top: -9999px!important;
+    bottom: -9999px!important;
+    left: -9999px!important;
+    right: -9999px!important;
+}
+
+.smallimage {
+    max-height: 80%!important;
+}
+
+.info {
+    position: absolute;
+    background-color: var(--tertiary);
+    text-align: left;
+    height: 22%;
+    width: 100%;
+    padding: 5px;
+    bottom: 0px;
+}
+
+.info * {
+    margin: 0px;
+}
+
+.info h4 {
+    font-weight: 700;
+    display: inline;
+}
+
+.info a {
+    display: block;
+    margin-top: 2px;
+}
+
+.label {
+    visibility: hidden;
+}
+
+.label:after {
+    visibility: visible;
+    display: inline;
+    border-radius: 50px;
+    padding: 0 6px;
+}
+
+#wiplabel:after {
+    background-color: crimson;
+    color: var(--dark-primary);
+    content: 'WIP';
+}
+
+#cslabel:after {
+    background-color: lightsalmon;
+    color: var(--dark-tertiary);
+    content: "C#";
+}
+
+#cpplabel:after {
+    background-color: lightgreen;
+    color: var(--dark-tertiary);
+    content: "C++";
+}
+
+#htmllabel:after {
+    background-color: lightskyblue;
+    color: var(--dark-tertiary);
+    content: "HTML";
+}
+
+#jslabel:after {
+    background-color: yellow;
+    color: var(--dark-tertiary);
+    content: "JS";
+}
+
+#abandoned:after {
+    background-color: var(--secondary);
+    color: var(--tertiary);
+    content: "Abandoned";
+}
+
+/* #footer {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 13vh;
+    background-color: var(--tertiary);
+    text-align: left;
+    box-sizing: border-box;
+    contain: strict;
+}
+
+#footer .column {
+    float: left;
+    width: 33.33%;
+    height: 100%;
+}
+
+#footer .left {
+    width: 60%;
+}
+  
+#footer .right, #footer .middle {
+    width: 20%;
+}
+
+#footer a {
+    margin-left: 10px;
+    display: block;
+    text-decoration: none;
+    color: var(--highlight);
+} */

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<script src="https://kit.fontawesome.com/2ef8ddb166.js" crossorigin="anonymous"></script>
+		<link href="./styles/style.css?17" rel="stylesheet" type="text/css">
+		<link href="./img/favicon.png" rel="icon">
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata:300,700,400|Montserrat" rel="stylesheet">
+		<title>Portfolio</title>
+	</head>
+
+	<body class="dark" onload="main();">
+		<h2 style="margin-bottom: 0px;">squidee_</h2>
+		<h4 style="margin: 0px;">Programming/coding hobbyist • HTML/CSS/JS, Node.JS, C++, C# and Python</h4>
+		<h4 style="margin: 0px;">Currently working on a secret project🤫</h4>
+		<h3 style="margin: 25px 0px;">
+			<a class="buttontype1" id="homebtn" onclick="changePage(this.id);">HOME</a>
+			<span class="divider">•</span>
+			<a class="buttontype1" id="projectsbtn" onclick="changePage(this.id);">PROJECTS</a>
+			<span class="divider">•</span>
+			<a class="buttontype1" id="aboutbtn" onclick="changePage(this.id);">ABOUT</a>
+		</h3>
+		<a id="darkbtn" onclick="toggleTheme();"><em class="fas fa-moon fa-lg"></em></a>
+		<a id="lightbtn" onclick="toggleTheme();"><em class="fas fa-sun fa-lg"></em></a>
+
+		<div id="home">
+			<h4>home</h4>
+		</div>
+
+		<div id="projects">
+			<div class="projectcontainer" id="RESprojectcontainer">
+				<div class="projectbox link" id="RESprojectbox"> 
+					<a href="hex-alpha/index.html" target="_blank"><img src="./img/projects/hexalpha.png" alt="hexalpha.png"></a>
+					<div class="info">
+						<h4>Hex to hex-alpha converter</h4>
+						<span class="label" id="htmllabel"></span>
+						<a>Hex to hex-alpha converts hex colour codes to the specified alpha code</a>
+					</div>
+				</div>
+
+				<div class="projectbox" id="RESprojectbox">
+					<img src="./img/projects/newmenu.png" class="centeredimg" alt="newmenu.png">
+					<div class="info">
+						<h4>RPG Project</h4>
+						<span class="label" id="abandoned"></span>
+						<span class="label" id="cslabel"></span>
+						<a>A C# application I used to learn XML. Windows 10 ended up seeing my parser as a virus 😔</a>
+					</div>
+				</div>
+
+				<div class="projectbox" id="RESprojectbox">
+					<img src="./img/projects/deskwarden.png" class="centeredimg" alt="deskwarden.png">
+					<div class="info">
+						<h4>Desk Warden</h4>
+						<span class="label" id="abandoned"></span>
+						<span class="label" id="cslabel"></span>
+						<a>Create healthy habits and stay fit at the comfort of your computer!</a>
+					</div>
+				</div>
+
+				<div class="projectbox" id="RESprojectbox">
+					<img src="./img/projects/triangle100-2nd.png" class="centeredimg" alt="triangle100-2nd.png">
+					<div class="info">
+						<h4>2nd gen triangle100</h4>
+						<span class="label" id="abandoned"></span>
+						<span class="label" id="htmllabel"></span>
+						<a>This website was made to test google auth and try out responsive features for mobile devices</a>
+					</div>
+				</div>
+				
+				<div class="projectbox link" id="RESprojectbox"">
+					<a href="https://clicker.triangle100.xyz/" target="_blank"><img src="./img/projects/clicker.png" class="smallimage" alt="clicker.png"></a>
+					<div class="info">
+						<h4>Clicker game</h4>
+						<span class="label" id="htmllabel"></span>
+						<span class="label" id="jslabel"></span>
+						<a>Simple clicker game made with JS utilizing cookies</a>
+					</div>
+				</div>
+				
+				<div class="projectbox" id="RESprojectbox">
+					<img src="./img/projects/confirmationtest.png" class="smallimage" alt="confirmationtest.png">
+					<div class="info">
+						<h4>Confirmation input</h4>
+						<span class="label" id="htmllabel"></span>
+						<span class="label" id="jslabel"></span>
+						<a>A confirmation dialog testing for a string of text to confirm you know what you're doing</a>
+					</div>
+				</div>
+				
+				<div class="projectbox" id="RESprojectbox">
+					<img src="./img/projects/invsystem.png" alt="invsystem.png">
+					<div class="info">
+						<h4>Inventory system</h4>
+						<span class="label" id="htmllabel"></span>
+						<span class="label" id="jslabel"></span>
+						<a>A simple inventory system to test moving items back and forth from arrays</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="about">
+			<div class="aboutcard">
+				<img src="./img/garf.jpg" alt="pfp"></img>
+				<h3>Zane Shaw</h3>
+				<h4>
+					<strong>Alias:</strong> squidee_
+					<br>
+					<strong>Gender:</strong> Male
+					<br>
+					<strong>Location:</strong> Australia
+					<br>
+					<strong>Languages:</strong> JS, HTML, CSS, C#, C++, Python
+					<br>
+					<strong>Platform:</strong> Windows 10 Pro 64x
+					<br>
+					<strong>Birthday:</strong> 20<sup>th</sup> August
+				</h4>
+				<div class="socialscontainer">
+					<a id="social1" href="https://twitter.com/zaneshaw05" target="_blank" style="color: #1DA1F2;">
+						<em class="fab fa-twitter fa-2x"></em>
+					</a>
+					<a id="social2" href="https://www.reddit.com/user/squidee_" target="_blank" style="color: #FF5700;">
+						<em class="fab fa-reddit fa-2x"></em>
+					</a>
+					<a id="social3" onclick="copy('squidee_#4919');" style="color: #738ADB;">
+						<em class="fab fa-discord fa-2x"></em>
+					</a>
+					<a id="social4" href="https://github.com/squidee100" target="_blank" style="color: #FFFFFF;"> <!-- #333 -->
+						<em class="fab fa-github fa-2x"></em>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- <div id="footer">
+			<div class="column left">
+				<h4>triangle100.xyz</h4>
+			</div>
+			<div class="column middle">
+				<h4>Support</h4>
+				<a href="#">support link 1</a>
+				<a href="#">support link 2</a>
+				<a href="#">support link 3</a>
+				<a href="#">support link 4</a>
+			</div>
+			<div class="column right">
+				<h4>Help</h4>
+				<a href="#">help link 1</a>
+				<a href="#">help link 2</a>
+				<a href="#">help link 3</a>
+				<a href="#">help link 4</a>
+			</div>
+		</div> -->
+
+		<script src="./js/script.js?17"></script>
+	</body>
+</html>

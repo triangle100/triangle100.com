@@ -1,0 +1,102 @@
+@font-face {
+  font-family: 'Mono';
+  src: url('fonts/woff2/JetBrainsMono-ExtraLight.woff2') format('woff2');
+}
+
+body {
+	background-color: #F3F4F6;
+	color: white;
+	font-family: Mono;
+	font-variant-ligatures: none;
+	margin: 0px;
+}
+
+h2 {
+	padding-top: 30px;
+	margin: 0px;
+	font-size: 48px;
+}
+
+h3 {
+	padding-top: 200px;
+	margin: 0px;
+	font-size: 72px;
+}
+
+a {
+	font-size: 38px;
+}
+
+.headerdivider {
+	background-color: #4CA6ED;
+	border: none;
+	height: 24px;
+	margin: 0px;
+}
+
+.header {
+	padding: 10px 0px 10px 0px;
+	background-color: #2D90DE;
+	text-align: center;
+	height: 175px;
+	position: relative;
+	-webkit-touch-callout: none; /* iOS Safari */
+	  -webkit-user-select: none; /* Safari */
+	   -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Chrome, Edge, Opera and Firefox */
+}
+
+.header_redirect {
+	padding: 40vh 0px 0px 0px;
+	background-color: #2D90DE;
+	text-align: center;
+	height: 100vh;
+	position: relative;
+	-webkit-touch-callout: none; /* iOS Safari */
+	  -webkit-user-select: none; /* Safari */
+	   -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Chrome, Edge, Opera and Firefox */
+}
+
+.navbar {
+	padding-top: 15px;
+	margin: 0px;
+	left: 50%;
+}
+
+.navbar a {
+	color: #D3D3D3;
+	margin: 0px 2vw 0px 2vw;
+	text-decoration: none;
+	font-size: 64px;
+}
+
+.navbar a:hover {
+	color: #FFFFFF;
+	border-bottom: 24px solid #00BFFF;
+}
+
+.navbar a.active {
+	color: #FFFFFF;
+	border-bottom: 24px solid #00BFFF;
+	cursor: pointer;
+}
+
+.bodycontainer {
+	z-index:-1;
+	position: absolute;
+	top: 0px;
+	height: 100vh;
+	background-color: #E8E8E8;
+	color: #383838;
+	padding: 2.5vh 1.5vh 2.5vh 1.5vh;
+	border-left: 2.2vw solid #A5A6A7;
+	border-right: 2.2vw solid #A5A6A7;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
