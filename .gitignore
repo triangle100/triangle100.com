@@ -65,4 +65,4 @@ node_modules/
 .env
 
 # Other
-public/terminal/
+public/terminal
