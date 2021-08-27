@@ -40,20 +40,7 @@ input.addEventListener("keyup", (e) => {
     }
 })
 
-// // Shut up i was being lazy
-// document.getElementById("_").addEventListener("input", () => {
-//     caretText.innerHTML = "_";
-// })
-
-// document.getElementById("|").addEventListener("input", () => {
-//     caretText.innerHTML = "|";
-// })
-
-// document.getElementById("█").addEventListener("input", () => {
-//     caretText.innerHTML = "█";
-// })
-
-// Was lazy here too. shh
+// Shut up i was being lazy
 async function caretAnim() {
     setInterval(() => {
         if (!locked) {
