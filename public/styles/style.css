@@ -1,17 +1,17 @@
-:root {
-    --dark-primary: #F0F6FC;
-    --dark-secondary: #C9D1D9;
-    --dark-tertiary: #212936;
+:root {    
+    --dark-primary: #ffffff;
+    --dark-secondary: #edf1f7;
+    --dark-tertiary: #222B45;
     --dark-quaternary: #394353;
     --dark-background: #0D1117;
-    --dark-highlight: #4168a3;
+    --dark-highlight: #17a2b8;
 
     --light-primary: #0D1117;
     --light-secondary: #1c1e20;
-    --light-tertiary: #ced5db;
-    --light-quaternary: #b9c5ce;
-    --light-background: #F0F6FC;
-    --light-highlight: #6a8ab9;
+    --light-tertiary: #ffffff;
+    --light-quaternary: #edf1f7;
+    --light-background: #edf1f7;
+    --light-highlight: #007bff;
 
     --primary: var(--dark-primary);
     --secondary: var(--dark-secondary);
@@ -124,7 +124,7 @@ h4 {
     height: 250px;
     background-color: var(--tertiary);
     margin: 30px auto;
-    box-shadow: 0 0 10px 5px var(--highlight);
+    box-shadow: 10px 10px 25px 15px rgba(0, 0, 0, 0.20);
     text-align: left;
 }
 
@@ -186,7 +186,7 @@ h4 {
 }
 
 .link {
-    outline: #148585 solid 2px!important;
+    outline: var(--highlight) solid 2px!important;
 }
 
 .link a, h4 {
