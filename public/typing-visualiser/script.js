@@ -6,9 +6,12 @@ var letters;
 var locked;
 var delay = 500;
 
+function SetupChars(input) {
+    letters = input.split("");
+    return(letters);
+}
+
 function Type() {
-    text = input.value;
-    letters = text.split("");
     locked = true;
     caretText.innerHTML = "_";
     for (let i = 0; i < letters.length; i++) { // Must be a 'let' variable!!
@@ -36,6 +39,7 @@ function Untype() {
 
 input.addEventListener("keyup", (e) => {
     if(e.key == "Enter" && !locked) {
+        text = SetupChars(input.value);
         Type()
     }
 })
