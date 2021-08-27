@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="../reminder/style.css">
+        <title>reminder</title>
+    </head>
+    <body>
+        <h1>Retainerminder</h1>
+        <div id="progressDiv"><div id="progressBar"></div></div>
+
+        <a id="timerText"></a><br><br><br>
+
+        <input id="rangeTime" type="range" min="1" max="120" value="15">
+        <a id="rangeText">15 minutes</a><br>
+
+        <button id="stopButton">I put them back in!</button>
+        <button id="startButton">I took out my retainers!</button>
+        <br><br><br>
+
+        <div id="authBanner">
+            <a>Notifications need to be enabled for this to work!</a> <a id="authButton"><b>ALLOW</b></a>
+        </div>
+        <button id="notifButton">send</button>
+
+        <script src="../reminder/script.js"></script>
+    </body>
+</html>
