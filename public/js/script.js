@@ -20,7 +20,6 @@ function updateResponsiveness() {
             console.log("PC detected...");
             platform = "pc"
         }
-    // updateResponsiveness(platform);
     if (platform == "mobile") {
         for (var i1 = 0; i1 < RESprojectbox.length; i1++) {
             RESprojectbox[i1].style.width = "95%";
@@ -28,9 +27,6 @@ function updateResponsiveness() {
         }
         document.getElementsByTagName("BODY")[0].style.fontSize = "200%"
         
-        // for (var ii1=0; ii1<RESprojectcontainer.length; ii1++) {
-        //     RESprojectcontainer[ii1].style.width = "100vw";
-        // }
         console.log("Site updated to Mobile!")
     }
     else {
@@ -39,9 +35,6 @@ function updateResponsiveness() {
             RESprojectbox[i2].style.height = "275px";
         }
         document.getElementsByTagName("BODY")[0].style.fontSize = "100%"
-        // for (var ii2=0; ii2<RESprojectcontainer.length; ii2++) {
-        //     RESprojectcontainer[ii2].style.width = "80vw";
-        // }
         console.log("Site updated to PC!")
     }
 }
@@ -80,7 +73,6 @@ function toggleTheme() {
         document.getElementById("social4").style.color = "#FFFFFF";
         // CODE link.href = "img/favicon.png2"; //Light foreground, dark background
     }
-    // CODE document.getElementsByTagName('head')[0].appendChild(link);
 }
 
 // Navigation buttons handler
@@ -126,13 +118,10 @@ const copy = str => {
 };
 
 // Preperation stuff
-function main()
+function setup()
 {
     document.getElementById("lightbtn").style.display = "block";
     document.getElementById("home").style.display = "block";
-    // var scriptdir = document.getElementById('script').src.split("/")
-    // const scriptname = scriptdir[scriptdir.length - 1]
-    // console.log(scriptname + " has loaded successfully!")
     updateResponsiveness();
     console.log("%cscript.js has loaded successfully!", "color: #008000");
 }
