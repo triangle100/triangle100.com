@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<!--Little CSS fade in -->
+<style>
+.fade-in{
+  -webkit-animation: fade-in 1s ease;
+  -moz-animation: fade-in ease-in-out 1s both;
+  -ms-animation: fade-in ease-in-out 1s both;
+  -o-animation: fade-in ease-in-out 1s both;
+  animation: fade-in 1s ease;
+  visibility: visible;
+  -webkit-backface-visibility: hidden;
+}
+
+@-webkit-keyframes fade-in{0%{opacity:0;} 100%{opacity:1;}}
+@-moz-keyframes fade-in{0%{opacity:0} 100%{opacity:1}}
+@-o-keyframes fade-in{0%{opacity:0} 100%{opacity:1}}
+@keyframes fade-in{0%{opacity:0} 100%{opacity:1}}
+
+</style>
+</head>
+<body>
+
+<div id="banner-load"></div>
+<div style="width:100%; justify-content: center; display: flex;">
+	<button onClick="window.location.reload();" style="margin-top: 20px; padding: 5px 15px; font-size: 18px;">Refresh</button>
+</div>
+<script>
+    var images = ['cover1.png', 'cover2.png', 'cover3.png', 'cover4.png','cover5.png','cover6.png','cover7.png','cover8.png','cover9.png','cover10.png','cover11.png','cover12.png','cover13.png','cover14.png','cover15.png','cover16.png','cover17.png','cover18.png','cover19.png','cover20.png','cover21.png','cover22.png','cover23.png','cover24.png','cover25.png','cover26.png'];
+    
+    $('<img  width="50%" style="display: block; margin-left: auto; margin-right: auto" class="fade-in" src="img/randomImageTest/' + images[Math.floor(Math.random() * images.length)] + '">').appendTo('#banner-load');
+</script>
+	<div class="returnBtn">
+		<a href="../projects.html" style="position: absolute; bottom: 0px; left: 0px; font-size: 22px; text-decoration: none; color: #0040ff; font-family: Arial;"><i class="fa fa-arrow-left"></i> Back to projects</a>
+	</div>
+</body>
+</html>

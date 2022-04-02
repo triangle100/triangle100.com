@@ -1,43 +1,186 @@
 <!DOCTYPE html>
+
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+	<head>
+		<script src="https://kit.fontawesome.com/2ef8ddb166.js" crossorigin="anonymous"></script>
+		<link href="./styles/style.css?21" rel="stylesheet" type="text/css">
+		<link href="./img/favicon.png" rel="icon">
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata:300,700,400|Montserrat" rel="stylesheet">
+		<title>Portfolio</title>
+	</head>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+	<body class="dark" onload="setup();">
+		<h2 style="margin-bottom: 0px;">squidee_</h2>
+		<h4 style="margin: 0px;">currently working on a new folio cos this one is crusty</h4>
+		<h4 style="margin: 0px;">(gonna use sass, react, node this time :D)</h4>
+		<h3 style="margin: 25px 0px;">
+			<a class="buttontype1" id="homebtn" onclick="changePage(this.id);">HOME</a>
+			<span class="divider">•</span>
+			<a class="buttontype1" id="projectsbtn" onclick="changePage(this.id);">PROJECTS</a>
+			<span class="divider">•</span>
+			<a class="buttontype1" id="aboutbtn" onclick="changePage(this.id);">ABOUT</a>
+		</h3>
+		<a id="darkbtn" onclick="toggleTheme();"><em class="fas fa-moon fa-lg"></em></a>
+		<a id="lightbtn" onclick="toggleTheme();"><em class="fas fa-sun fa-lg"></em></a>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+		<div id="home">
+			<h4>The home page is empty :(</h4>
+			<h4>Head over to the <a onclick="changePage('projectsbtn');" style="cursor: pointer;"><b>projects</b></a> tab to see all my public creations!</h4>
+			<h4>You can also check out the <a onclick="changePage('aboutbtn');" style="cursor: pointer;"><b>about</b></a> tab to see basic info about myself. (Including social links!!)</h4>
+			<h4>(Star this website on <a href="https://github.com/squidee100/triangle100" target="_blank" style="text-decoration: none; color: var(--primary);"><b>GitHub</b></a>!)</h4>
+			<br><br><br>
+			<img src="./img/hytass.jpg" alt="hytass" width="100"></img>
+			<h4>yo</h4>
+		</div>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+		<div id="projects">
+			<div class="projectcontainer" id="RESprojectcontainer">
+				<div class="projectbox link" id="RESprojectbox"> 
+					<a href="typing-visualiser/index.html" target="_blank"><img src="./img/projects/typing-visualiser.png" alt="typing-visualiser.png"></a>
+					<div class="info">
+						<h4>Typing visualiser</h4>
+						<span class="label" id="htmllabel"></span>
+						<span class="label" id="jslabel"></span>
+						<a>Animates inputted text to a terminal-like style</a>
+					</div>
+				</div>
+				
+				<div class="projectbox link" id="RESprojectbox"> 
+					<a href="hex-alpha/index.html" target="_blank"><img src="./img/projects/hexalpha.png" alt="hexalpha.png"></a>
+					<div class="info">
+						<h4>Hex to hex-alpha converter</h4>
+						<span class="label" id="htmllabel"></span>
+						<span class="label" id="jslabel"></span>
+						<a>Hex to hex-alpha converts hex colour codes to the specified alpha code</a>
+					</div>
+				</div>
+				
+				<div class="projectbox link" id="RESprojectbox"> 
+					<a href="terminal/index.html" target="_blank"><img src="./img/projects/terminal.png" alt="terminal.png"></a>
+					<div class="info">
+						<h4>Command line</h4>
+						<span class="label" id="htmllabel"></span>
+						<span class="label" id="jslabel"></span>
+						<a>Lazily made command line app with limited functionality. Still kinda cool though</a>
+					</div>
+				</div>
+
+				<div class="projectbox" id="RESprojectbox">
+					<img src="./img/projects/newmenu.png" class="centeredimg" alt="newmenu.png">
+					<div class="info">
+						<h4>RPG Project</h4>
+						<span class="label" id="abandoned"></span>
+						<span class="label" id="cslabel"></span>
+						<a>A C# application I used to learn XML. Windows 10 ended up seeing my parser as a virus 😔</a>
+					</div>
+				</div>
+
+				<div class="projectbox" id="RESprojectbox">
+					<img src="./img/projects/deskwarden.png" class="centeredimg" alt="deskwarden.png">
+					<div class="info">
+						<h4>Desk Warden</h4>
+						<span class="label" id="abandoned"></span>
+						<span class="label" id="cslabel"></span>
+						<a>Create healthy habits and stay fit at the comfort of your computer!</a>
+					</div>
+				</div>
+
+				<div class="projectbox  link" id="RESprojectbox">
+					<a href="responsive/index.html" target="_blank"><img src="./img/projects/triangle100-2nd.png" class="centeredimg" alt="triangle100-2nd.png"></a>
+					<div class="info">
+						<h4>2nd gen triangle100</h4>
+						<span class="label" id="abandoned"></span>
+						<span class="label" id="htmllabel"></span>
+						<a>This website was made to test google auth and try out responsive features for mobile devices</a>
+					</div>
+				</div>
+				
+				<div class="projectbox link" id="RESprojectbox"">
+					<a href="https://clicker.triangle100.xyz/" target="_blank"><img src="./img/projects/clicker.png" class="smallimage" alt="clicker.png"></a>
+					<div class="info">
+						<h4>Clicker game</h4>
+						<span class="label" id="htmllabel"></span>
+						<span class="label" id="jslabel"></span>
+						<a>Simple clicker game made with JS utilizing cookies</a>
+					</div>
+				</div>
+				
+				<div class="projectbox" id="RESprojectbox">
+					<img src="./img/projects/confirmationtest.png" class="smallimage" alt="confirmationtest.png">
+					<div class="info">
+						<h4>Confirmation input</h4>
+						<span class="label" id="htmllabel"></span>
+						<span class="label" id="jslabel"></span>
+						<a>A confirmation dialog testing for a string of text to confirm you know what you're doing</a>
+					</div>
+				</div>
+				
+				<div class="projectbox" id="RESprojectbox">
+					<img src="./img/projects/invsystem.png" alt="invsystem.png">
+					<div class="info">
+						<h4>Inventory system</h4>
+						<span class="label" id="htmllabel"></span>
+						<span class="label" id="jslabel"></span>
+						<a>A simple inventory system to test moving items back and forth from arrays</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="about">
+			<div class="aboutcard">
+				<img src="./img/garf.jpg" alt="pfp"></img>
+				<h3>Zane Shaw</h3>
+				<h4>
+					<strong>Alias:</strong> squidee_
+					<br>
+					<strong>Gender:</strong> Male
+					<br>
+					<strong>Location:</strong> Australia
+					<br>
+					<strong>Languages:</strong> JS, HTML, CSS, C#, C++, Python
+					<br>
+					<strong>Platform:</strong> Windows 10 Pro 64x
+					<br>
+					<strong>Birthday:</strong> 20<sup>th</sup> August
+				</h4>
+				<div class="socialscontainer">
+					<a id="social1" href="https://twitter.com/zaneshaw05" target="_blank" style="color: #1DA1F2;">
+						<em class="fab fa-twitter fa-2x"></em>
+					</a>
+					<a id="social2" href="https://www.reddit.com/user/squidee_" target="_blank" style="color: #FF5700;">
+						<em class="fab fa-reddit fa-2x"></em>
+					</a>
+					<a id="social3" onclick="copy('squidee_#4919');" style="color: #738ADB;">
+						<em class="fab fa-discord fa-2x"></em>
+					</a>
+					<a id="social4" href="https://github.com/squidee100" target="_blank" style="color: #FFFFFF;"> <!-- #333 -->
+						<em class="fab fa-github fa-2x"></em>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- <div id="footer">
+			<div class="column left">
+				<h4>triangle100.xyz</h4>
+			</div>
+			<div class="column middle">
+				<h4>Support</h4>
+				<a href="#">support link 1</a>
+				<a href="#">support link 2</a>
+				<a href="#">support link 3</a>
+				<a href="#">support link 4</a>
+			</div>
+			<div class="column right">
+				<h4>Help</h4>
+				<a href="#">help link 1</a>
+				<a href="#">help link 2</a>
+				<a href="#">help link 3</a>
+				<a href="#">help link 4</a>
+			</div>
+		</div> -->
+
+		<script src="./js/script.js?19"></script>
+	</body>
 </html>

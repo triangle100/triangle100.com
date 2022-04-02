@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--web design by squidee_-->
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" crossorigin="anonymous">
+	<title>theme-test</title>
+	<link rel="icon" href="/icon.svg">
+	<style>
+	@font-face {
+   font-family: RobotoMono;
+   src: url(../fonts/RobotoMono.ttf);
+}
+
+.noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+#bodycontainer {
+	border-radius: 0.333vh 0.333vh 0vh 0vh;
+	border-style: solid;
+    border-width: 3px;
+	padding: 10px 10px 10px 15px;
+	margin-right: 80%;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+:root {
+	--dark_background: #121212;
+    --dark_primary: #222831;
+	--dark_secondary: #30475e;
+	
+	--viper_background: #191a1b;
+	--viper_primary: #48494b;
+	--viper_secondary: #79a617;
+	
+	--raspberry_background: #333a45;
+	--raspberry_primary: #939eae;
+	--raspberry_secondary: #f44c7f;
+}
+
+* {
+   font-family: RobotoMono;
+}
+
+body {
+	margin-left: 30px;
+}
+
+h1 {
+	margin: 0px;
+}
+
+h2 {
+	margin: 0px;
+	font-weight: 100;
+}
+
+h3 {
+	margin-top: 0px;
+	font-weight: 100;
+}
+
+button {
+	margin: 5px 0px 5px 0px;
+	width: 100%;
+	height: 40px;
+	font-size: 150%;
+	font-weight: bold;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+	</style>
+	<script>
+function main()
+{
+    
+}
+
+function dark()
+{
+	var style = getComputedStyle(document.body);
+    document.getElementById('theme-status').innerHTML='Dark';
+	document.body.style.backgroundColor = (style.getPropertyValue('--dark_background'));
+	document.getElementById('bodycontainer').style.borderColor = (style.getPropertyValue('--dark_primary'));
+	document.getElementsByTagName("H1")[0].style.color = (style.getPropertyValue('--dark_primary'));
+	document.getElementsByTagName("H2")[0].style.color = (style.getPropertyValue('--dark_secondary'));
+	document.getElementsByTagName("H3")[0].style.color = (style.getPropertyValue('--dark_secondary'));
+	document.getElementsByTagName("BUTTON")[0].style.backgroundColor = (style.getPropertyValue('--dark_secondary'));
+	document.getElementsByTagName("BUTTON")[1].style.backgroundColor = (style.getPropertyValue('--dark_secondary'));
+	document.getElementsByTagName("BUTTON")[2].style.backgroundColor = (style.getPropertyValue('--dark_secondary'));
+	document.getElementsByTagName("BUTTON")[0].style.color = (style.getPropertyValue('--dark_background'));
+	document.getElementsByTagName("BUTTON")[1].style.color = (style.getPropertyValue('--dark_background'));
+	document.getElementsByTagName("BUTTON")[2].style.color = (style.getPropertyValue('--dark_background'));
+}
+
+function viper()
+{
+	var style = getComputedStyle(document.body);
+    document.getElementById('theme-status').innerHTML='Viper';
+	document.body.style.backgroundColor = (style.getPropertyValue('--viper_background'));
+	document.getElementById('bodycontainer').style.borderColor = (style.getPropertyValue('--viper_primary'));
+	document.getElementsByTagName("H1")[0].style.color = (style.getPropertyValue('--viper_primary'));
+	document.getElementsByTagName("H2")[0].style.color = (style.getPropertyValue('--viper_secondary'));
+	document.getElementsByTagName("H3")[0].style.color = (style.getPropertyValue('--viper_secondary'));
+	document.getElementsByTagName("BUTTON")[0].style.backgroundColor = (style.getPropertyValue('--viper_secondary'));
+	document.getElementsByTagName("BUTTON")[1].style.backgroundColor = (style.getPropertyValue('--viper_secondary'));
+	document.getElementsByTagName("BUTTON")[2].style.backgroundColor = (style.getPropertyValue('--viper_secondary'));
+	document.getElementsByTagName("BUTTON")[0].style.color = (style.getPropertyValue('--viper_background'));
+	document.getElementsByTagName("BUTTON")[1].style.color = (style.getPropertyValue('--viper_background'));
+	document.getElementsByTagName("BUTTON")[2].style.color = (style.getPropertyValue('--viper_background'));
+}
+
+function raspberry()
+{
+	var style = getComputedStyle(document.body);
+    document.getElementById('theme-status').innerHTML='Raspberry';
+	document.body.style.backgroundColor = (style.getPropertyValue('--raspberry_background'));
+	document.getElementById('bodycontainer').style.borderColor = (style.getPropertyValue('--raspberry_primary'));
+	document.getElementsByTagName("H1")[0].style.color = (style.getPropertyValue('--raspberry_primary'));
+	document.getElementsByTagName("H2")[0].style.color = (style.getPropertyValue('--raspberry_secondary'));
+	document.getElementsByTagName("H3")[0].style.color = (style.getPropertyValue('--raspberry_secondary'));
+	document.getElementsByTagName("BUTTON")[0].style.backgroundColor = (style.getPropertyValue('--raspberry_secondary'));
+	document.getElementsByTagName("BUTTON")[1].style.backgroundColor = (style.getPropertyValue('--raspberry_secondary'));
+	document.getElementsByTagName("BUTTON")[2].style.backgroundColor = (style.getPropertyValue('--raspberry_secondary'));
+	document.getElementsByTagName("BUTTON")[0].style.color = (style.getPropertyValue('--raspberry_background'));
+	document.getElementsByTagName("BUTTON")[1].style.color = (style.getPropertyValue('--raspberry_background'));
+	document.getElementsByTagName("BUTTON")[2].style.color = (style.getPropertyValue('--raspberry_background'));
+}
+	</script>
+</svg>
+</head>
+<body class="noselect" onload="main(), dark()">
+	<h1 id="heading">theme-test</h1>
+	<div id="bodycontainer">
+		<h2>Select a theme!</h2>
+		<h3 id="theme-status">Light Mode</h3>
+		<div>
+			<button onclick="dark()">Dark</button>
+			<br>
+			<button onclick="viper()">Viper</button>
+			<br>
+			<button onclick="raspberry()">Raspberry</button>
+		</div>
+	</div>
+	<div class="returnBtn">
+		<a href="../projects.html" style="position: absolute; bottom: 0px; left: 0px; font-size: 22px; text-decoration: none; color: #0040ff; font-family: Arial;"><i class="fa fa-arrow-left"></i> Back to projects</a>
+	</div>
+</body>
+</html>
