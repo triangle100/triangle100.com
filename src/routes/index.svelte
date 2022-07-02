@@ -1,7 +1,10 @@
 <script>
-	import logo from "./assets/svelte.png";
-	import Counter from "./lib/Counter.svelte";
+	import logo from "../assets/svelte.png";
+	import Counter from "../lib/Counter.svelte";
+	import SEO from "../lib/SEO.svelte";
 </script>
+
+<SEO title={"triangle100"} description={"description..."} />
 
 <main>
 	<img src={logo} alt="Svelte Logo" />
