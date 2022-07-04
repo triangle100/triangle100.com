@@ -17,5 +17,8 @@
 		"svelte-check": "^2.8.0",
 		"typescript": "^4.7.4"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"firebase": "^9.8.4"
+	}
 }
