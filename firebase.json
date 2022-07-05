@@ -9,8 +9,14 @@
     "rewrites": [
       {
         "source": "**",
-        "destination": "/index.html"
+        "function": "ssrServer"
       }
+    ],
+    "predeploy": [
+      "npm run build"
     ]
+  },
+  "functions": {
+    "source": "functions"
   }
 }
