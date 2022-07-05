@@ -31,7 +31,7 @@
         white-space: nowrap;
         text-align: center;
 
-        transition: all 150ms ease-in-out;
+        transition: all 200ms ease-in-out;
 
         .aligner {
             display: inline-block;
