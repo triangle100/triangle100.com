@@ -10,7 +10,7 @@
     }
 </script>
 
-<div id="icon" on:click={openLink} title={label}>
+<div id="icon" on:click={openLink} data-tooltip={label}>
     <Image {src} alt={label} />
     <span class="aligner"></span>
 </div>
@@ -30,7 +30,9 @@
         cursor: pointer;
         white-space: nowrap;
         text-align: center;
-        
+
+        transition: all 150ms ease-in-out;
+
         .aligner {
             display: inline-block;
             height: 100%;
@@ -40,6 +42,8 @@
         &:hover {
             filter: brightness(90%);
             background-color: rgba(0, 0, 0, 0.1);
+
+            transform: scale(1.05);
         }
     }
 </style>
