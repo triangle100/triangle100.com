@@ -12,7 +12,7 @@
 
 <div id="icon" on:click={openLink} data-tooltip={label}>
     <Image {src} alt={label} />
-    <span class="aligner"></span>
+    <span class="aligner" />
 </div>
 
 <style lang="scss">
