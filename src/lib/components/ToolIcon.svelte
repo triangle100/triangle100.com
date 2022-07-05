@@ -18,7 +18,7 @@
 <style lang="scss">
     #icon {
         display: inline-block;
-        margin: 0px 5px;
+        margin: 5px 5px;
         padding: 10px;
         white-space: nowrap;
 
