@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "static",
+    "public": "build",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -9,14 +9,8 @@
     "rewrites": [
       {
         "source": "**",
-        "function": "ssrServer"
+        "destination": "/app.html"
       }
-    ],
-    "predeploy": [
-      "npm run build"
     ]
-  },
-  "functions": {
-    "source": "functions"
   }
 }
