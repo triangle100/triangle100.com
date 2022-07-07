@@ -93,4 +93,8 @@
             margin-top: 10px;
         }
     }
+
+    #tool-icons {
+        user-select: none;
+    }
 </style>

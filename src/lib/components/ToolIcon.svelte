@@ -16,6 +16,10 @@
 </div>
 
 <style lang="scss">
+    * {
+        user-select: none;
+    }
+
     #icon {
         display: inline-block;
         margin: 5px 5px;
