@@ -7,14 +7,20 @@
     const repo = "triangle100-com";
     const workflowId = "firebase-hosting-merge.yml";
     const url = `https://api.github.com/repos/${owner}/${repo}/actions`;
+    const reqInit = {
+        method: "GET",
+        headers: {
+            Authorization: "token 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",
+        },
+    };
 
-    const jobs = fetch(`${url}/workflows/${workflowId}/runs`)
+    const jobs = fetch(`${url}/workflows/${workflowId}/runs`, reqInit)
         .then((response) => response.json())
         .then((data) => {
             const runId = data.workflow_runs[0].id;
             buildNumber = data.workflow_runs[0].run_number;
 
-            return fetch(`${url}/runs/${runId}/jobs`);
+            return fetch(`${url}/runs/${runId}/jobs`, reqInit);
         })
         .then((response) => response.json())
         .catch((err) => console.error(err));
@@ -26,12 +32,14 @@
         });
         const createdAt = new Date(step[0].completed_at);
         buildTime = createdAt.getTime();
-        buildDate = createdAt.toISOString();
     });
+
 </script>
 
 <div>
     <code>
-        Build: 1.0.{buildNumber} - Build Time: {buildTime} - Build Date: {buildDate}
+        Build: {buildNumber} - Build Time: {buildTime} - Build Date: {new Date(
+            buildTime
+        ).toISOString()}
     </code>
 </div>
