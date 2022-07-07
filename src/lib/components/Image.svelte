@@ -27,8 +27,8 @@
 </script>
 
 <svelte:head>
-    <link rel="preload" as="image" href={errorImage} />
-    <link rel="preload" as="image" href={loadingGif} />
+    <link rel="prefetch" as="image" href={errorImage} />
+    <link rel="prefetch" as="image" href={loadingGif} />
 </svelte:head>
 
 {#if loaded}
