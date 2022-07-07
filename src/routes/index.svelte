@@ -19,6 +19,9 @@
         name="description"
         content="I'm a fullstack hobbyist, game developer, and computer nerd that loves learning the ins and outs of new bleeding edge technology."
     />
+
+    <meta property="og:title" content="triangle100" />
+    <meta property="og:description" content="I'm a fullstack hobbyist, game developer, and computer nerd that loves learning the ins and outs of new bleeding edge technology." />
 </svelte:head>
 
 <div id="container">
