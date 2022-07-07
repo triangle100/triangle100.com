@@ -31,10 +31,7 @@
 
     #container {
         text-align: center;
-        margin-top: 20px;
-        position: fixed;
-        left: 50%;
-        transform: translateX(-50%);
+        margin-top: 30px;
     }
 
     .link {

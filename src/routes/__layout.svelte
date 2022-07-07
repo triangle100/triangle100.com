@@ -1,7 +1,6 @@
 <script>
 	import { onMount } from "svelte";
 	import { goto } from "$app/navigation";
-	import Font from "$lib/components/Font.svelte";
 
 	onMount(() => {
 		window.onunhandledrejection = (e) => {
@@ -10,7 +9,6 @@
 	});
 </script>
 
-<Font />
 <slot />
 
 <svelte:head>
@@ -27,7 +25,7 @@
 			visibility: hidden;
 			opacity: 0;
 			pointer-events: none;
-			transition: 0.2s ease-out;
+			transition: 200ms ease-out;
 			transform: translate(-50%, 5px);
 		}
 
@@ -50,7 +48,7 @@
 			text-align: center;
 			font-size: 14px;
 			line-height: 1.2;
-			transition: 0.2s ease-out;
+			transition: 200ms ease-out;
 		}
 
 		[data-tooltip]:after {
