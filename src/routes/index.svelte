@@ -62,7 +62,7 @@
 
     .link {
         border-bottom: 2px dotted;
-        color: rgb(85, 130, 255);
+        color: #2f60e9;
         cursor: pointer;
     }
 </style>
