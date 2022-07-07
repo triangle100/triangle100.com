@@ -8,9 +8,9 @@
     const url = `https://api.github.com/repos/${owner}/${repo}/actions`;
     const reqInit = {
         method: "GET",
-        headers: {
-            Authorization: "token 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",
-        },
+        // headers: {
+        //     Authorization: "token TOKEN",
+        // },
     };
 
     const jobs = fetch(`${url}/workflows/${workflowId}/runs`, reqInit)
