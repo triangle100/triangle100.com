@@ -48,8 +48,6 @@
 
 <div>
     <code>
-        Build: {buildNumber} - Build Time: {buildTime} - Build Date: {new Date(
-            buildTime
-        ).toISOString()}
+        Build: {buildNumber}
     </code>
 </div>
