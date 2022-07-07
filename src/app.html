@@ -3,11 +3,22 @@
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"/>
+		<meta property="og:site_name" content="triangle100" />
+		<meta property="og:url" content="https://triangle100.com" />
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content="%sveltekit.assets%/favicon.png" />
+		<meta property="og:image:alt" content="triangle100 favicon" />
 		<style>
 			* {
 				font-family: Montserrat;
+			}
+
+			code {
+				font-family: monospace;
 			}
 		</style>
 		%sveltekit.head%

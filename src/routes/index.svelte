@@ -1,6 +1,6 @@
 <script>
-    import SEO from "$lib/components/SEO.svelte";
     import Modal from "$lib/components/Modal/Modal.svelte";
+    import BuildId from "$lib/components/BuildNumber.svelte";
 
     let modalOpen = false;
 
@@ -13,16 +13,34 @@
     }
 </script>
 
-<SEO title="triangle100" description="" />
+<svelte:head>
+    <title>triangle100</title>
+    <meta
+        name="description"
+        content="I'm a fullstack hobbyist, game developer, and computer nerd that loves learning the ins and outs of new bleeding edge technology."
+    />
+
+    <meta property="og:title" content="triangle100" />
+    <meta property="og:description" content="I'm a fullstack hobbyist, game developer, and computer nerd that loves learning the ins and outs of new bleeding edge technology." />
+</svelte:head>
 
 <div id="container">
     <h1>triangle100</h1>
     <p>Website is currently undergoing construction</p>
 
-    <p>Meanwhile, you can check out this project's <span class="link" on:click={openModal}>tech stack</span></p>
+    <p>
+        Meanwhile, you can check out this project's <span
+            class="link"
+            on:click={openModal}>tech stack</span
+        >
+    </p>
 </div>
 
-<Modal modalOpen={modalOpen} on:closeModal={closeModal} />
+<div id="foot">
+    <BuildId />
+</div>
+
+<Modal {modalOpen} on:closeModal={closeModal} />
 
 <style>
     h1 {
@@ -34,9 +52,17 @@
         margin-top: 30px;
     }
 
+    #foot {
+        position: absolute;
+        transform: translateX(-50%);
+        bottom: 0px;
+        left: 50%;
+        text-align: center;
+    }
+
     .link {
-        border-bottom: 2px dotted; 
-        color: rgb(85, 130, 255);
+        border-bottom: 2px dotted;
+        color: #2f60e9;
         cursor: pointer;
     }
 </style>
