@@ -1,6 +1,6 @@
 <script>
     import Modal from "$lib/components/Modal/Modal.svelte";
-    import BuildId from "$lib/components/BuildId.svelte";
+    import BuildId from "$lib/components/BuildNumber.svelte";
 
     let modalOpen = false;
 
