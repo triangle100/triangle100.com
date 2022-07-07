@@ -1,6 +1,7 @@
 <script>
     import SEO from "$lib/components/SEO.svelte";
     import Modal from "$lib/components/Modal/Modal.svelte";
+    import BuildId from "$lib/components/BuildId.svelte";
 
     let modalOpen = false;
 
@@ -22,6 +23,10 @@
     <p>Meanwhile, you can check out this project's <span class="link" on:click={openModal}>tech stack</span></p>
 </div>
 
+<div id="foot">
+    <BuildId />
+</div>
+
 <Modal modalOpen={modalOpen} on:closeModal={closeModal} />
 
 <style>
@@ -32,6 +37,14 @@
     #container {
         text-align: center;
         margin-top: 30px;
+    }
+
+    #foot {
+        position: absolute;
+        transform: translateX(-50%);
+        bottom: 0px;
+        left: 50%;
+        text-align: center;
     }
 
     .link {
