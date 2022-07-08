@@ -30,17 +30,15 @@ jobs:
 
       - name: Generate build number
         id: buildnumber
-        run: echo "BUILD_NUMBER=0.0.${{ github.run_number }}.${{ steps.date.outputs.formattedTime }}" >> $GITHUB_ENV
-
-      - name: Use build number
-        run: echo "v${{ env.BUILD_NUMBER }}"
+        run: |
+          export BUILD_NUMBER=0.0.${{ github.run_number }}.${{ steps.date.outputs.formattedTime }}
+          echo "::set-env name=BUILD_NUMBER::$BUILD_NUMBER"
+          echo "Build = v$BUILD_NUMBER"
 
       - name: Create GitHub release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          TAG_NAME: "v${{ env.BUILD_NUMBER }}"
-          RELEASE_NAME: "Build v${{ env.BUILD_NUMBER }}"
         with:
-          tag_name: ${{ env.TAG_NAME }}
-          release_name: ${{ env.RELEASE_NAME }}
+          tag_name: v${{ env.BUILD_NUMBER }}.
+          release_name: Release v${{ env.BUILD_NUMBER }}
