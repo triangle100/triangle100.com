@@ -2,6 +2,9 @@
     let buildNumber = "";
     let buildTime = 0;
 
+    const marjor = 0;
+    const minor = 0;
+
     const owner = "triangle100";
     const repo = "triangle100-com";
     const workflowId = "firebase-hosting-merge.yml";
@@ -17,7 +20,7 @@
         .then((response) => response.json())
         .then((data) => {
             const runId = data.workflow_runs[0].id;
-            buildNumber = `1.0.${data.workflow_runs[0].run_number}.`;
+            buildNumber = `${marjor}.${minor}.${data.workflow_runs[0].run_number}.`;
 
             return fetch(`${url}/runs/${runId}/jobs`, reqInit);
         })
