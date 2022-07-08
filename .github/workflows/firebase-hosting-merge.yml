@@ -18,3 +18,27 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_TRIANGLE100_C9280 }}'
           channelId: live
           projectId: triangle100-c9280
+  release:
+    name: Release build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get current date
+        uses: josStorer/get-current-time@v2
+        id: date
+        with:
+          format: YYMMDDHHMM
+
+      - name: Generate build number
+        id: buildnumber
+        run: |
+          export BUILD_NUMBER=0.0.${{ github.run_number }}.${{ steps.date.outputs.formattedTime }}
+          echo "::set-env name=BUILD_NUMBER::$BUILD_NUMBER"
+          echo "Build = v$BUILD_NUMBER"
+
+      - name: Create GitHub release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+        with:
+          tag_name: v${{ env.BUILD_NUMBER }}.
+          release_name: Release v${{ env.BUILD_NUMBER }}
