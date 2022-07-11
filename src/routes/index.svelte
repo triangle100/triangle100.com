@@ -65,4 +65,8 @@
         color: #2f60e9;
         cursor: pointer;
     }
+    
+    .link:hover {
+        color: #81a0f3;
+    }
 </style>
