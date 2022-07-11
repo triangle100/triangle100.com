@@ -32,10 +32,8 @@
     <p>Website is currently undergoing construction</p>
 
     <p>
-        Meanwhile, you can check out this project's <span
-            class="link"
-            on:click={openModal}>tech stack</span
-        >
+        Meanwhile, you can check out this project's
+        <span class="link" on:click={openModal}>tech stack</span>
     </p>
 </div>
 
