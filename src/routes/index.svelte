@@ -85,6 +85,8 @@
         border-bottom: 2px dotted;
         color: #2f60e9;
         cursor: pointer;
+
+        transition: color 200ms;
     }
 
     a:hover,
