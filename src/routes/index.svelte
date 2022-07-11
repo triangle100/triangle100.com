@@ -64,6 +64,10 @@
         transform: translateX(-50%);
         bottom: 0px;
         left: 50%;
+
+        width: 100%;
+        margin-bottom: 5px;
+
         text-align: center;
     }
 
