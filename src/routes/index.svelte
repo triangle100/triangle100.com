@@ -43,6 +43,10 @@
 <Modal {modalOpen} on:closeModal={closeModal} />
 
 <style>
+    * {
+        color: #303030;
+    }
+
     h1 {
         margin: 0px;
     }
