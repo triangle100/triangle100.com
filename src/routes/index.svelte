@@ -40,7 +40,15 @@
 </div>
 
 <div id="foot">
-    <span>Build: <BuildNumber /></span>
+    <span>
+        Build:
+        <a
+            href="https://github.com/triangle100/triangle100-com/releases/latest"
+            target="_blank"
+        >
+            <BuildNumber />
+        </a>
+    </span>
 </div>
 
 <Modal {modalOpen} on:closeModal={closeModal} />
