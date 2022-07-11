@@ -1,6 +1,6 @@
 <script>
     import Modal from "$lib/components/Modal/Modal.svelte";
-    import BuildId from "$lib/components/BuildNumber.svelte";
+    import BuildNumber from "$lib/components/BuildNumber.svelte";
 
     let modalOpen = false;
 
@@ -37,7 +37,7 @@
 </div>
 
 <div id="foot">
-    <BuildId />
+    <span>Build: <BuildNumber /></span>
 </div>
 
 <Modal {modalOpen} on:closeModal={closeModal} />
