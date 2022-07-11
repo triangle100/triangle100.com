@@ -51,13 +51,11 @@
 
 <Modal {modalOpen} on:closeModal={closeModal} />
 
-<style>
-    * {
-        color: #303030;
-    }
-
+<style>    
     :global(body) {
         margin: 0px;
+        background-color: #fafafa;
+        color: #303030;
     }
 
     h1 {
