@@ -1,5 +1,5 @@
 <script>
-    let buildNumber = "";
+    let buildNumber = "v0.0.0.0";
 
     fetch("https://api.github.com/repos/triangle100/triangle100-com/releases/latest")
         .then((response) => response.json())
