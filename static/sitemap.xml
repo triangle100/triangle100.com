@@ -9,4 +9,8 @@
 	<url>
 		<loc>https://triangle100.com/</loc>
 	</url>
+    <url>
+		<loc>https://status.triangle100.com/</loc>
+		<changefreq>always</changefreq>
+	</url>
 </urlset>
