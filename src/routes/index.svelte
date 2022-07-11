@@ -71,12 +71,15 @@
         text-align: center;
     }
 
+    a,
     .link {
+        text-decoration: none;
         border-bottom: 2px dotted;
         color: #2f60e9;
         cursor: pointer;
     }
 
+    a:hover,
     .link:hover {
         color: #81a0f3;
     }
