@@ -58,6 +58,10 @@
         color: #303030;
     }
 
+    :global(body) {
+        margin: 0px;
+    }
+
     h1 {
         margin: 0px;
     }
