@@ -39,7 +39,7 @@
 
 <div id="foot">
     <span>
-        Build:
+        Build
         <a
             href="https://github.com/triangle100/triangle100-com/releases/latest"
             target="_blank"
