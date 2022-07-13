@@ -1,20 +1,20 @@
 {
-  "functions": {
-    "source": "functions",
-    "runtime": "nodejs14"
-  },
-  "hosting": {
-    "public": "build",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
-  }
+    "functions": {
+        "source": "functions",
+        "runtime": "nodejs14"
+    },
+    "hosting": {
+        "public": "build",
+        "ignore": [
+            "firebase.json",
+            "**/.*",
+            "**/node_modules/**"
+        ],
+        "rewrites": [
+            {
+                "source": "**",
+                "destination": "/index.html"
+            }
+        ]
+    }
 }

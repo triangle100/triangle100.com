@@ -51,7 +51,7 @@
 
 <Modal {modalOpen} on:closeModal={closeModal} />
 
-<style>    
+<style>
     :global(body) {
         margin: 0px;
         background-color: #fafafa;
