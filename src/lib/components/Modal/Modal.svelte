@@ -92,8 +92,14 @@
         box-shadow: 0px 0px 50px 15px rgba(0, 0, 0, 0.1);
         border-radius: 15px;
 
-        h2 {
+        #body {
             margin-top: 10px;
+            margin-bottom: 20px;
+
+            h2,
+            p {
+                margin: 5px 0px;
+            }
         }
     }
 
