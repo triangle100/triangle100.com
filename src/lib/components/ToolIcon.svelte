@@ -53,7 +53,6 @@
         }
 
         &:hover {
-            filter: brightness(90%);
             background-color: rgba(0, 0, 0, 0.1);
 
             transform: scale(1.05);
