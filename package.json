@@ -23,6 +23,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"sveltejs-tippy": "^3.0.0"
+		"svelte-tippy": "^1.3.2",
+		"tippy.js": "^6.3.7"
 	}
 }

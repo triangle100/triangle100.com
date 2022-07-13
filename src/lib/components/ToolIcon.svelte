@@ -1,6 +1,8 @@
 <script>
     import Image from "$lib/components/Image.svelte";
-    import tippy from "sveltejs-tippy";
+    import tippy from "tippy.js";
+    import "tippy.js/dist/tippy.css";
+    import "tippy.js/animations/shift-away-subtle.css";
 
     export let label;
     export let src;
