@@ -1,5 +1,6 @@
 <script>
     import Image from "$lib/components/Image.svelte";
+    import tippy from "sveltejs-tippy";
 
     export let label;
     export let src;
@@ -8,9 +9,15 @@
     function openLink() {
         window.open(target, "_blank");
     }
+
+    const props = {
+        content: label,
+        duration: 200,
+        animation: "shift-away-subtle",
+    };
 </script>
 
-<div id="icon" on:click={openLink} data-tooltip={label}>
+<div id="icon" on:click={openLink} use:tippy={props}>
     <Image {src} alt={label} />
     <span class="aligner" />
 </div>

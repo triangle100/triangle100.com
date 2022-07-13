@@ -14,7 +14,7 @@
 <svelte:head>
 	<style>
 		/* https://svelte.dev/repl/3153faf7584d40bd8ddebecf39f24ac1?version=3.48.0 */
-		[data-tooltip] {
+		/* [data-tooltip] {
 			position: relative;
 			z-index: 2;
 			display: block;
@@ -75,6 +75,6 @@
 		[data-tooltip="false"]:hover:after {
 			visibility: hidden;
 			opacity: 0;
-		}
+		} */
 	</style>
 </svelte:head>
