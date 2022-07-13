@@ -18,7 +18,10 @@
     <div out:fade>
         <div id="background" in:fade on:click={closeModal} />
         <div id="modal" in:fly={{ y: 25, duration: 500 }}>
-            <h2>Tech Stack</h2>
+            <div id="body">
+                <h2>Tech Stack</h2>
+                <p>I'm using these tools for my WIP fullstack project.</p>
+            </div>
             <div id="tool-icons">
                 <ToolIcon
                     label="Firebase"
@@ -26,7 +29,7 @@
                     target="https://firebase.google.com/"
                 />
                 <ToolIcon
-                    label="GCP"
+                    label="Google Cloud"
                     src="https://static.cdnlogo.com/logos/g/1/google-cloud.svg"
                     target="https://cloud.google.com/"
                 />
@@ -89,8 +92,14 @@
         box-shadow: 0px 0px 50px 15px rgba(0, 0, 0, 0.1);
         border-radius: 15px;
 
-        h2 {
+        #body {
             margin-top: 10px;
+            margin-bottom: 20px;
+
+            h2,
+            p {
+                margin: 5px 0px;
+            }
         }
     }
 

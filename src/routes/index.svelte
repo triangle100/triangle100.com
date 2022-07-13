@@ -1,5 +1,5 @@
 <script>
-    import Modal from "$lib/components/Modal/Modal.svelte";
+    import Modal from "$lib/components/Modal.svelte";
     import BuildNumber from "$lib/components/BuildNumber.svelte";
 
     let modalOpen = false;
@@ -51,7 +51,7 @@
 
 <Modal {modalOpen} on:closeModal={closeModal} />
 
-<style>    
+<style>
     :global(body) {
         margin: 0px;
         background-color: #fafafa;
