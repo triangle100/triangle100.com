@@ -26,7 +26,7 @@
                     target="https://firebase.google.com/"
                 />
                 <ToolIcon
-                    label="GCP"
+                    label="Google Cloud"
                     src="https://static.cdnlogo.com/logos/g/1/google-cloud.svg"
                     target="https://cloud.google.com/"
                 />
