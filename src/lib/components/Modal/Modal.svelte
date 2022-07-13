@@ -18,7 +18,10 @@
     <div out:fade>
         <div id="background" in:fade on:click={closeModal} />
         <div id="modal" in:fly={{ y: 25, duration: 500 }}>
-            <h2>Tech Stack</h2>
+            <div id="body">
+                <h2>Tech Stack</h2>
+                <p>I'm using these tools for my WIP fullstack project.</p>
+            </div>
             <div id="tool-icons">
                 <ToolIcon
                     label="Firebase"
