@@ -11,6 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Write version file
+        uses: DamianReeves/write-file-action@v1.0
+        with:
+          path: src/lib/components/BuildNumber2.svelte
+          contents: |
+            <p>TEST ABC 2</p>
+          write-mode: overwrite
       - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
