@@ -1,7 +1,6 @@
 <script>
     import Modal from "$lib/components/Modal.svelte";
     import BuildNumber from "$lib/components/BuildNumber.svelte";
-    import BuildNumber2 from "$lib/components/BuildNumber2.svelte";
 
     let modalOpen = false;
 
@@ -33,7 +32,6 @@
     <p>Website is currently undergoing construction</p>
 
     <p>
-        <BuildNumber2 />
         Meanwhile, you can check out this project's
         <span class="link" on:click={openModal}>tech stack</span>
     </p>

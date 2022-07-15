@@ -1,14 +1,1 @@
-<script>
-    let buildNumber = "v0.0.0.0";
-
-    fetch(
-        "https://api.github.com/repos/triangle100/triangle100-com/releases/latest"
-    )
-        .then((response) => response.json())
-        .then((data) => {
-            buildNumber = data.tag_name;
-        })
-        .catch((err) => console.error(err));
-</script>
-
-{buildNumber}
+<span>v0.0.0 dev</span>
