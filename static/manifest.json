@@ -1,8 +1,0 @@
-{
-    "name": "triangle100",
-    "short_name": "triangle100",
-    "start_url": "/index.html",
-    "background_color": "#FAFAFA",
-    "theme_color": "#FF6D0A",
-    "display": "standalone"
-}
