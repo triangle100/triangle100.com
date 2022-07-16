@@ -34,7 +34,7 @@ jobs:
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          TAG_NAME: "v0.0.${{ github.run_number }} prod"
+          TAG_NAME: "v0.0.${{ github.run_number }}-prod"
           RELEASE_NAME: "Build v0.0.${{ github.run_number }} prod"
         with:
           tag_name: ${{ env.TAG_NAME }}
