@@ -41,7 +41,7 @@
     <span>
         Build
         <a
-            href="https://github.com/triangle100/triangle100-com/releases/latest"
+            href="https://github.com/triangle100/triangle100-com/releases"
             target="_blank"
         >
             <BuildNumber />

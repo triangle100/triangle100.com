@@ -8,9 +8,17 @@ name: Deploy to Firebase Hosting on merge
       - main
 jobs:
   build_and_deploy:
+    name: Build and deploy
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Write version file
+        uses: DamianReeves/write-file-action@v1.0
+        with:
+          path: src/lib/components/BuildNumber.svelte
+          contents: |
+            <span>v0.0.${{ github.run_number }} prod</span>
+          write-mode: overwrite
       - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
@@ -22,25 +30,12 @@ jobs:
     name: Release build
     runs-on: ubuntu-latest
     steps:
-      - name: Get current date
-        uses: josStorer/get-current-time@v2
-        id: date
-        with:
-          format: YYMMDDHHMM
-
-      - name: Generate build number
-        id: buildnumber
-        run: echo "BUILD_NUMBER=0.0.${{ github.run_number }}.${{ steps.date.outputs.formattedTime }}" >> $GITHUB_ENV
-
-      - name: Use build number
-        run: echo "v${{ env.BUILD_NUMBER }}"
-
       - name: Create GitHub release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          TAG_NAME: "v${{ env.BUILD_NUMBER }}"
-          RELEASE_NAME: "Build v${{ env.BUILD_NUMBER }}"
+          TAG_NAME: "v0.0.${{ github.run_number }} prod"
+          RELEASE_NAME: "Build v0.0.${{ github.run_number }} prod"
         with:
           tag_name: ${{ env.TAG_NAME }}
           release_name: ${{ env.RELEASE_NAME }}
