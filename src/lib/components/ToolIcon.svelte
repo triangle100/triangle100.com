@@ -46,6 +46,13 @@
 
         transition: all 200ms ease-in-out;
 
+        :global(#image) {
+            max-width: 100%;
+            max-height: 100%;
+            vertical-align: middle;
+            margin: auto;
+        }
+
         .aligner {
             display: inline-block;
             height: 100%;
