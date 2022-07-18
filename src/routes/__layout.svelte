@@ -15,6 +15,7 @@
     <Navbar id="navbar" />
     <slot />
     
+    <div id="spacer"></div>
     <div id="foot">
         <span>
             Build
@@ -29,6 +30,10 @@
 </div>
 
 <style lang="scss">
+    #spacer {
+        height: 50px;
+    }
+
     #content {
         position: relative;
         text-align: center;
