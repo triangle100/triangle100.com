@@ -1,6 +1,5 @@
 <script>
     import Modal from "$lib/components/Modal.svelte";
-    import BuildNumber from "$lib/components/BuildNumber.svelte";
 
     let modalOpen = false;
 
@@ -27,7 +26,7 @@
     />
 </svelte:head>
 
-<div id="container">
+<div id="main">
     <h1>triangle100</h1>
     <p>Website is currently undergoing construction</p>
 
@@ -37,21 +36,9 @@
     </p>
 </div>
 
-<div id="foot">
-    <span>
-        Build
-        <a
-            href="https://github.com/triangle100/triangle100-com/releases"
-            target="_blank"
-        >
-            <BuildNumber />
-        </a>
-    </span>
-</div>
-
 <Modal {modalOpen} on:closeModal={closeModal} />
 
-<style>
+<style lang="scss">
     :global(body) {
         margin: 0px;
         background-color: #fafafa;
@@ -62,35 +49,7 @@
         margin: 0px;
     }
 
-    #container {
-        text-align: center;
+    #main {
         margin-top: 30px;
-    }
-
-    #foot {
-        position: absolute;
-        transform: translateX(-50%);
-        bottom: 0px;
-        left: 50%;
-
-        width: 100%;
-        margin-bottom: 5px;
-
-        text-align: center;
-    }
-
-    a,
-    .link {
-        text-decoration: none;
-        border-bottom: 2px dotted;
-        color: #2f60e9;
-        cursor: pointer;
-
-        transition: color 200ms;
-    }
-
-    a:hover,
-    .link:hover {
-        color: #81a0f3;
     }
 </style>
