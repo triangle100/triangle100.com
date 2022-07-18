@@ -1,0 +1,52 @@
+<script>
+    import { onMount } from "svelte";
+
+    let page = "home";
+
+    onMount(() => {
+        console.log(document.getElementById(page));
+    });
+</script>
+
+<div id={$$props.id} class="navbar">
+    <div id="logo">
+        <a href="/" sveltekit:reload>
+            <img src="favicon.png" alt="Site logo" />
+        </a>
+    </div>
+    <div id="buttons">
+        <span id="home">Home</span>
+        <span>Projects</span>
+        <span>Blog</span>
+    </div>
+</div>
+
+<style lang="scss">
+    .navbar {
+        height: 50px;
+
+        display: flex;
+        align-items: center;
+
+        #logo {
+            width: 50px;
+            margin-right: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            background-color: #eaeaea;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        #buttons {
+            cursor: default;
+
+            span {
+                cursor: pointer;
+                margin-right: 10px;
+            }
+        }
+    }
+</style>

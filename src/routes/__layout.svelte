@@ -1,6 +1,7 @@
 <script>
     import { onMount } from "svelte";
     import { goto } from "$app/navigation";
+    import Navbar from "$lib/components/Navbar.svelte";
     import BuildNumber from "$lib/components/BuildNumber.svelte";
 
     onMount(() => {
@@ -11,6 +12,7 @@
 </script>
 
 <div id="content">
+    <Navbar id="navbar" />
     <slot />
     
     <div id="foot">
