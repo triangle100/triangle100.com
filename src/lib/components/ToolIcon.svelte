@@ -1,5 +1,5 @@
 <script>
-    import Image from "$lib/components/Image.svelte";
+    import RichImage from "$lib/components/RichImage.svelte";
     import tippy from "tippy.js";
     import "tippy.js/dist/tippy.css";
     import "tippy.js/animations/shift-away-subtle.css";
@@ -20,7 +20,7 @@
 </script>
 
 <div id="icon" on:click={openLink} use:tippy={props}>
-    <Image {src} alt={label} />
+    <RichImage id="image" {src} alt={label} />
     <span class="aligner" />
 </div>
 

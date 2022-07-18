@@ -32,18 +32,16 @@
 </svelte:head>
 
 {#if loaded}
-    <img {src} {alt} />
+    <img id={$$props.id} {src} {alt} />
 {:else if failed}
-    <img src={errorImage} alt="Not Found" />
+    <img id={$$props.id} src={errorImage} alt="Not Found" />
 {:else if loading}
-    <img src={loadingGif} alt="Loading..." />
+    <img id={$$props.id} src={loadingGif} alt="Loading..." />
 {/if}
 
 <style>
     img {
         max-width: 100%;
         max-height: 100%;
-        vertical-align: middle;
-        margin: auto;
     }
 </style>
