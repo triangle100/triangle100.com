@@ -14,8 +14,8 @@
 <div id="content">
     <Navbar id="navbar" />
     <slot />
-    
-    <div id="spacer"></div>
+
+    <div id="spacer" />
     <div id="foot">
         <span>
             Build
