@@ -66,18 +66,20 @@
         text-align: center;
     }
 
-    a,
-    :global(.link) {
-        text-decoration: none;
-        border-bottom: 2px dotted;
-        color: #2f60e9;
-        cursor: pointer;
+    :global {
+        a,
+        .link {
+            text-decoration: none;
+            border-bottom: 2px dotted;
+            color: #2f60e9;
+            cursor: pointer;
 
-        transition: color 200ms;
-    }
+            transition: color 200ms;
+        }
 
-    a:hover,
-    :global(.link:hover) {
-        color: #81a0f3;
+        a:hover,
+        .link:hover {
+            color: #81a0f3;
+        }
     }
 </style>
