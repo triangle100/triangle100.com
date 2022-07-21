@@ -15,9 +15,10 @@
         </a>
     </div>
     <div id="buttons">
-        <span id="home">Home</span>
-        <span>Projects</span>
-        <span>Blog</span>
+        <a href="/">Home</a>
+        <a href="/projects">Projects</a>
+        <a href="/blog">Blog</a>
+        <a href="/404">404</a>
     </div>
 </div>
 
