@@ -42,8 +42,4 @@
     h1 {
         margin: 0px;
     }
-
-    #main {
-        margin-top: 30px;
-    }
 </style>
