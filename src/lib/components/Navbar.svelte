@@ -35,6 +35,10 @@
             border-radius: 5px;
             background-color: #eaeaea;
 
+            a {
+                border: none;
+            }
+
             img {
                 width: 100%;
             }
