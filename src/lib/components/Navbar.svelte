@@ -49,9 +49,9 @@
         #buttons {
             cursor: default;
 
-            span {
-                cursor: pointer;
+            a {
                 margin-right: 10px;
+                border: none;
             }
         }
     }
