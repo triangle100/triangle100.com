@@ -19,15 +19,17 @@
     <h1>{status}</h1>
     <h2>{error.message}</h2>
 
-    {#if error.frame}
-        <pre>{error.frame}</pre>
-    {/if}
-    {#if error.stack}
-        <pre>{error.stack}</pre>
-    {/if}
+    <div id="error-text">
+        {#if error.frame}
+            <pre>{error.frame}</pre>
+        {/if}
+        {#if error.stack}
+            <pre>{error.stack}</pre>
+        {/if}
+    </div>
 </div>
 
-<style>
+<style lang="scss">
     h1,
     h2 {
         text-align: center;
@@ -36,5 +38,11 @@
 
     #container {
         text-align: left;
+
+        #error-text {
+            margin: 0px auto;
+            max-width: 80%;
+            overflow-y: scroll;
+        }
     }
 </style>
