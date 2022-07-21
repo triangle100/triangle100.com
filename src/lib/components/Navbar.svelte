@@ -28,7 +28,6 @@
 
         display: flex;
         align-items: center;
-        margin-bottom: 20px;
 
         #logo {
             width: 50px;
