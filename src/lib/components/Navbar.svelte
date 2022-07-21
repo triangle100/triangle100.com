@@ -31,6 +31,8 @@
 
         #logo {
             width: 50px;
+            height: 50px;
+
             margin-right: 10px;
             cursor: pointer;
             border-radius: 5px;
