@@ -67,6 +67,12 @@
     }
 
     :global {
+        body {
+            margin: 0px;
+            background-color: #fafafa;
+            color: #303030;
+        }
+
         a,
         .link {
             text-decoration: none;
