@@ -35,5 +35,6 @@
     }
 
     #container {
+        text-align: left;
     }
 </style>
