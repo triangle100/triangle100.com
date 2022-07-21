@@ -37,9 +37,3 @@
 </div>
 
 <Modal {modalOpen} on:closeModal={closeModal} />
-
-<style lang="scss">
-    h1 {
-        margin: 0px;
-    }
-</style>

@@ -33,7 +33,11 @@
     h1,
     h2 {
         text-align: center;
-        margin: 0px;
+        margin-bottom: 0px;
+    }
+
+    h2 {
+        margin-top: 0px;
     }
 
     #container {
