@@ -39,6 +39,7 @@
         text-align: center;
 
         min-width: 60vw;
+        min-height: 100vh;
         width: 60vw;
         margin: 0 auto;
 
