@@ -35,8 +35,5 @@
     }
 
     #container {
-        position: fixed;
-        left: 50%;
-        transform: translateX(-50%);
     }
 </style>
