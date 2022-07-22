@@ -43,9 +43,11 @@
     }
 
     #container {
-        text-align: left;
+        text-align: center;
 
         #error-text {
+            text-align: left;
+
             margin: 0px auto;
             max-width: 80%;
             overflow-y: scroll;
