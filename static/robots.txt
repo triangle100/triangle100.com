@@ -4,3 +4,4 @@ Disallow: /admin
 
 Allow: /
 
+Sitemap: https://triangle100.com/sitemap.xml
