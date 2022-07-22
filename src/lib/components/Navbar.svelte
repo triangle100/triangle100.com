@@ -1,5 +1,6 @@
 <script>
     import { onMount } from "svelte";
+    import githubImage from "$lib/assets/github.png";
 
     let page = "home";
 
@@ -9,8 +10,8 @@
 </script>
 
 <div id={$$props.id} class="navbar">
-    <div id="logo">
-        <a href="/" sveltekit:reload>
+    <div id="logo" class="icon">
+        <a href="/" sveltekit:reload title="triangle100">
             <img src="favicon.png" alt="Site logo" />
         </a>
     </div>
@@ -19,6 +20,12 @@
         <a href="/projects">Projects</a>
         <a href="/blog">Blog</a>
         <a href="/404">404</a>
+    </div>
+
+    <div id="source-button" class="icon">
+        <a href="https://github.com/triangle100/triangle100-com" target="_blank" title="Source Code">
+            <img src={githubImage} alt="GitHub logo" />
+        </a>
     </div>
 </div>
 
@@ -29,22 +36,24 @@
         display: flex;
         align-items: center;
 
-        #logo {
+        .icon {
             width: 50px;
             height: 50px;
-
-            margin-right: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            background-color: #eaeaea;
-
-            a {
-                border: none;
-            }
 
             img {
                 width: 100%;
             }
+
+            a {
+                border: none;
+            }
+        }
+
+        #logo {
+            margin-right: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            background-color: #eaeaea;
         }
 
         #buttons {
@@ -54,6 +63,10 @@
                 margin-right: 10px;
                 border: none;
             }
+        }
+
+        #source-button {
+            margin-left: auto;
         }
     }
 </style>
