@@ -49,6 +49,11 @@
             }
         }
 
+        #source-button {
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
         #logo {
             margin-right: 10px;
             cursor: pointer;
