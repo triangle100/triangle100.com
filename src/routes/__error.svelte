@@ -34,9 +34,7 @@
 </div>
 
 <style lang="scss">
-    h1,
-    h2 {
-        text-align: center;
+    h1 {
         margin-bottom: 0px;
     }
 
