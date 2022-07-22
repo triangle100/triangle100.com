@@ -8,12 +8,16 @@
 </script>
 
 <script>
+    import SEO from "$lib/components/SEO.svelte";
+
     /** @type {number} */
     export let status;
 
     /** @type {Error & {frame?: string} & {loc?: object}} */
     export let error;
 </script>
+
+<SEO title="triangle100 - {status}" />
 
 <div id="container">
     <h1>{status}</h1>

@@ -1,6 +1,7 @@
 <script>
     import { onMount } from "svelte";
     import { goto } from "$app/navigation";
+    import SEO from "$lib/components/SEO.svelte";
     import Navbar from "$lib/components/Navbar.svelte";
     import BuildNumber from "$lib/components/BuildNumber.svelte";
 
@@ -10,6 +11,8 @@
         };
     });
 </script>
+
+<SEO />
 
 <div id="content">
     <Navbar id="navbar" />
