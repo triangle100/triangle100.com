@@ -64,7 +64,6 @@
         left: 50%;
 
         width: 100%;
-        margin-top: 50px;
 
         text-align: center;
     }
