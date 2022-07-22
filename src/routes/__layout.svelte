@@ -89,5 +89,32 @@
         .link:hover {
             color: #81a0f3;
         }
+
+        input,
+        button {
+            height: 25px;
+
+            box-sizing: border-box;
+            border: 1px solid black;
+            border-radius: 3px;
+
+            background-color: #ffffff;
+        }
+
+        input {
+            padding-left: 5px;
+        }
+
+        button {
+            padding: 0px 10px;
+            height: 25px;
+
+            text-align: center;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #e6e6e6;
+        }
     }
 </style>
