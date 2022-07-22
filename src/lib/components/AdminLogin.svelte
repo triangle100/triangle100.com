@@ -39,13 +39,9 @@
 
         display: flex;
         align-items: center;
-
-        label {
-            margin-right: auto;
-        }
+        justify-content: space-between;
 
         input {
-            margin-left: auto;
             width: 70%;
 
             font-size: 16px;
