@@ -1,12 +1,5 @@
 <script>
-    import { onMount } from "svelte";
     import githubImage from "$lib/assets/github.png";
-
-    let page = "home";
-
-    onMount(() => {
-        console.log(document.getElementById(page));
-    });
 </script>
 
 <nav id={$$props.id} class="navbar">
