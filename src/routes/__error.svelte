@@ -19,7 +19,7 @@
 
 <SEO title={status.toString()} />
 
-<div id="container">
+<main>
     <h1>{status}</h1>
     <h2>{error.message}</h2>
 
@@ -32,7 +32,7 @@
         {/if}
     </div>
     <p>Return to <a href="/">Home</a></p>
-</div>
+</main>
 
 <style lang="scss">
     h1 {
@@ -43,7 +43,7 @@
         margin-top: 0px;
     }
 
-    #container {
+    main {
         text-align: center;
 
         #error-text {

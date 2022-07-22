@@ -14,7 +14,7 @@
 
 <SEO />
 
-<div id="content">
+<main>
     <Navbar id="navbar" />
     <slot />
 
@@ -30,14 +30,14 @@
             </a>
         </span>
     </div>
-</div>
+</main>
 
 <style lang="scss">
     #spacer {
         height: 50px;
     }
 
-    #content {
+    main {
         position: relative;
         text-align: center;
 

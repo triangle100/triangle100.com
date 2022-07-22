@@ -15,7 +15,7 @@
 
 <SEO />
 
-<div id="main">
+<main>
     <h1>triangle100</h1>
     <p>Website is currently undergoing construction</p>
 
@@ -23,6 +23,6 @@
         Meanwhile, you can check out this project's
         <span class="link" on:click={openModal}>tech stack</span>
     </p>
-</div>
+</main>
 
 <Modal {modalOpen} on:closeModal={closeModal} />
