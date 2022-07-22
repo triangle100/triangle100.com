@@ -50,6 +50,7 @@
 
             margin: 0px auto;
             max-width: 80%;
+            max-height: 50vh;
             overflow-y: scroll;
         }
     }
