@@ -31,6 +31,7 @@
             <pre>{error.stack}</pre>
         {/if}
     </div>
+    <p>Return to <a href="/">Home</a></p>
 </div>
 
 <style lang="scss">
