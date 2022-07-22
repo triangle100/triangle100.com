@@ -17,20 +17,10 @@
 
 <SEO title="Admin Console" desc="Admin Console" />
 
-<main>
-    <h1>{loggedIn ? "Admin Console" : "Admin Login"}</h1>
-    
-    {#if loggedIn}
-        <p>:)</p>
-    {:else}
-        <AdminLogin />
-    {/if}
-</main>
+<h1>{loggedIn ? "Admin Console" : "Admin Login"}</h1>
 
-<style lang="scss">
-    main {
-        margin: 0px auto;
-
-        width: 375px;
-    }
-</style>
+{#if loggedIn}
+    <p>:)</p>
+{:else}
+    <AdminLogin />
+{/if}

@@ -10,29 +10,37 @@
     }
 </script>
 
-<div id="input-area">
-    <label for="email">Email</label>
-    <input
-        type="email"
-        required
-        id="email"
-        name="email"
-        on:change={handleChange}
-    />
+<div id="form">
+    <div id="input-area">
+        <label for="email">Email</label>
+        <input
+            type="email"
+            required
+            id="email"
+            name="email"
+            on:change={handleChange}
+        />
+    </div>
+    <div id="input-area">
+        <label for="password">Password</label>
+        <input
+            type="password"
+            required
+            id="password"
+            name="password"
+            on:change={handleChange}
+        />
+    </div>
+    <button on:click={onSubmit}>Login</button>
 </div>
-<div id="input-area">
-    <label for="password">Password</label>
-    <input
-        type="password"
-        required
-        id="password"
-        name="password"
-        on:change={handleChange}
-    />
-</div>
-<button on:click={onSubmit}>Login</button>
 
 <style lang="scss">
+    #form {
+        margin: 0px auto;
+
+        width: 375px;
+    }
+
     #input-area {
         margin-bottom: 10px;
         text-align: left;

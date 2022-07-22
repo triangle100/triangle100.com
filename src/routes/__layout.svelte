@@ -16,7 +16,9 @@
 
 <main>
     <Navbar id="navbar" />
-    <slot />
+    <div>
+        <slot />
+    </div>
 
     <div id="spacer" />
     <div id="foot">

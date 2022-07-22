@@ -15,14 +15,12 @@
 
 <SEO />
 
-<main>
-    <h1>triangle100</h1>
-    <p>Website is currently undergoing construction</p>
+<h1>triangle100</h1>
+<p>Website is currently undergoing construction</p>
 
-    <p>
-        Meanwhile, you can check out this project's
-        <span class="link" on:click={openModal}>tech stack</span>
-    </p>
-</main>
+<p>
+    Meanwhile, you can check out this project's
+    <span class="link" on:click={openModal}>tech stack</span>
+</p>
 
 <Modal {modalOpen} on:closeModal={closeModal} />
