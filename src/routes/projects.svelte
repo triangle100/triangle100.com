@@ -3,7 +3,7 @@
 </script>
 
 <SEO
-    title="triangle100 - Projects"
+    title="Projects"
     desc="A repository of all my finished or notable projects"
 />
 

@@ -1,6 +1,10 @@
 <script>
     export let title = "triangle100";
     export let desc = "I'm a fullstack hobbyist, game developer, and computer nerd that loves learning the ins and outs of new bleeding edge technology.";
+
+    if (title != "triangle100") {
+        title = `triangle100 - ${title}`
+    }
 </script>
 
 <svelte:head>

@@ -3,7 +3,7 @@
 </script>
 
 <SEO
-    title="triangle100 - Blog"
+    title="Blog"
     desc="A blog I use to post updates on what I'm working on at the moment"
 />
 

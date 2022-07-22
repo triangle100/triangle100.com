@@ -17,7 +17,7 @@
     export let error;
 </script>
 
-<SEO title="triangle100 - {status}" />
+<SEO title={status.toString()} />
 
 <div id="container">
     <h1>{status}</h1>
