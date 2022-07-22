@@ -9,7 +9,7 @@
     });
 </script>
 
-<div id={$$props.id} class="navbar">
+<nav id={$$props.id} class="navbar">
     <div id="logo" class="icon">
         <a href="/" sveltekit:reload title="triangle100">
             <img src="favicon.png" alt="Site logo" />
@@ -27,7 +27,7 @@
             <img src={githubImage} alt="GitHub logo" />
         </a>
     </div>
-</div>
+</nav>
 
 <style lang="scss">
     .navbar {
