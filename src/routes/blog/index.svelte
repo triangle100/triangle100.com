@@ -20,7 +20,7 @@
 
 <h1>Blog</h1>
 {#each posts as post}
-    <h2><a href={`blog/${post.id}`}>{post.id}</a></h2>
+    <h2><a href={`blog/${post.id}`}>{post.data.title}</a></h2>
 {:else}
     {#if loading}
         <h2>Loading posts...</h2>

@@ -13,7 +13,7 @@
         post = await getPost($page.params.slug);
 
         loading = false;
-        title = post.data ? post.id : "No blog post found!"; // post.id => post.data.title
+        title = post.data ? post.data.title : "No blog post found!";
         
         console.log(post);
     });
