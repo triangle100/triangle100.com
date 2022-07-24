@@ -5,7 +5,7 @@
 <nav id={$$props.id} class="navbar">
     <div id="logo" class="icon">
         <a href="/" sveltekit:reload title="triangle100">
-            <img src="favicon.png" alt="Site logo" />
+            <img src="/favicon.png" alt="Site logo" />
         </a>
     </div>
     <div id="buttons">
