@@ -1,16 +1,38 @@
 <script>
+    import { signIn } from "$lib/services/firebase";
+
+    let submitting;
+
     function handleChange(e) {
         console.log("form changed!", e);
     }
 
-    function onSubmit(e) {
+    async function onSubmit(e) {
         e.preventDefault();
-
+        submitting = true;
         console.log("submitted", e);
+
+        // @ts-ignore
+        const email = document.getElementById("email").value;
+        // @ts-ignore
+        const password = document.getElementById("password").value;
+
+        signIn(email, password)
+            .then((res) => {
+                console.log("signed in!");
+            })
+            .catch((error) => {
+                submitting = false;
+                console.log("error signing in!", error.code);
+            });
+    }
+
+    function submit(e) {
+        document.getElementById("form").submit();
     }
 </script>
 
-<div id="form">
+<form id="form" on:submit={onSubmit}>
     <div id="input-area">
         <label for="email">Email</label>
         <input
@@ -31,8 +53,10 @@
             on:change={handleChange}
         />
     </div>
-    <button on:click={onSubmit}>Login</button>
-</div>
+    <button on:click={submit} disabled={submitting}>
+        {submitting ? "Working..." : "Sign in"}
+    </button>
+</form>
 
 <style lang="scss">
     #form {

@@ -1,18 +1,14 @@
 <script>
+    import { signOut } from "$lib/services/firebase";
+    import { user } from "$lib/stores/userStore";
+    import { get } from "svelte/store";
     import SEO from "$lib/components/SEO.svelte";
     import AdminLogin from "$lib/components/AdminLogin.svelte";
 
-    let loggedIn = false;
-
-    function handleChange(e) {
-        console.log("form changed!", e);
-    }
-
-    function onSubmit(e) {
-        e.preventDefault();
-
-        console.log("submitted", e);
-    }
+    let loggedIn = !!get(user);
+    user.subscribe((value) => {
+        loggedIn = !!value;
+    });
 </script>
 
 <SEO title="Admin Console" desc="Admin Console" />
@@ -21,6 +17,7 @@
 
 {#if loggedIn}
     <p>:)</p>
+    <button on:click={signOut}>Sign Out</button>
 {:else}
     <AdminLogin />
 {/if}
