@@ -2,6 +2,7 @@
     import { page } from "$app/stores";
     import { onMount } from "svelte";
     import { getPost } from "$lib/services/firebase";
+    import loadingGif from "$lib/assets/loading.gif";
     import SEO from "$lib/components/SEO.svelte";
     import NoBlog from "$lib/components/blog/NoBlog.svelte";
 
@@ -12,25 +13,36 @@
     onMount(async () => {
         post = await getPost($page.params.slug);
 
-        loading = false;
+        setTimeout(() => {
+            loading = false;
+        }, 200);
         title = post.data ? post.data.title : "No blog post found!";
-        
+
         console.log(post);
     });
 </script>
 
 <SEO
-    title={title}
+    {title}
     desc="A blog I use to post updates on what I'm working on at the moment"
 />
 
-<h1>{title}</h1>
 {#if loading}
-    <h2>loading...</h2>
-{:else if post.data}
-    <h2>{JSON.stringify(post)}</h2>
+    <img id="loading" src={loadingGif} alt="Loading..." />
 {:else}
-    <h2>
-        <NoBlog id={post.id} />
-    </h2>
+    <h1>{title}</h1>
+    {#if post.data}
+        <h2>{JSON.stringify(post)}</h2>
+    {:else}
+        <h2>
+            <NoBlog id={post.id} />
+        </h2>
+    {/if}
 {/if}
+
+<style>
+    #loading {
+        width: 100px;
+        margin-top: 50px;
+    }
+</style>

@@ -16,7 +16,7 @@
 
 <main>
     <Navbar id="navbar" />
-    <div>
+    <div id="slot">
         <slot />
     </div>
 
@@ -35,6 +35,10 @@
 </main>
 
 <style lang="scss">
+    #slot {
+        word-wrap: break-word;
+    }
+
     #spacer {
         height: 50px;
     }

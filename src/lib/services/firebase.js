@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, doc, getDocs, getDoc } from "firebase/firestore";
-import { getAuth, browserSessionPersistence } from "firebase/auth";
+import { getFirestore, collection, doc, getDocs, getDoc, query, orderBy } from "firebase/firestore";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { _user } from "$lib/stores/userStore";
 
 const firebaseConfig = {
     apiKey: "AIzaSyArMZxrKJ9SLGOpN22cR8NXlHnEpaHVquE",
@@ -13,12 +14,44 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const auth = getAuth(app);
-auth.setPersistence(browserSessionPersistence);
+
+
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        console.log("signed in!");
+        _user.set(user);
+    }
+});
+
+export async function signIn(email, password) {
+    return new Promise((resolve, reject) => {
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                resolve(userCredential.user);
+            })
+            .catch((error) => {
+                reject(error);
+            });
+    })
+}
+
+export async function signOut() {
+    const firebaseAuth = await import("firebase/auth");
+    firebaseAuth.signOut(auth).then(() => {
+        // Signed out
+    }).catch((error) => {
+        console.error(error);
+    });
+
+    _user.set();
+}
 
 export async function getPosts() {
     let posts = [];
 
-    const querySnapshot = await getDocs(collection(db, "blog"));
+    const q = query(collection(db, "blog"), orderBy("createdAt", "desc"));
+
+    const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
         posts.push({ id: doc.id, data: doc.data() });
 
