@@ -52,8 +52,6 @@ export async function getPosts() {
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
         posts.push({ id: doc.id, data: doc.data() });
-
-        console.log(doc.id, " => ", doc.data());
     });
 
     return posts;
