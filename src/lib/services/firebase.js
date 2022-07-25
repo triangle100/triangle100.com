@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, doc, getDocs, getDoc, query, orderBy } from "firebase/firestore";
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
-import { _user } from "$lib/stores/userStore";
+import { user as userStore } from "$lib/stores/userStore";
 
 const firebaseConfig = {
     apiKey: "AIzaSyArMZxrKJ9SLGOpN22cR8NXlHnEpaHVquE",
@@ -15,11 +15,11 @@ export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const auth = getAuth(app);
 
-
-onAuthStateChanged(auth, (user) => {
+onAuthStateChanged(auth, (user, error) => {
     if (user) {
-        console.log("signed in!");
-        _user.set(user);
+        userStore.set(user);
+    } else if (error) {
+        console.error(error);
     }
 });
 
@@ -38,12 +38,10 @@ export async function signIn(email, password) {
 export async function signOut() {
     const firebaseAuth = await import("firebase/auth");
     firebaseAuth.signOut(auth).then(() => {
-        // Signed out
+        userStore.set();
     }).catch((error) => {
         console.error(error);
     });
-
-    _user.set();
 }
 
 export async function getPosts() {

@@ -1,14 +1,8 @@
 <script>
-    import { _user } from "$lib/stores/userStore";
+    import { user } from "$lib/stores/userStore";
     import githubImage from "$lib/assets/github.png";
 
-    let user;
-    _user.subscribe((value) => {
-        user = value;
-    });
-
-    let loggedIn;
-    $: loggedIn = !!user;
+    $: loggedIn = !!$user;
 </script>
 
 <nav id={$$props.id} class="navbar">
