@@ -1,8 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, doc, getDocs, getDoc, query, orderBy } from "firebase/firestore";
-import { getAuth, browserSessionPersistence, signInWithEmailAndPassword } from "firebase/auth";
-import { user } from "$lib/stores/userStore";
-import { get } from "svelte/store";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { _user } from "$lib/stores/userStore";
 
 const firebaseConfig = {
     apiKey: "AIzaSyArMZxrKJ9SLGOpN22cR8NXlHnEpaHVquE",
@@ -16,18 +15,21 @@ export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const auth = getAuth(app);
 
+
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        console.log("signed in!");
+        _user.set(user);
+    }
+});
+
 export async function signIn(email, password) {
     return new Promise((resolve, reject) => {
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                user.set(userCredential.user);
-                console.log(get(user));
-
                 resolve(userCredential.user);
             })
             .catch((error) => {
-                console.error(error.code, error.message);
-
                 reject(error);
             });
     })
@@ -41,7 +43,7 @@ export async function signOut() {
         console.error(error);
     });
 
-    user.set();
+    _user.set();
 }
 
 export async function getPosts() {
