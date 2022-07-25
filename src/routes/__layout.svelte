@@ -1,6 +1,7 @@
 <script>
     import { onMount } from "svelte";
     import { goto } from "$app/navigation";
+    import "$lib/services/firebase";
     import SEO from "$lib/components/SEO.svelte";
     import Navbar from "$lib/components/Navbar.svelte";
     import BuildNumber from "$lib/components/BuildNumber.svelte";
