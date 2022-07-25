@@ -1,5 +1,5 @@
 <script>
-    import { signOut, } from "$lib/services/firebase";
+    import { signOut } from "$lib/services/firebase";
     import { _user } from "$lib/stores/userStore";
     import SEO from "$lib/components/SEO.svelte";
     import AdminLogin from "$lib/components/AdminLogin.svelte";
