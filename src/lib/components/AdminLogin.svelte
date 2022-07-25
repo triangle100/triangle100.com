@@ -6,13 +6,12 @@
     let submitting;
 
     function handleChange(e) {
-        console.log("form changed!", e);
+        // Handle input change
     }
 
     async function onSubmit(e) {
         e.preventDefault();
         submitting = true;
-        console.log("submitted", e);
 
         const emailInput = document.getElementById("email");
         const passwordInput = document.getElementById("password");
@@ -26,7 +25,6 @@
 
             signIn(email, password)
                 .then((res) => {
-                    console.log("signed in!");
                 })
                 .catch((error) => {
                     const pretty = error.code.split("/")[1].replace(/-/g, " ");
