@@ -98,8 +98,9 @@
         }
 
         input,
-        button {
-            height: 25px;
+        button,
+        textarea {
+            min-height: 25px;
 
             box-sizing: border-box;
             border: 1px solid black;
