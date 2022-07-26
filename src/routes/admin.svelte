@@ -1,7 +1,6 @@
 <script>
     import MarkdownIt from "markdown-it";
     import hljs from "highlight.js";
-    import "highlight.js/styles/stackoverflow-light.css";
 
     import { goto } from "$app/navigation";
     import { signOut, newPost } from "$lib/services/firebase";
