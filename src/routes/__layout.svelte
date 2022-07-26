@@ -82,6 +82,12 @@
             color: #303030;
         }
 
+        hr {
+            border: none;
+            border-bottom: 1px solid black;
+            width: 95%;
+        }
+
         a,
         .link {
             text-decoration: none;

@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, doc, getDocs, getDoc, query, orderBy } from "firebase/firestore";
+import { getFirestore, collection, doc, getDocs, getDoc, query, orderBy, setDoc, serverTimestamp } from "firebase/firestore";
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { user as userStore } from "$lib/stores/userStore";
 
@@ -42,6 +42,21 @@ export async function signOut() {
     }).catch((error) => {
         console.error(error);
     });
+}
+
+export function newPost(slug, title, content) {
+    return new Promise((resolve, reject) => {
+        setDoc(doc(db, "blog", slug), {
+            slug: slug,
+            title: title,
+            content: content,
+            createdAt: serverTimestamp()
+        }).then((res) => {
+            resolve(res);
+        }).catch((error) => {
+            reject(error);
+        });
+    })
 }
 
 export async function getPosts() {
