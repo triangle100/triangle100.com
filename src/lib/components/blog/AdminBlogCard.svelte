@@ -48,7 +48,19 @@
         padding: 0px 20px;
         box-sizing: border-box;
 
+        #left {
+            min-width: 0px;
+
+            h2 {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
         #right {
+            min-width: fit-content;
+
             a,
             .link {
                 margin-left: 10px;
