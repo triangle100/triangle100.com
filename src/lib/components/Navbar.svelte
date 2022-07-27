@@ -15,7 +15,6 @@
         <a href="/">Home</a>
         <a href="/projects">Projects</a>
         <a href="/blog">Blog</a>
-        <a href="/404">404</a>
         {#if loggedIn}
             <a href="/admin">Console</a>
         {/if}
@@ -51,6 +50,7 @@
         #source-button {
             padding: 8px;
             box-sizing: border-box;
+            margin-left: auto;
         }
 
         #logo {
@@ -67,10 +67,6 @@
                 margin-right: 10px;
                 border: none;
             }
-        }
-
-        #source-button {
-            margin-left: auto;
         }
     }
 </style>
