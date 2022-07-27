@@ -1,13 +1,13 @@
 <script>
-    import { removePost } from "$lib/services/firebase/db";
+    import { createEventDispatcher } from "svelte";
+
+    const dispatch = createEventDispatcher();
 
     export let title;
     export let id;
 
     function deletePost(slug) {
-        removePost(slug).then((res) => {
-            window.location.reload();
-        });
+        dispatch("deletePost", { slug });
     }
 </script>
 
