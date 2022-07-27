@@ -8,7 +8,7 @@
     import loadingGif from "$lib/assets/loading.gif";
     import SEO from "$lib/components/SEO.svelte";
     import NoBlog from "$lib/components/blog/NoBlog.svelte";
-    import MarkDown from "$lib/components/MarkDown.svelte";
+    import Markdown from "$lib/components/Markdown.svelte";
 
     let post;
     let loading = true;
@@ -39,7 +39,7 @@
 {:else if post.data}
     <div id="blog-post">
         <h1>{title}</h1>
-        <MarkDown raw={content} />
+        <Markdown raw={content} />
     </div>
 {:else}
     <h1>{title}</h1>

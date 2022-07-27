@@ -4,7 +4,7 @@
     import { user } from "$lib/stores/userStore";
     import SEO from "$lib/components/SEO.svelte";
     import AdminLogin from "$lib/components/AdminLogin.svelte";
-    import MarkDown from "$lib/components/MarkDown.svelte";
+    import Markdown from "$lib/components/Markdown.svelte";
     import BlogList from "$lib/components/blog/BlogList.svelte";
 
     let preview = "";
@@ -54,7 +54,7 @@
         <div id="preview-container">
             <h3>Preview</h3>
             <div id="preview">
-                <MarkDown raw={preview} />
+                <Markdown raw={preview} />
             </div>
         </div>
         <button id="post" on:click={handleSubmit}>Post</button>
