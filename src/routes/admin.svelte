@@ -5,8 +5,8 @@
     import { user } from "$lib/stores/userStore";
     import SEO from "$lib/components/SEO.svelte";
     import AdminLogin from "$lib/components/AdminLogin.svelte";
+    import AdminBlogList from "$lib/components/blog/AdminBlogList.svelte";
     import Markdown from "$lib/components/Markdown.svelte";
-    import BlogList from "$lib/components/blog/BlogList.svelte";
     import ActionButton from "$lib/components/ActionButton.svelte";
 
     let preview = "";
@@ -28,11 +28,13 @@
         // @ts-ignore
         const contentValue = document.getElementById("content").value;
 
-        newPost(titleValue, contentValue).then((res) => {
-            goto(`blog/${res.slug}`);
-        }).catch(() => {
-            posting = false;
-        });
+        newPost(titleValue, contentValue)
+            .then((res) => {
+                goto(`blog/${res.slug}`);
+            })
+            .catch(() => {
+                posting = false;
+            });
     }
 </script>
 
@@ -44,56 +46,70 @@
     <p>Welcome, <b>{$user.email}</b></p>
     <button on:click={signOut}>Sign Out</button>
 
-    <div id="new-blog-post">
-        <div id="inputs">
-            <input type="text" id="title" placeholder="Title" />
-            <textarea
-                id="content"
-                placeholder="Content"
-                rows="15"
-                cols="50"
-                on:input={handleContentInput}
-            />
+    <div id="layout">
+        <div id="blog-list">
+            <h2>Blog posts</h2>
+            <AdminBlogList />
         </div>
-        <hr />
-        <div id="preview-container">
-            <h3>Preview</h3>
-            <div id="preview">
-                <Markdown raw={preview} />
+        <div id="new-blog-post">
+            <h2>Create a Blog Post</h2>
+            <div id="inputs">
+                <input type="text" id="title" placeholder="Title" />
+                <textarea
+                    id="content"
+                    placeholder="Content"
+                    rows="15"
+                    cols="50"
+                    on:input={handleContentInput}
+                />
             </div>
+            <hr />
+            <div id="preview-container">
+                <h3>Preview</h3>
+                <div id="preview">
+                    <Markdown raw={preview} />
+                </div>
+            </div>
+            <ActionButton
+                on:click={handleSubmit}
+                action={posting}
+                actionText="Posting..."
+                id="post-btn"
+                >Post
+            </ActionButton>
         </div>
-        <ActionButton
-            on:click={handleSubmit}
-            action={posting}
-            actionText="Posting..."
-            id="post-btn"
-            >Post
-        </ActionButton>
-    </div>
-    <div id="blog-list">
-        <h2>Blog posts</h2>
-        <BlogList linkPath="admin" />
     </div>
 {:else}
     <AdminLogin />
 {/if}
 
 <style lang="scss">
+    #layout {
+        > * {
+            box-sizing: border-box;
+        }
+
+        > div {
+            float: left;
+            width: 50%;
+            padding: 10px;
+        }
+    }
+
     #new-blog-post {
-        margin-bottom: 30px;
-
         #inputs {
-            margin-top: 50px;
-
             #title {
                 margin-bottom: 5px;
+                padding-top: 10px;
+                padding-bottom: 10px;
             }
 
             #content {
                 display: block;
                 resize: none;
                 margin: 0px;
-                padding-left: 5px;
+                padding-top: 5px;
+                padding-bottom: 5px;
             }
         }
 

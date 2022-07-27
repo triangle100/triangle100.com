@@ -9,15 +9,13 @@
 
     let post;
     let loading = true;
-    let title = "Loading...";
-    let content = "Loading...";
+    let title;
+    let content;
 
     onMount(async () => {
         post = await getPost($page.params.slug);
 
-        setTimeout(() => {
-            loading = false;
-        }, 200);
+        loading = false;
 
         title = post.data ? post.data.title : "No blog post found!";
         content = post.data ? post.data.content : "";

@@ -69,6 +69,11 @@
     }
 
     :global {
+        html {
+            width: 100vw;
+            overflow-x: hidden;
+        }
+
         body {
             margin: 0px;
             background-color: #fafafa;
@@ -135,7 +140,9 @@
             background-color: #ffffff;
         }
 
-        input {
+        input,
+        textarea {
+            font-size: 16px;
             padding-left: 5px;
         }
 

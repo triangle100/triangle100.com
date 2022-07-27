@@ -92,8 +92,6 @@
 
         input {
             width: 70%;
-
-            font-size: 16px;
         }
     }
 
