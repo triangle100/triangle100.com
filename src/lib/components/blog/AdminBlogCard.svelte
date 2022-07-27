@@ -18,9 +18,9 @@
     <div id="right">
         <a href={`blog/${id}`} target="_blank">View</a>
         <a href={`blog/${id}?edit`} target="_blank">Edit</a>
-        <span class="link" id="delete" on:click={() => deletePost(id)}
-            >Delete</span
-        >
+        <span class="link" id="delete" on:click={() => deletePost(id)}>
+            Delete
+        </span>
     </div>
 </div>
 
@@ -47,8 +47,11 @@
         }
 
         #delete {
+            color: #a3a3a3;
+        }
+
+        #delete:hover {
             color: #ff3232;
-            font-weight: bold;
         }
     }
 </style>
