@@ -5,6 +5,7 @@
     import SEO from "$lib/components/SEO.svelte";
     import AdminLogin from "$lib/components/AdminLogin.svelte";
     import MarkDown from "$lib/components/MarkDown.svelte";
+    import BlogList from "$lib/components/blog/BlogList.svelte";
 
     let preview = "";
     $: loggedIn = !!$user;
@@ -56,6 +57,10 @@
             </div>
         </div>
         <button id="post" on:click={handleSubmit}>Post</button>
+    </div>
+    <div id="blog-list">
+        <h2>Blog posts</h2>
+        <BlogList />
     </div>
 {:else}
     <AdminLogin />

@@ -89,6 +89,27 @@
             width: 95%;
         }
 
+        pre.hljs {
+            display: block;
+            overflow-x: auto;
+            padding: 0.5em;
+            color: #2f3337;
+            background-color: #eeeeee;
+            border-radius: 5px;
+
+            table {
+                width: 100%;
+            }
+
+            .line-number {
+                min-width: 22px;
+                text-align: right;
+                width: 1%;
+                padding-right: 5px;
+                user-select: none;
+            }
+        }
+
         a,
         .link {
             text-decoration: none;
