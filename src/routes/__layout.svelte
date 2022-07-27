@@ -86,6 +86,13 @@
             width: 95%;
         }
 
+        code {
+            font-size: 16px;
+            border-radius: 6px;
+            background-color: #e7e7e7;
+            padding: 0.1em 0.2em;
+        }
+
         pre.hljs {
             display: block;
             overflow-x: auto;
