@@ -10,4 +10,3 @@
 
 <h1>Blog</h1>
 <BlogList />
-<h2><a href={"blog/dummy_id"}>No ID Error</a></h2>
