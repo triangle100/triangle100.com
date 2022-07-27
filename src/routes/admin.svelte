@@ -63,16 +63,14 @@
 
     function handleSubmit() {
         // @ts-ignore
-        const slugValue = document.getElementById("slug").value;
-        // @ts-ignore
         const titleValue = document.getElementById("title").value;
         // @ts-ignore
         const contentValue = document.getElementById("content").value;
 
         console.log("posting...", contentValue);
-        newPost(slugValue, titleValue, contentValue).then((res) => {
+        newPost(titleValue, contentValue).then((res) => {
             console.log("posted!", res);
-        })
+        });
     }
 </script>
 

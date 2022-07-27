@@ -2,6 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, collection, doc, getDocs, getDoc, query, orderBy, setDoc, serverTimestamp } from "firebase/firestore";
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { user as userStore } from "$lib/stores/userStore";
+import { generateSlug } from "$lib/utils/slugGenerator";
 
 const firebaseConfig = {
     apiKey: "AIzaSyArMZxrKJ9SLGOpN22cR8NXlHnEpaHVquE",
@@ -14,6 +15,8 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const auth = getAuth(app);
+
+console.log(generateSlug("  Hello  world !"));
 
 onAuthStateChanged(auth, (user, error) => {
     if (user) {
@@ -44,7 +47,9 @@ export async function signOut() {
     });
 }
 
-export function newPost(slug, title, content) {
+export function newPost(title, content) {
+    const slug = generateSlug(title);
+
     return new Promise((resolve, reject) => {
         setDoc(doc(db, "blog", slug), {
             slug: slug,
