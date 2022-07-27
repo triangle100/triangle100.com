@@ -57,8 +57,8 @@ export function newPost(title, content) {
             content: content,
             createdAt: serverTimestamp(),
             updatedAt: serverTimestamp()
-        }).then((res) => {
-            resolve(res);
+        }).then(() => {
+            resolve({ slug: slug });
         }).catch((error) => {
             reject(error);
         });

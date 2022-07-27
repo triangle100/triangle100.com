@@ -28,7 +28,7 @@
         const contentValue = document.getElementById("content").value;
 
         newPost(titleValue, contentValue).then((res) => {
-            window.location.reload();
+            goto(`blog/${res.slug}`);
         }).catch(() => {
             posting = false;
         });
