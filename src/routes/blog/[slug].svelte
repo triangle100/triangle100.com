@@ -1,7 +1,4 @@
 <script>
-    import MarkdownIt from "markdown-it";
-    import hljs from "highlight.js";
-
     import { page } from "$app/stores";
     import { onMount } from "svelte";
     import { getPost } from "$lib/services/firebase/db";
