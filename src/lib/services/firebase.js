@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, doc, getDocs, getDoc, query, orderBy, setDoc, serverTimestamp } from "firebase/firestore";
+import { getFirestore, collection, doc, getDocs, getDoc, query, orderBy, setDoc, serverTimestamp, deleteDoc } from "firebase/firestore";
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { user as userStore } from "$lib/stores/userStore";
 import { generateSlug } from "$lib/utils/slugGenerator";
@@ -55,7 +55,8 @@ export function newPost(title, content) {
             slug: slug,
             title: title,
             content: content,
-            createdAt: serverTimestamp()
+            createdAt: serverTimestamp(),
+            updatedAt: serverTimestamp()
         }).then((res) => {
             resolve(res);
         }).catch((error) => {
@@ -64,10 +65,23 @@ export function newPost(title, content) {
     })
 }
 
+export function removePost(slug) {
+    const ref = doc(db, "blog", slug);
+
+    return new Promise((resolve, reject) => {
+        deleteDoc(ref)
+            .then((res) => {
+                resolve(res);
+            }).catch((error) => {
+                reject(error);
+            });
+    })
+}
+
 export async function getPosts() {
     let posts = [];
 
-    const q = query(collection(db, "blog"), orderBy("createdAt", "desc"));
+    const q = query(collection(db, "blog"), orderBy("updatedAt", "desc"));
 
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {

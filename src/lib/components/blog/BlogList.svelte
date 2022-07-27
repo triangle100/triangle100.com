@@ -3,18 +3,18 @@
     import { getPosts } from "$lib/services/firebase";
     import loadingGif from "$lib/assets/loading.gif";
 
+    export let linkPath = "blog";
     let posts = [];
     let loading = true;
 
     onMount(async () => {
         posts = await getPosts();
         loading = false;
-        console.log(posts);
     });
 </script>
 
 {#each posts as post}
-    <h2><a href={`blog/${post.id}`}>{post.data.title}</a></h2>
+    <h2><a href={`${linkPath}/${post.id}`}>{post.data.title}</a></h2>
 {:else}
     {#if loading}
         <img id="loading" src={loadingGif} alt="Loading..." />

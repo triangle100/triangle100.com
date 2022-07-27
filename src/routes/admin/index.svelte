@@ -26,6 +26,7 @@
         console.log("posting...", contentValue);
         newPost(titleValue, contentValue).then((res) => {
             console.log("posted!", res);
+            window.location.reload();
         });
     }
 </script>
@@ -60,7 +61,7 @@
     </div>
     <div id="blog-list">
         <h2>Blog posts</h2>
-        <BlogList />
+        <BlogList linkPath="admin" />
     </div>
 {:else}
     <AdminLogin />
@@ -73,8 +74,7 @@
         #inputs {
             margin-top: 50px;
 
-            #title,
-            #slug {
+            #title {
                 margin-bottom: 5px;
             }
 
