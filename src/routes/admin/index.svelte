@@ -6,9 +6,11 @@
     import AdminLogin from "$lib/components/AdminLogin.svelte";
     import Markdown from "$lib/components/Markdown.svelte";
     import BlogList from "$lib/components/blog/BlogList.svelte";
+    import ActionButton from "$lib/components/ActionButton.svelte";
 
     let preview = "";
     $: loggedIn = !!$user;
+    let posting;
 
     function handleContentInput() {
         const el = document.getElementById("content");
@@ -18,15 +20,17 @@
     }
 
     function handleSubmit() {
+        posting = true;
+
         // @ts-ignore
         const titleValue = document.getElementById("title").value;
         // @ts-ignore
         const contentValue = document.getElementById("content").value;
 
-        console.log("posting...", contentValue);
         newPost(titleValue, contentValue).then((res) => {
-            console.log("posted!", res);
             window.location.reload();
+        }).catch(() => {
+            posting = false;
         });
     }
 </script>
@@ -57,7 +61,13 @@
                 <Markdown raw={preview} />
             </div>
         </div>
-        <button id="post" on:click={handleSubmit}>Post</button>
+        <ActionButton
+            on:click={handleSubmit}
+            action={posting}
+            actionText="Posting..."
+            id="post-btn"
+            >Post
+        </ActionButton>
     </div>
     <div id="blog-list">
         <h2>Blog posts</h2>
@@ -105,7 +115,7 @@
         }
     }
 
-    #post {
+    :global(#post-btn) {
         width: min-content;
         float: right;
     }

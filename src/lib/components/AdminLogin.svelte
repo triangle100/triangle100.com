@@ -1,6 +1,7 @@
 <script>
     // @ts-nocheck PLEASE REMOVE
 
+    import ActionButton from "$lib/components/ActionButton.svelte";
     import { signIn } from "$lib/services/firebase";
 
     let submitting;
@@ -64,9 +65,14 @@
             on:change={handleChange}
         />
     </div>
-    <button on:click={onSubmit} disabled={submitting}>
-        {submitting ? "Working..." : "Sign in"}
-    </button>
+
+    <ActionButton
+        on:click={onSubmit}
+        action={submitting}
+        actionText="Working..."
+        id="btn"
+        >Sign In
+    </ActionButton>
 </div>
 
 <style lang="scss">
@@ -91,7 +97,7 @@
         }
     }
 
-    button {
+    :global(#btn) {
         display: block;
         margin-left: auto;
     }
