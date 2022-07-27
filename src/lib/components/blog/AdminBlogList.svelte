@@ -12,6 +12,7 @@
     });
 
     export async function syncPosts() {
+        loading = true;
         posts = await getPosts();
         loading = false;
     }
