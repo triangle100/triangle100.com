@@ -1,9 +1,9 @@
 import adapter from '@sveltejs/adapter-static';
-import sveltePreprocess from 'svelte-preprocess';
+import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-    preprocess: sveltePreprocess(),
+    preprocess: preprocess(),
     kit: {
         adapter: adapter({
             fallback: 'index.html'
