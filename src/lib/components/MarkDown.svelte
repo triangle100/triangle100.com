@@ -44,7 +44,7 @@
             return html;
         });
 
-        return `<table><tbody>${rows.join("")}</tbody></table>`;
+        return `<table cellspacing="0" ><tbody>${rows.join("")}</tbody></table>`;
     };
 </script>
 

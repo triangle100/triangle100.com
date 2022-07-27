@@ -93,6 +93,7 @@
             display: block;
             overflow-x: auto;
             padding: 0.5em;
+            padding-left: 10px;
             color: #2f3337;
             background-color: #eeeeee;
             border-radius: 5px;
@@ -101,11 +102,16 @@
                 width: 100%;
             }
 
+            .code-line {
+                padding: 0px;
+                line-height: 20px;
+            }
+
             .line-number {
                 min-width: 22px;
                 text-align: right;
                 width: 1%;
-                padding-right: 5px;
+                padding-right: 10px;
                 user-select: none;
             }
         }
