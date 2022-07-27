@@ -1,7 +1,7 @@
 <script>
     import { onMount } from "svelte";
     import { getPosts } from "$lib/services/firebase/db";
-    import loadingGif from "$lib/assets/loading.gif";
+    import Loading from "$lib/components/Loading.svelte";
 
     let posts = [];
     let loading = true;
@@ -16,14 +16,8 @@
     <h2><a href={`blog/${post.id}`}>{post.data.title}</a></h2>
 {:else}
     {#if loading}
-        <img id="loading" src={loadingGif} alt="Loading..." />
+        <Loading />
     {:else}
         <h2>No blog posts</h2>
     {/if}
 {/each}
-
-<style>
-    #loading {
-        width: 100px;
-    }
-</style>

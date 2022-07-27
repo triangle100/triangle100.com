@@ -2,7 +2,7 @@
     import { page } from "$app/stores";
     import { onMount } from "svelte";
     import { getPost } from "$lib/services/firebase/db";
-    import loadingGif from "$lib/assets/loading.gif";
+    import Loading from "$lib/components/Loading.svelte";
     import SEO from "$lib/components/SEO.svelte";
     import NoBlog from "$lib/components/blog/NoBlog.svelte";
     import Markdown from "$lib/components/Markdown.svelte";
@@ -30,7 +30,7 @@
 />
 
 {#if loading}
-    <img id="loading" src={loadingGif} alt="Loading..." />
+    <Loading id="loading" />
 {:else if post.data}
     <div id="blog-post">
         <h1>{title}</h1>
@@ -42,8 +42,7 @@
 {/if}
 
 <style>
-    #loading {
-        width: 100px;
+    :global(#loading) {
         margin-top: 50px;
     }
 

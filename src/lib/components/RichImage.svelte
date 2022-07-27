@@ -1,7 +1,7 @@
 <!-- https://svelte.dev/repl/327aa441312e41d7937b4adcdab86765?version=3.46.2 -->
 <script>
+    import Loading from "$lib/components/Loading.svelte";
     import errorImage from "$lib/assets/error.png";
-    import loadingGif from "$lib/assets/loading.gif";
     import { onMount } from "svelte";
     export let src;
     export let alt;
@@ -26,17 +26,12 @@
     });
 </script>
 
-<svelte:head>
-    <link rel="prefetch" as="image" href={errorImage} />
-    <link rel="prefetch" as="image" href={loadingGif} />
-</svelte:head>
-
 {#if loaded}
     <img id={$$props.id} {src} {alt} />
 {:else if failed}
     <img id={$$props.id} src={errorImage} alt="Not Found" />
 {:else if loading}
-    <img id={$$props.id} src={loadingGif} alt="Loading..." />
+    <Loading id={$$props.id} />
 {/if}
 
 <style>
