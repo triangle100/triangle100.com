@@ -4,7 +4,7 @@
 
     import { page } from "$app/stores";
     import { onMount } from "svelte";
-    import { getPost } from "$lib/services/firebase";
+    import { getPost } from "$lib/services/firebase/db";
     import loadingGif from "$lib/assets/loading.gif";
     import SEO from "$lib/components/SEO.svelte";
     import NoBlog from "$lib/components/blog/NoBlog.svelte";

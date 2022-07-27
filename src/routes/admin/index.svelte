@@ -1,6 +1,7 @@
 <script>
     import { goto } from "$app/navigation";
-    import { signOut, newPost } from "$lib/services/firebase";
+    import { signOut } from "$lib/services/firebase/auth";
+    import { newPost } from "$lib/services/firebase/db";
     import { user } from "$lib/stores/userStore";
     import SEO from "$lib/components/SEO.svelte";
     import AdminLogin from "$lib/components/AdminLogin.svelte";

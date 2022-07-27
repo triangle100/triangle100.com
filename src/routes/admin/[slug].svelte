@@ -1,7 +1,7 @@
 <script>
     import { goto } from "$app/navigation";
     import { page } from "$app/stores";
-    import { removePost } from "$lib/services/firebase";
+    import { removePost } from "$lib/services/firebase/db";
     import ActionButton from "$lib/components/ActionButton.svelte";
 
     let removing;

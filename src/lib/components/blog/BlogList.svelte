@@ -1,6 +1,6 @@
 <script>
     import { onMount } from "svelte";
-    import { getPosts } from "$lib/services/firebase";
+    import { getPosts } from "$lib/services/firebase/db";
     import loadingGif from "$lib/assets/loading.gif";
 
     export let linkPath = "blog";

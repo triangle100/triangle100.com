@@ -2,7 +2,7 @@
     // @ts-nocheck PLEASE REMOVE
 
     import ActionButton from "$lib/components/ActionButton.svelte";
-    import { signIn } from "$lib/services/firebase";
+    import { signIn } from "$lib/services/firebase/auth";
 
     let submitting;
 
