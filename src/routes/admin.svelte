@@ -12,6 +12,7 @@
     let preview = "";
     $: loggedIn = !!$user;
     let posting;
+    let blogsComp;
 
     function handleContentInput() {
         const el = document.getElementById("content");
@@ -30,9 +31,9 @@
 
         newPost(titleValue, contentValue)
             .then((res) => {
-                goto(`blog/${res.slug}`);
+                blogsComp.syncPosts();
             })
-            .catch(() => {
+            .finally(() => {
                 posting = false;
             });
     }
@@ -49,7 +50,7 @@
     <div id="layout">
         <div id="blog-list">
             <h2>Blog posts</h2>
-            <AdminBlogList />
+            <AdminBlogList bind:this={blogsComp} />
         </div>
         <div id="new-blog-post">
             <h2>Create a Blog Post</h2>

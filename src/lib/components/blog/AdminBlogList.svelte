@@ -8,9 +8,13 @@
     let loading = true;
 
     onMount(async () => {
+        syncPosts();
+    });
+
+    export async function syncPosts() {
         posts = await getPosts();
         loading = false;
-    });
+    }
 </script>
 
 {#if loading}
