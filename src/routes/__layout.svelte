@@ -128,6 +128,13 @@
             color: #81a0f3;
         }
 
+        a[target="_blank"]:not([data-noglyph])::after {
+            filter: invert(25%) sepia(63%) saturate(5077%) hue-rotate(224deg)
+                brightness(101%) contrast(83%);
+            content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
+            margin: 0 3px 0 5px;
+        }
+
         input,
         button,
         textarea {

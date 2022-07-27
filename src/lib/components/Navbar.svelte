@@ -21,7 +21,7 @@
     </div>
 
     <div id="source-button" class="icon">
-        <a href="https://github.com/triangle100/triangle100-com" target="_blank" title="Source Code">
+        <a href="https://github.com/triangle100/triangle100-com" target="_blank" title="Source Code" data-noglyph>
             <img src={githubImage} alt="GitHub logo" />
         </a>
     </div>
