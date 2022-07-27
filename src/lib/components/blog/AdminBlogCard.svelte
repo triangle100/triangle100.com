@@ -1,5 +1,8 @@
 <script>
     import { createEventDispatcher } from "svelte";
+    import tippy from "tippy.js";
+    import "tippy.js/dist/tippy.css";
+    import "tippy.js/animations/shift-away-subtle.css";
 
     const dispatch = createEventDispatcher();
 
@@ -9,11 +12,18 @@
     function deletePost(slug) {
         dispatch("deletePost", { slug });
     }
+
+    const props = {
+        content: title,
+        duration: 200,
+        animation: "shift-away-subtle",
+        arrow: false,
+    };
 </script>
 
 <div id="card">
     <div id="left">
-        <h2>{title}</h2>
+        <h2 use:tippy={props}>{title}</h2>
     </div>
     <div id="right">
         <a href={`blog/${id}`} target="_blank">View</a>
