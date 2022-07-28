@@ -18,7 +18,7 @@
     }
     
     export async function deletePost(e) {
-        removePost(e.detail.slug);
+        await removePost(e.detail.slug);
         await syncPosts();
     }
 </script>
