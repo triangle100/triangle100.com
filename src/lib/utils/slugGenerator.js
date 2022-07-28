@@ -1,10 +1,14 @@
-export function generateSlug(str) {
-    let res = str;
+import slugify from "slugify";
 
-    res = res.toLowerCase(); // Convert to lowercase
-    res = res.replace(/ +(?= )/g, ""); // Purge multiple spaces
-    res = res.replace(/[^A-Za-z0-9]/g, " ").trim(); // Convert to alphanumeric
-    res = res.replaceAll(" ", "_"); // Replace spaces with underscores
+const props = {
+    replacement: "_",
+    lower: true,
+    strict: true,
+    trim: true,
+};
+
+export function generateSlug(str) {
+    const res = slugify(str, props);
 
     return res;
 }
