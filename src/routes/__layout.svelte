@@ -4,6 +4,7 @@
     import Navbar from "$lib/components/Navbar.svelte";
     import BuildNumber from "$lib/components/BuildNumber.svelte";
     import "highlight.js/styles/stackoverflow-light.css";
+    import "virtual:windi.css";
 </script>
 
 <SEO />
