@@ -10,7 +10,7 @@
 <SEO />
 
 <main>
-    <Navbar id="navbar" />
+    <Navbar />
     <div id="slot">
         <slot />
     </div>
@@ -49,13 +49,6 @@
 
         display: flex;
         flex-direction: column;
-
-        :global(#navbar) {
-            text-align: left;
-            padding: 15px 0px;
-
-            border-bottom: 1px #303030 solid;
-        }
     }
 
     #foot {

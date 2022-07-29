@@ -1,17 +1,20 @@
 <script>
     import { user } from "$lib/stores/userStore";
-    import githubImage from "$lib/assets/github.png";
+    import { GithubBrand } from "svelte-awesome-icons";
 
     $: loggedIn = !!$user;
 </script>
 
-<nav id={$$props.id} class="navbar">
-    <div id="logo" class="icon">
+<nav
+    id={$$props.id}
+    class="mh-12 py-4 mb-2 flex items-center border-b border-slate-300"
+>
+    <div id="logo" class="w-12 mr-4 rounded-md bg-slate-200">
         <a href="/" sveltekit:reload title="triangle100">
             <img src="/favicon.png" alt="Site logo" />
         </a>
     </div>
-    <div id="buttons">
+    <div id="buttons" class="cursor-default [&>*]:mr-2 [&>*]:border-none">
         <a href="/">Home</a>
         <a href="/projects">Projects</a>
         <a href="/blog">Blog</a>
@@ -19,54 +22,15 @@
             <a href="/admin">Console</a>
         {/if}
     </div>
-
-    <div id="source-button" class="icon">
-        <a href="https://github.com/triangle100/triangle100-com" target="_blank" title="Source Code" data-noglyph>
-            <img src={githubImage} alt="GitHub logo" />
+    <div class="ml-auto">
+        <a
+            href="https://github.com/triangle100/triangle100-com"
+            target="_blank"
+            class="border-none"
+            title="Source Code"
+            data-noglyph
+        >
+            <GithubBrand alt="GitHub logo" class="text-slate-800" />
         </a>
     </div>
 </nav>
-
-<style lang="scss">
-    .navbar {
-        height: 50px;
-
-        display: flex;
-        align-items: center;
-
-        .icon {
-            width: 50px;
-            height: 50px;
-
-            img {
-                width: 100%;
-            }
-
-            a {
-                border: none;
-            }
-        }
-
-        #source-button {
-            padding: 8px;
-            box-sizing: border-box;
-            margin-left: auto;
-        }
-
-        #logo {
-            margin-right: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            background-color: #eaeaea;
-        }
-
-        #buttons {
-            cursor: default;
-
-            a {
-                margin-right: 10px;
-                border: none;
-            }
-        }
-    }
-</style>
