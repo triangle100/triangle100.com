@@ -1,4 +1,5 @@
 <script>
+    import "../app.css";
     import "$lib/services/firebase/auth";
     import SEO from "$lib/components/SEO.svelte";
     import Navbar from "$lib/components/Navbar.svelte";
