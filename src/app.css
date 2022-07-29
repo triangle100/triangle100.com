@@ -2,3 +2,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h1 {
+    @apply text-4xl my-5;
+}
+
+h2 {
+    @apply text-2xl my-3;
+}
+
+h3 {
+    @apply text-2xl;
+}
+
+h4 {
+    @apply text-xl;
+}
+
+h5 {
+    @apply text-lg;
+}
+
+h6 {
+    @apply text-base;
+}
+
+a,
+.link {
+    @apply text-blue-600 border-b-2 border-dotted border-blue-600 cursor-pointer transition hover:border-blue-400 hover:text-blue-400;
+}
+
+a[target="_blank"]:not([data-noglyph])::after {
+    @apply relative -top-1 left-0.5 content-[url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==)];
+}
