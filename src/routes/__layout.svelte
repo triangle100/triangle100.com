@@ -90,8 +90,6 @@
         code {
             font-size: 16px;
             border-radius: 6px;
-            background-color: #e7e7e7;
-            padding: 0.1em 0.2em;
         }
 
         pre.hljs {
@@ -119,58 +117,6 @@
                 padding-right: 10px;
                 user-select: none;
             }
-        }
-
-        a,
-        .link {
-            text-decoration: none;
-            border-bottom: 2px dotted;
-            color: #2f60e9;
-            cursor: pointer;
-
-            transition: color 200ms;
-        }
-
-        a:hover,
-        .link:hover {
-            color: #81a0f3;
-        }
-
-        a[target="_blank"]:not([data-noglyph])::after {
-            filter: invert(25%) sepia(63%) saturate(5077%) hue-rotate(224deg)
-                brightness(101%) contrast(83%);
-            content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
-            margin: 0 3px 0 5px;
-        }
-
-        input,
-        button,
-        textarea {
-            min-height: 25px;
-
-            box-sizing: border-box;
-            border: 1px solid black;
-            border-radius: 3px;
-
-            background-color: #ffffff;
-        }
-
-        input,
-        textarea {
-            font-size: 16px;
-            padding-left: 5px;
-        }
-
-        button {
-            padding: 0px 10px;
-            height: 25px;
-
-            text-align: center;
-            font-size: 16px;
-        }
-
-        button:hover {
-            background-color: #e6e6e6;
         }
     }
 </style>
