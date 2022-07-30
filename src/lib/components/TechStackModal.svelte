@@ -43,6 +43,11 @@
                         target="https://sass-lang.com/"
                     />
                     <TechIcon
+                        label="Tailwind"
+                        src="https://tailwindcss.com/_next/static/media/tailwindcss-mark.79614a5f61617ba49a0891494521226b.svg"
+                        target="https://tailwindcss.com/"
+                    />
+                    <TechIcon
                         label="Vite"
                         src="https://vitejs.dev/logo.svg"
                         target="https://vitejs.dev/"
