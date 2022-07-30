@@ -13,7 +13,7 @@
 
 <Tooltip content={label}>
     <Button
-        class="!p-3 w-16 h-16 !bg-gray-100 hover:!bg-gray-200 hover:scale-110 transition ease-in-out duration-300"
+        class="!p-3 w-16 h-16 !bg-gray-100 hover:!bg-gray-200 hover:scale-110 transition ease-in-out duration-300 !ring-0"
         on:click={openLink}
     >
         <RichImage {src} alt={label} />
