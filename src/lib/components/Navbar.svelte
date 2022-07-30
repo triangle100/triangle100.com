@@ -1,6 +1,7 @@
 <script>
     import { user } from "$lib/stores/userStore";
-    import { GithubBrand } from "svelte-awesome-icons";
+    import Icon from "svelte-awesome";
+    import github from "svelte-awesome/icons/github";
 
     $: loggedIn = !!$user;
 </script>
@@ -30,7 +31,7 @@
             title="Source Code"
             data-noglyph
         >
-            <GithubBrand alt="GitHub logo" class="text-slate-800" />
+            <Icon data={github} scale={2} class="text-slate-800" />
         </a>
     </div>
 </nav>
