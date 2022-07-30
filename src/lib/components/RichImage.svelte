@@ -12,7 +12,7 @@
 
     onMount(() => {
         const img = new Image();
-        img.src = src;
+        img.src = "https://static.cdnlogo.com/logos/f/11/firebase.svg";
         loading = true;
 
         img.onload = () => {

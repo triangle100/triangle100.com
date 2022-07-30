@@ -1,16 +1,8 @@
 <script>
     import SEO from "$lib/components/SEO.svelte";
-    import Modal from "$lib/components/Modal.svelte";
+    import TechStackModal from "$lib/components/TechStackModal.svelte";
 
-    let modalOpen = false;
-
-    function openModal() {
-        modalOpen = true;
-    }
-
-    function closeModal() {
-        modalOpen = false;
-    }
+    let open;
 </script>
 
 <SEO />
@@ -20,7 +12,7 @@
 
 <p>
     Meanwhile, you can check out this project's
-    <span class="link" on:click={openModal}>tech stack</span>
+    <span class="link" on:click={() => (open = true)}>tech stack</span>
 </p>
 
-<Modal {modalOpen} on:closeModal={closeModal} />
+<TechStackModal {open} on:closeModal={() => (open = false)} />
