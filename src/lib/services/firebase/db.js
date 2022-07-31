@@ -9,6 +9,9 @@ export function newPost(title, content) {
     const slug = generateSlug(title);
 
     return new Promise((resolve, reject) => {
+        if (!title) reject("missing_title");
+        if (!content) reject("missing_content");
+
         setDoc(doc(db, "blog", slug), {
             slug: slug,
             title: title,
