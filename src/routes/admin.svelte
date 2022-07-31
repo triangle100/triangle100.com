@@ -1,5 +1,4 @@
 <script>
-    import { goto } from "$app/navigation";
     import { signOut } from "$lib/services/firebase/auth";
     import { newPost } from "$lib/services/firebase/db";
     import { user } from "$lib/stores/userStore";
@@ -24,10 +23,12 @@
     function handleSubmit() {
         posting = true;
 
-        // @ts-ignore
-        const titleValue = document.getElementById("title").value;
-        // @ts-ignore
-        const contentValue = document.getElementById("content").value;
+        const titleRef = document.getElementById("title");
+        const contentRef = document.getElementById("content");
+        const titleValue = titleRef.value;
+        const contentValue = contentRef.value;
+        titleRef.value = null;
+        contentRef.value = null;
 
         newPost(titleValue, contentValue)
             .then((res) => {
