@@ -9,7 +9,7 @@
 
 <SEO />
 
-<main class="relative text-center w-[60vw] h-screen mx-auto flex flex-col">
+<main class="relative text-center w-[60vw] min-h-screen mx-auto flex flex-col">
     <Navbar />
     <div>
         <slot />
