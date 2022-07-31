@@ -35,3 +35,7 @@ a,
 a[target="_blank"]:not([data-noglyph])::after {
     @apply relative -top-1 left-0.5 content-[url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==)];
 }
+
+button {
+    @apply border border-black px-2 rounded bg-white hover:bg-gray-100
+}
