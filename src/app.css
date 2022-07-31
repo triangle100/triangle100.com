@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 html {
-    @apply w-screen overflow-x-hidden
+    @apply w-screen overflow-x-hidden;
 }
 
 body {
-    @apply bg-[#fafafa] text-[#303030]
+    @apply bg-[#fafafa] text-[#303030];
 }
 
 h1 {
@@ -44,29 +44,29 @@ a[target="_blank"]:not([data-noglyph])::after {
 }
 
 button {
-    @apply border border-black px-2 rounded bg-white hover:bg-gray-100;
+    @apply border border-black px-2 rounded bg-white hover:bg-gray-100 w-fit;
 }
 
 hr {
-    @apply my-4 mx-auto w-11/12 border-black border-t border-b-0 border-l-0 border-r-0
+    @apply my-4 mx-auto w-11/12 border-black border-t border-b-0 border-l-0 border-r-0;
 }
 
 code {
-    @apply text-base rounded-md bg-gray-200 px-1 py-0.5
+    @apply text-base rounded-md bg-gray-200 px-1 py-0.5;
 }
 
 pre.hljs {
-    @apply block overflow-x-auto p-2 px-6 text-[#2f3337] bg-[#eeeeee] rounded
+    @apply block overflow-x-auto p-2 px-6 text-[#2f3337] bg-[#eeeeee] rounded;
 }
 
 .hljs tr {
-    @apply h-8
+    @apply h-8;
 }
 
 .line-number {
-    @apply min-w-[32px] text-right pr-3 select-none pointer-events-none
+    @apply min-w-[32px] text-right pr-3 select-none pointer-events-none;
 }
 
 .code-line {
-    @apply p-0 leading-[26px]
+    @apply p-0 leading-[26px];
 }
