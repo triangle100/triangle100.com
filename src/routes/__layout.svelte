@@ -9,14 +9,12 @@
 
 <SEO />
 
-<main>
+<main class="relative text-center w-[60vw] h-screen mx-auto flex flex-col">
     <Navbar />
-    <div id="slot">
-        <slot />
-    </div>
+    <slot />
 
-    <div id="spacer" />
-    <div id="foot">
+    <div class="h-12" />
+    <div class="absolute bottom-1 left-1/2 -translate-x-1/2 w-full text-center">
         <span>
             Build
             <a
@@ -28,88 +26,3 @@
         </span>
     </div>
 </main>
-
-<style lang="scss">
-    #slot {
-        word-wrap: break-word;
-    }
-
-    #spacer {
-        height: 50px;
-    }
-
-    main {
-        position: relative;
-        text-align: center;
-
-        min-width: 60vw;
-        min-height: 100vh;
-        width: 60vw;
-        margin: 0 auto;
-
-        display: flex;
-        flex-direction: column;
-    }
-
-    #foot {
-        position: absolute;
-        transform: translateX(-50%);
-        bottom: 5px;
-        left: 50%;
-
-        width: 100%;
-
-        text-align: center;
-    }
-
-    :global {
-        html {
-            width: 100vw;
-            overflow-x: hidden;
-        }
-
-        body {
-            margin: 0px;
-            background-color: #fafafa;
-            color: #303030;
-        }
-
-        hr {
-            border: none;
-            border-bottom: 1px solid black;
-            width: 95%;
-        }
-
-        code {
-            font-size: 16px;
-            border-radius: 6px;
-        }
-
-        pre.hljs {
-            display: block;
-            overflow-x: auto;
-            padding: 0.5em;
-            padding-left: 10px;
-            color: #2f3337;
-            background-color: #eeeeee;
-            border-radius: 5px;
-
-            table {
-                width: 100%;
-            }
-
-            .code-line {
-                padding: 0px;
-                line-height: 20px;
-            }
-
-            .line-number {
-                min-width: 22px;
-                text-align: right;
-                width: 1%;
-                padding-right: 10px;
-                user-select: none;
-            }
-        }
-    }
-</style>

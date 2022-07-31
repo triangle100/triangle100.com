@@ -63,7 +63,7 @@
                     on:input={handleContentInput}
                 />
             </div>
-            <hr class="my-4 mx-auto" />
+            <hr />
             <div class="text-left">
                 <h4 class="mt-0 mb-2">Preview</h4>
                 <div class="!mb-2 px-2 min-h-[100px] border border-black bg-white rounded">
