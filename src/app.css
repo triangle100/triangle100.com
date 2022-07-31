@@ -79,19 +79,3 @@ hr {
 code {
     @apply text-base rounded-md bg-gray-200 px-1 py-0.5;
 }
-
-pre.hljs {
-    @apply block overflow-x-auto p-2 px-6 text-[#2f3337] bg-[#eeeeee] rounded;
-}
-
-.hljs tr {
-    @apply h-8;
-}
-
-.line-number {
-    @apply min-w-[32px] text-right pr-3 select-none pointer-events-none;
-}
-
-.code-line {
-    @apply p-0 leading-[26px];
-}

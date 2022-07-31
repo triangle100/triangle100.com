@@ -27,7 +27,7 @@
                 code = applyLineNumbers(code);
             }
 
-            return `<pre class="hljs"><code>${code}</code></pre>`;
+            return `<pre class="block overflow-x-auto p-2 px-6 text-[#2f3337] bg-[#eeeeee] rounded">${code}</pre>`;
         },
     });
 
@@ -38,8 +38,8 @@
             const lineNumber = idx + 1;
 
             let html = "<tr>";
-            html += `<td class="line-number">${lineNumber}</td>`;
-            html += `<td class="code-line">${line}</td>`;
+            html += `<td class="min-w-[1.75em] text-right pr-3 select-none pointer-events-none font-mono font-bold">${lineNumber}</td>`;
+            html += `<td class="p-0 leading-[1.75em] font-mono">${line}</td>`;
             html += "</tr>";
             return html;
         });
