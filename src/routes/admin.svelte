@@ -55,11 +55,11 @@
         <div id="new-blog-post">
             <h2>Create a Blog Post</h2>
             <div class="[&>*]:w-full">
-                <input id="title" placeholder="Title" class="border border-black mb-1 p-2 rounded" />
+                <input id="title" placeholder="Title" class="mb-1 !p-2" />
                 <textarea
                     id="content"
                     placeholder="Content"
-                    class="border border-black px-2 block resize-none py-2 rounded"
+                    class="!px-2 !py-2 resize-y min-h-[8em]"
                     on:input={handleContentInput}
                 />
             </div>

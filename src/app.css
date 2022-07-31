@@ -47,6 +47,14 @@ button {
     @apply border border-black px-2 rounded bg-white hover:bg-gray-100 w-fit;
 }
 
+input {
+    @apply border border-black rounded px-1;
+}
+
+textarea {
+    @apply border border-black p-1 block rounded;
+}
+
 hr {
     @apply my-4 mx-auto w-11/12 border-black border-t border-b-0 border-l-0 border-r-0;
 }
