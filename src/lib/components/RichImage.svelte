@@ -27,9 +27,9 @@
 </script>
 
 {#if loaded}
-    <img id={$$props.id} class="max-w-full max-h-full" {src} {alt} />
+    <img class="max-w-full max-h-full" {src} {alt} />
 {:else if failed}
-    <img id={$$props.id} src={errorImage} alt="Not Found" />
+    <img src={errorImage} alt="Not Found" />
 {:else if loading}
-    <Loading id={$$props.id} />
+    <Loading />
 {/if}

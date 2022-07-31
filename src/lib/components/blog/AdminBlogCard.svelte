@@ -7,7 +7,7 @@
     const dispatch = createEventDispatcher();
 
     export let title;
-    export let id;
+    export let slug;
 
     function deletePost(slug) {
         dispatch("deletePost", { slug });
@@ -26,9 +26,9 @@
         <h3 use:tippy={props} class="whitespace-nowrap overflow-hidden overflow-ellipsis select-none">{title}</h3>
     </div>
     <div class="min-w-fit [&>*]:ml-3 [&>*]:border-none select-none [&>*]:select-auto">
-        <a href={`blog/${id}`} target="_blank">View</a>
-        <a href={`blog/${id}?edit`} target="_blank">Edit</a>
-        <span class="link !text-gray-400 hover:!text-red-500" id="delete" on:click={() => deletePost(id)}>
+        <a href={`blog/${slug}`} target="_blank">View</a>
+        <a href={`blog/${slug}?edit`} target="_blank">Edit</a>
+        <span class="link !text-gray-400 hover:!text-red-500" on:click={() => deletePost(slug)}>
             Delete
         </span>
     </div>

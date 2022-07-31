@@ -38,5 +38,5 @@
     </div>
 {:else}
     <h1>{title}</h1>
-    <NoBlog id={post.id} />
+    <NoBlog slug={post.id} />
 {/if}

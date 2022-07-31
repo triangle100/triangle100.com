@@ -29,7 +29,7 @@
     <Loading />
 {:else}
     {#each posts as post}
-        <AdminBlogCard title={post.data.title} id={post.id} on:deletePost={deletePost} />
+        <AdminBlogCard title={post.data.title} slug={post.id} on:deletePost={deletePost} />
     {:else}
         <h2>No blog posts</h2>
     {/each}

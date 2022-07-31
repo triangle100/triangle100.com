@@ -6,16 +6,13 @@
     $: loggedIn = !!$user;
 </script>
 
-<nav
-    id={$$props.id}
-    class="mh-12 py-4 mb-2 flex items-center border-b border-gray-300"
->
-    <div id="logo" class="w-12 mr-4 rounded-md bg-gray-200">
+<nav class="mh-12 py-4 mb-2 flex items-center border-b border-gray-300">
+    <div class="w-12 mr-4 rounded-md bg-gray-200">
         <a href="/" sveltekit:reload title="triangle100">
             <img src="/favicon.png" alt="Site logo" />
         </a>
     </div>
-    <div id="buttons" class="cursor-default [&>*]:mr-2 [&>*]:border-none">
+    <div class="cursor-default [&>*]:mr-2 [&>*]:border-none">
         <a href="/">Home</a>
         <a href="/projects">Projects</a>
         <a href="/blog">Blog</a>

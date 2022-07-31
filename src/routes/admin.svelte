@@ -43,11 +43,11 @@
     <button on:click={signOut}>Sign Out</button>
 
     <div class="[&>div]:float-left [&>div]:w-1/2 [&>div]:p-2">
-        <div id="blog-list">
+        <div>
             <h2>Blog posts</h2>
             <AdminBlogList bind:this={blogsComp} />
         </div>
-        <div id="new-blog-post">
+        <div>
             <h2>Create a Blog Post</h2>
             <div class="[&>*]:w-full">
                 <input id="title" bind:this={el.title} placeholder="Title" class="mb-1 !p-2" />
