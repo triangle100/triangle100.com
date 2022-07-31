@@ -23,7 +23,7 @@
 
 <div id="card">
     <div id="left">
-        <h2 use:tippy={props}>{title}</h2>
+        <h3 use:tippy={props}>{title}</h3>
     </div>
     <div id="right">
         <a href={`blog/${id}`} target="_blank">View</a>
@@ -51,7 +51,9 @@
         #left {
             min-width: 0px;
 
-            h2 {
+            h3 {
+                margin-top: 10px;
+                margin-bottom: 10px;
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;

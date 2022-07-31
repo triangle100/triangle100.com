@@ -1,10 +1,10 @@
 <script>
     export let action;
     export let actionText;
-    export let id = null;
+    export let buttonClass = null;
 </script>
 
-<button on:click disabled={action} {id}>
+<button on:click disabled={action} class={buttonClass}>
     {#if action}
         {actionText}
     {:else}

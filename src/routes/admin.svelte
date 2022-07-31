@@ -47,27 +47,26 @@
     <p>Welcome, <b>{$user.email}</b></p>
     <button on:click={signOut}>Sign Out</button>
 
-    <div id="layout">
+    <div class="[&>div]:float-left [&>div]:w-1/2 [&>div]:p-2">
         <div id="blog-list">
             <h2>Blog posts</h2>
             <AdminBlogList bind:this={blogsComp} />
         </div>
         <div id="new-blog-post">
             <h2>Create a Blog Post</h2>
-            <div id="inputs">
-                <input type="text" id="title" placeholder="Title" />
+            <div class="[&>*]:w-full">
+                <input id="title" placeholder="Title" class="border border-black mb-1 p-2 rounded" />
                 <textarea
                     id="content"
                     placeholder="Content"
-                    rows="15"
-                    cols="50"
+                    class="border border-black px-2 block resize-none py-2 rounded"
                     on:input={handleContentInput}
                 />
             </div>
-            <hr />
-            <div id="preview-container">
-                <h3>Preview</h3>
-                <div id="preview">
+            <hr class="my-4 mx-auto" />
+            <div class="text-left">
+                <h4 class="mt-0 mb-2">Preview</h4>
+                <div class="!mb-2 px-2 min-h-[100px] border border-black bg-white rounded">
                     <Markdown raw={preview} />
                 </div>
             </div>
@@ -75,7 +74,7 @@
                 on:click={handleSubmit}
                 action={posting}
                 actionText="Posting..."
-                id="post-btn"
+                buttonClass="w-min float-right"
                 >Post
             </ActionButton>
         </div>
@@ -83,63 +82,3 @@
 {:else}
     <AdminLogin />
 {/if}
-
-<style lang="scss">
-    #layout {
-        > * {
-            box-sizing: border-box;
-        }
-
-        > div {
-            float: left;
-            width: 50%;
-            padding: 10px;
-        }
-    }
-
-    #new-blog-post {
-        #inputs {
-            #title {
-                margin-bottom: 5px;
-                padding-top: 10px;
-                padding-bottom: 10px;
-            }
-
-            #content {
-                display: block;
-                resize: none;
-                margin: 0px;
-                padding-top: 5px;
-                padding-bottom: 5px;
-            }
-        }
-
-        #preview-container {
-            text-align: left;
-
-            h3 {
-                margin-top: 0px;
-                margin-bottom: 10px;
-            }
-
-            #preview {
-                margin-bottom: 5px;
-                border: 1px solid black;
-                border-radius: 4px;
-                background-color: white;
-                min-height: 100px;
-                padding: 5px;
-            }
-        }
-    }
-
-    :global(#post-btn) {
-        width: min-content;
-        float: right;
-    }
-
-    #inputs * {
-        width: 100%;
-        box-sizing: border-box;
-    }
-</style>
