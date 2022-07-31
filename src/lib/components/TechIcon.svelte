@@ -1,8 +1,10 @@
 <script>
-    import { Button, Tooltip } from "flowbite-svelte";
     import RichImage from "$lib/components/RichImage.svelte";
     import { Icon } from "svelte-awesome";
     import externalLink from "svelte-awesome/icons/externalLink";
+    import tippy from "tippy.js";
+    import "tippy.js/dist/tippy.css";
+    import "tippy.js/animations/shift-away-subtle.css";
 
     export let label;
     export let src;
@@ -11,11 +13,17 @@
     function openLink() {
         window.open(target, "_blank");
     }
+
+    const props = {
+        content: label,
+        duration: 300,
+        animation: "shift-away-subtle",
+    };
 </script>
 
-<Tooltip content={label}>
-    <Button
-        class="!p-3 w-16 h-16 !bg-gray-100 hover:!bg-gray-200 hover:scale-110 transition ease-in-out duration-300 !ring-0 relative"
+<div use:tippy={props}>
+    <button
+        class="relative inline-flex items-center justify-center p-3 w-16 h-16 border-none bg-gray-100 hover:bg-gray-200 hover:scale-110 transition ease-in-out duration-300"
         on:click={openLink}
     >
         <Icon
@@ -24,5 +32,5 @@
         />
 
         <RichImage {src} alt={label} />
-    </Button>
-</Tooltip>
+    </button>
+</div>
