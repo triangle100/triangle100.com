@@ -20,7 +20,7 @@
             on:click={closeModal}
         />
         <div
-            class="fixed z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-2xl px-8 py-6"
+            class="fixed z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white drop-shadow-xl rounded-2xl px-8 py-6"
             in:fly={{ y: 25, duration: 500 }}
         >
             <div class="text-center">
