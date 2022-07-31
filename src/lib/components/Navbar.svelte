@@ -8,9 +8,9 @@
 
 <nav
     id={$$props.id}
-    class="mh-12 py-4 mb-2 flex items-center border-b border-slate-300"
+    class="mh-12 py-4 mb-2 flex items-center border-b border-gray-300"
 >
-    <div id="logo" class="w-12 mr-4 rounded-md bg-slate-200">
+    <div id="logo" class="w-12 mr-4 rounded-md bg-gray-200">
         <a href="/" sveltekit:reload title="triangle100">
             <img src="/favicon.png" alt="Site logo" />
         </a>
@@ -31,7 +31,7 @@
             title="Source Code"
             data-noglyph
         >
-            <Icon data={github} scale={2} class="text-slate-800" />
+            <Icon data={github} scale={2} class="text-gray-800" />
         </a>
     </div>
 </nav>
