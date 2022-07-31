@@ -34,6 +34,10 @@ h6 {
     @apply text-base;
 }
 
+p {
+    @apply block my-4;
+}
+
 a,
 .link {
     @apply text-blue-600 border-b-2 border-dotted border-blue-600 cursor-pointer transition hover:border-blue-400 hover:text-blue-400;
@@ -57,7 +61,7 @@ ol {
 }
 
 button {
-    @apply border border-black px-2 rounded bg-white hover:bg-gray-100 w-fit;
+    @apply border border-black px-2 rounded bg-white hover:bg-gray-100;
 }
 
 input {

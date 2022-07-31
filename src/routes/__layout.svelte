@@ -11,7 +11,9 @@
 
 <main class="relative text-center w-[60vw] h-screen mx-auto flex flex-col">
     <Navbar />
-    <slot />
+    <div>
+        <slot />
+    </div>
 
     <div class="h-12" />
     <div class="absolute bottom-1 left-1/2 -translate-x-1/2 w-full text-center">

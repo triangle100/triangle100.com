@@ -46,7 +46,7 @@
 
 {#if loggedIn}
     <p>Welcome, <b>{$user.email}</b></p>
-    <button on:click={signOut} class="mx-auto mt-1">Sign Out</button>
+    <button on:click={signOut}>Sign Out</button>
 
     <div class="[&>div]:float-left [&>div]:w-1/2 [&>div]:p-2">
         <div id="blog-list">
