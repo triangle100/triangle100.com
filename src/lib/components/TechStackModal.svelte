@@ -13,15 +13,13 @@
 </script>
 
 {#if open}
-    <div out:fade>
+    <div transition:fade={{duration: 300}}>
         <div
             class="fixed z-10 top-0 left-0 w-screen h-screen bg-black bg-opacity-20"
-            in:fade
             on:click={closeModal}
         />
         <div
-            class="fixed z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white drop-shadow-xl rounded-2xl px-8 py-6"
-            in:fly={{ y: 25, duration: 500 }}
+            class="fixed z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 m-0 bg-white drop-shadow-xl rounded-2xl px-8 py-6"
         >
             <div class="text-center">
                 <h2 class="m-0">Tech Stack</h2>
