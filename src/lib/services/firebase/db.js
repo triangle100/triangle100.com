@@ -12,7 +12,7 @@ export function newPost(title, content) {
         if (!title) reject("missing_title");
         if (!content) reject("missing_content");
 
-        setDoc(doc(db, "blog", slug), {
+        setDoc(doc(db, "blogs", slug), {
             slug: slug,
             title: title,
             content: content,
@@ -27,7 +27,7 @@ export function newPost(title, content) {
 }
 
 export function removePost(slug) {
-    const ref = doc(db, "blog", slug);
+    const ref = doc(db, "blogs", slug);
 
     return new Promise((resolve, reject) => {
         deleteDoc(ref)
@@ -42,7 +42,7 @@ export function removePost(slug) {
 export async function getPosts() {
     let posts = [];
 
-    const q = query(collection(db, "blog"), orderBy("updatedAt", "desc"));
+    const q = query(collection(db, "blogs"), orderBy("updatedAt", "desc"));
 
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
@@ -53,7 +53,7 @@ export async function getPosts() {
 }
 
 export async function getPost(post) {
-    const ref = doc(db, `blog/${post}`);
+    const ref = doc(db, `blogs/${post}`);
     const document = await getDoc(ref);
     const res = {
         id: document.id,
