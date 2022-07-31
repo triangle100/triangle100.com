@@ -44,59 +44,34 @@
     }
 </script>
 
-<div id="form">
-    <div id="input-area">
+<div class="mx-auto w-96">
+    <div class="flex mb-2 text-left items-center justify-between">
         <label for="email">Email</label>
         <input
             type="email"
             required
             id="email"
             name="email"
+            class="w-9/12"
             on:change={handleChange}
         />
     </div>
-    <div id="input-area">
+    <div class="flex mb-2 text-left items-center justify-between">
         <label for="password">Password</label>
         <input
             type="password"
             required
             id="password"
             name="password"
+            class="w-9/12"
             on:change={handleChange}
         />
     </div>
-
     <ActionButton
         on:click={onSubmit}
         action={submitting}
         actionText="Working..."
-        id="btn"
+        buttonClass="block ml-auto"
         >Sign In
     </ActionButton>
 </div>
-
-<style lang="scss">
-    #form {
-        margin: 0px auto;
-
-        width: 375px;
-    }
-
-    #input-area {
-        margin-bottom: 10px;
-        text-align: left;
-
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        input {
-            width: 70%;
-        }
-    }
-
-    :global(#btn) {
-        display: block;
-        margin-left: auto;
-    }
-</style>

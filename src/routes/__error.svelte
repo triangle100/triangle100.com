@@ -19,7 +19,7 @@
 
 <SEO title={status.toString()} />
 
-{#if status == 404}
+{#if status == 402}
     <h1>Page not found!</h1>
     <h3>Sorry, I couldn't find the page you requested.</h3>
     <p>
@@ -27,9 +27,9 @@
         to be here, you can <a href="/contact" target="_blank">contact</a> me.
     </p>
 {:else}
-    <h1>{status}</h1>
-    <h2>{error.message}</h2>
-    <div id="error-text">
+    <h1 class="mb-0">{status}</h1>
+    <h2 class="mt-0">{error.message}</h2>
+    <div class="mx-auto mb-4 w-4/5 max-h-[50vh] overflow-y-auto text-left">
         {#if error.frame}
             <pre>{error.frame}</pre>
         {/if}
@@ -46,14 +46,3 @@
 {/if}
 
 <p>Return to <a href="/">Home</a></p>
-
-<style lang="scss">
-    #error-text {
-        text-align: left;
-
-        margin: 0px auto;
-        max-width: 80%;
-        max-height: 50vh;
-        overflow-y: auto;
-    }
-</style>

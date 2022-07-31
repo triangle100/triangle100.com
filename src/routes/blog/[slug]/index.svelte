@@ -30,9 +30,9 @@
 />
 
 {#if loading}
-    <Loading id="loading" />
+    <Loading imageClass="mt-12" />
 {:else if post.data}
-    <div id="blog-post">
+    <div class="text-left">
         <h1>{title}</h1>
         <Markdown raw={content} />
     </div>
@@ -40,13 +40,3 @@
     <h1>{title}</h1>
     <NoBlog id={post.id} />
 {/if}
-
-<style>
-    :global(#loading) {
-        margin-top: 50px;
-    }
-
-    #blog-post {
-        text-align: left;
-    }
-</style>

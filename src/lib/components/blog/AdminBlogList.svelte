@@ -18,8 +18,10 @@
     }
     
     export async function deletePost(e) {
+        loading = true;
         await removePost(e.detail.slug);
         await syncPosts();
+        loading = false;
     }
 </script>
 

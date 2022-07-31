@@ -1,4 +1,5 @@
 <script>
+    import "../app.css";
     import "$lib/services/firebase/auth";
     import SEO from "$lib/components/SEO.svelte";
     import Navbar from "$lib/components/Navbar.svelte";
@@ -8,14 +9,14 @@
 
 <SEO />
 
-<main>
-    <Navbar id="navbar" />
-    <div id="slot">
+<main class="relative text-center w-[60vw] h-screen mx-auto flex flex-col">
+    <Navbar />
+    <div>
         <slot />
     </div>
 
-    <div id="spacer" />
-    <div id="foot">
+    <div class="h-12" />
+    <div class="absolute bottom-1 left-1/2 -translate-x-1/2 w-full text-center">
         <span>
             Build
             <a
@@ -27,149 +28,3 @@
         </span>
     </div>
 </main>
-
-<style lang="scss">
-    #slot {
-        word-wrap: break-word;
-    }
-
-    #spacer {
-        height: 50px;
-    }
-
-    main {
-        position: relative;
-        text-align: center;
-
-        min-width: 60vw;
-        min-height: 100vh;
-        width: 60vw;
-        margin: 0 auto;
-
-        display: flex;
-        flex-direction: column;
-
-        :global(#navbar) {
-            text-align: left;
-            padding: 15px 0px;
-
-            border-bottom: 1px #303030 solid;
-        }
-    }
-
-    #foot {
-        position: absolute;
-        transform: translateX(-50%);
-        bottom: 5px;
-        left: 50%;
-
-        width: 100%;
-
-        text-align: center;
-    }
-
-    :global {
-        html {
-            width: 100vw;
-            overflow-x: hidden;
-        }
-
-        body {
-            margin: 0px;
-            background-color: #fafafa;
-            color: #303030;
-        }
-
-        hr {
-            border: none;
-            border-bottom: 1px solid black;
-            width: 95%;
-        }
-
-        code {
-            font-size: 16px;
-            border-radius: 6px;
-            background-color: #e7e7e7;
-            padding: 0.1em 0.2em;
-        }
-
-        pre.hljs {
-            display: block;
-            overflow-x: auto;
-            padding: 0.5em;
-            padding-left: 10px;
-            color: #2f3337;
-            background-color: #eeeeee;
-            border-radius: 5px;
-
-            table {
-                width: 100%;
-            }
-
-            .code-line {
-                padding: 0px;
-                line-height: 20px;
-            }
-
-            .line-number {
-                min-width: 22px;
-                text-align: right;
-                width: 1%;
-                padding-right: 10px;
-                user-select: none;
-            }
-        }
-
-        a,
-        .link {
-            text-decoration: none;
-            border-bottom: 2px dotted;
-            color: #2f60e9;
-            cursor: pointer;
-
-            transition: color 200ms;
-        }
-
-        a:hover,
-        .link:hover {
-            color: #81a0f3;
-        }
-
-        a[target="_blank"]:not([data-noglyph])::after {
-            filter: invert(25%) sepia(63%) saturate(5077%) hue-rotate(224deg)
-                brightness(101%) contrast(83%);
-            content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
-            margin: 0 3px 0 5px;
-        }
-
-        input,
-        button,
-        textarea {
-            min-height: 25px;
-
-            box-sizing: border-box;
-            border: 1px solid black;
-            border-radius: 3px;
-
-            background-color: #ffffff;
-        }
-
-        input,
-        textarea {
-            font-size: 16px;
-            padding-left: 5px;
-        }
-
-        button {
-            padding: 0px 10px;
-            height: 25px;
-
-            text-align: center;
-            font-size: 16px;
-        }
-
-        button:hover {
-            background-color: #e6e6e6;
-        }
-    }
-</style>

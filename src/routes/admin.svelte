@@ -1,5 +1,4 @@
 <script>
-    import { goto } from "$app/navigation";
     import { signOut } from "$lib/services/firebase/auth";
     import { newPost } from "$lib/services/firebase/db";
     import { user } from "$lib/stores/userStore";
@@ -13,25 +12,21 @@
     $: loggedIn = !!$user;
     let posting;
     let blogsComp;
+    let el = {};
 
-    function handleContentInput() {
-        const el = document.getElementById("content");
-
-        // @ts-ignore
-        preview = el.value;
+    function updatePreview() {
+        preview = el.content.value;
     }
 
     function handleSubmit() {
         posting = true;
 
-        // @ts-ignore
-        const titleValue = document.getElementById("title").value;
-        // @ts-ignore
-        const contentValue = document.getElementById("content").value;
-
-        newPost(titleValue, contentValue)
+        newPost(el.title.value, el.content.value)
             .then((res) => {
                 blogsComp.syncPosts();
+                el.title.value = null;
+                el.content.value = null;
+                updatePreview();
             })
             .finally(() => {
                 posting = false;
@@ -47,27 +42,28 @@
     <p>Welcome, <b>{$user.email}</b></p>
     <button on:click={signOut}>Sign Out</button>
 
-    <div id="layout">
+    <div class="[&>div]:float-left [&>div]:w-1/2 [&>div]:p-2">
         <div id="blog-list">
             <h2>Blog posts</h2>
             <AdminBlogList bind:this={blogsComp} />
         </div>
         <div id="new-blog-post">
             <h2>Create a Blog Post</h2>
-            <div id="inputs">
-                <input type="text" id="title" placeholder="Title" />
+            <div class="[&>*]:w-full">
+                <input id="title" bind:this={el.title} placeholder="Title" class="mb-1 !p-2" />
                 <textarea
                     id="content"
                     placeholder="Content"
-                    rows="15"
-                    cols="50"
-                    on:input={handleContentInput}
+                    class="!px-2 !py-2 resize-y min-h-[8em]"
+                    bind:this={el.content}
+                    on:input={updatePreview}
                 />
             </div>
-            <hr />
-            <div id="preview-container">
-                <h3>Preview</h3>
-                <div id="preview">
+            <div class="text-left">
+                <h4 class="mt-6 mb-2">Preview</h4>
+                <div
+                    class="!mb-2 px-2 min-h-[8em] border border-black bg-white rounded"
+                >
                     <Markdown raw={preview} />
                 </div>
             </div>
@@ -75,7 +71,7 @@
                 on:click={handleSubmit}
                 action={posting}
                 actionText="Posting..."
-                id="post-btn"
+                buttonClass="float-right"
                 >Post
             </ActionButton>
         </div>
@@ -83,63 +79,3 @@
 {:else}
     <AdminLogin />
 {/if}
-
-<style lang="scss">
-    #layout {
-        > * {
-            box-sizing: border-box;
-        }
-
-        > div {
-            float: left;
-            width: 50%;
-            padding: 10px;
-        }
-    }
-
-    #new-blog-post {
-        #inputs {
-            #title {
-                margin-bottom: 5px;
-                padding-top: 10px;
-                padding-bottom: 10px;
-            }
-
-            #content {
-                display: block;
-                resize: none;
-                margin: 0px;
-                padding-top: 5px;
-                padding-bottom: 5px;
-            }
-        }
-
-        #preview-container {
-            text-align: left;
-
-            h3 {
-                margin-top: 0px;
-                margin-bottom: 10px;
-            }
-
-            #preview {
-                margin-bottom: 5px;
-                border: 1px solid black;
-                border-radius: 4px;
-                background-color: white;
-                min-height: 100px;
-                padding: 5px;
-            }
-        }
-    }
-
-    :global(#post-btn) {
-        width: min-content;
-        float: right;
-    }
-
-    #inputs * {
-        width: 100%;
-        box-sizing: border-box;
-    }
-</style>
