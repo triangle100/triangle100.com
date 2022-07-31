@@ -63,10 +63,9 @@
                     on:input={handleContentInput}
                 />
             </div>
-            <hr />
             <div class="text-left">
-                <h4 class="mt-0 mb-2">Preview</h4>
-                <div class="!mb-2 px-2 min-h-[100px] border border-black bg-white rounded">
+                <h4 class="mt-6 mb-2">Preview</h4>
+                <div class="!mb-2 px-2 min-h-[8em] border border-black bg-white rounded">
                     <Markdown raw={preview} />
                 </div>
             </div>
