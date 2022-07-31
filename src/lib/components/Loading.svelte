@@ -1,8 +1,8 @@
 <script>
     import loadingGif from "$lib/assets/loading.gif";
 
-    export let id = null;
+    export let imageClass = null;
 </script>
 
-<img {id} class="w-16 mx-auto" src={loadingGif} alt="Loading..." />
+<img class="{imageClass} w-16 mx-auto" src={loadingGif} alt="Loading..." />
 
