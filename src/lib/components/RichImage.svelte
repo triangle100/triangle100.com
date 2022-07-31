@@ -12,7 +12,7 @@
 
     onMount(() => {
         const img = new Image();
-        img.src = "https://static.cdnlogo.com/logos/f/11/firebase.svg";
+        img.src = src;
         loading = true;
 
         img.onload = () => {
@@ -27,16 +27,9 @@
 </script>
 
 {#if loaded}
-    <img id={$$props.id} {src} {alt} />
+    <img id={$$props.id} class="max-w-full max-h-full" {src} {alt} />
 {:else if failed}
     <img id={$$props.id} src={errorImage} alt="Not Found" />
 {:else if loading}
     <Loading id={$$props.id} />
 {/if}
-
-<style>
-    img {
-        max-width: 100%;
-        max-height: 100%;
-    }
-</style>
