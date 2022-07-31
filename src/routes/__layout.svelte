@@ -15,8 +15,8 @@
         <slot />
     </div>
 
-    <div class="h-12" />
-    <div class="absolute bottom-1 left-1/2 -translate-x-1/2 w-full text-center">
+    <div class="h-24" />
+    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 w-full text-center">
         <span>
             Build
             <a
