@@ -12,27 +12,21 @@
     $: loggedIn = !!$user;
     let posting;
     let blogsComp;
+    let el = {};
 
-    function handleContentInput() {
-        const el = document.getElementById("content");
-
-        // @ts-ignore
-        preview = el.value;
+    function updatePreview() {
+        preview = el.content.value;
     }
 
     function handleSubmit() {
         posting = true;
 
-        const titleRef = document.getElementById("title");
-        const contentRef = document.getElementById("content");
-        const titleValue = titleRef.value;
-        const contentValue = contentRef.value;
-        titleRef.value = null;
-        contentRef.value = null;
-
-        newPost(titleValue, contentValue)
+        newPost(el.title.value, el.content.value)
             .then((res) => {
                 blogsComp.syncPosts();
+                el.title.value = null;
+                el.content.value = null;
+                updatePreview();
             })
             .finally(() => {
                 posting = false;
@@ -56,17 +50,20 @@
         <div id="new-blog-post">
             <h2>Create a Blog Post</h2>
             <div class="[&>*]:w-full">
-                <input id="title" placeholder="Title" class="mb-1 !p-2" />
+                <input id="title" bind:this={el.title} placeholder="Title" class="mb-1 !p-2" />
                 <textarea
                     id="content"
                     placeholder="Content"
                     class="!px-2 !py-2 resize-y min-h-[8em]"
-                    on:input={handleContentInput}
+                    bind:this={el.content}
+                    on:input={updatePreview}
                 />
             </div>
             <div class="text-left">
                 <h4 class="mt-6 mb-2">Preview</h4>
-                <div class="!mb-2 px-2 min-h-[8em] border border-black bg-white rounded">
+                <div
+                    class="!mb-2 px-2 min-h-[8em] border border-black bg-white rounded"
+                >
                     <Markdown raw={preview} />
                 </div>
             </div>
