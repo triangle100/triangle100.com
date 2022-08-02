@@ -75,7 +75,7 @@
                 <textarea
                     id="content"
                     placeholder="Content"
-                    class="!px-2 !py-2 resize-y min-h-[8em]"
+                    class="!px-2 !py-2 resize-y min-h-[16em]"
                     bind:this={el.content}
                     on:input={updatePreview}
                 />
