@@ -67,7 +67,7 @@
         />
     </div>
 </div>
-<div class="text-left">
+<div class="text-left mb-2">
     <h2>Preview</h2>
     <div class="border border-black rounded p-5">
         <Blog {post} {loading} bind:title bind:content />
