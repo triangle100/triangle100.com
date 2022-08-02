@@ -27,7 +27,7 @@
     </div>
     <div class="min-w-fit [&>*]:ml-3 [&>*]:border-none select-none [&>*]:select-auto">
         <a href={`blog/${slug}`} target="_blank">View</a>
-        <a href={`blog/${slug}?edit`} target="_blank">Edit</a>
+        <a href={`blog/${slug}/edit`} target="_blank">Edit</a>
         <span class="link !text-gray-400 hover:!text-red-500" on:click={() => deletePost(slug)}>
             Delete
         </span>

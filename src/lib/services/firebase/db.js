@@ -1,5 +1,5 @@
 import { app } from "$lib/services/firebase/app";
-import { getFirestore, collection, doc, getDocs, getDoc, query, orderBy, setDoc, serverTimestamp, deleteDoc } from "firebase/firestore";
+import { getFirestore, collection, doc, getDocs, getDoc, query, orderBy, setDoc, serverTimestamp, deleteDoc, updateDoc } from "firebase/firestore";
 import { generateSlug } from "$lib/utils/slugGenerator";
 
 export const db = getFirestore(app);
@@ -24,6 +24,22 @@ export function newPost(title, content) {
             reject(error);
         });
     })
+}
+
+export function editPost(slug, title, content) {
+    const ref = doc(db, "blogs", slug);
+
+    return new Promise((resolve, reject) => {
+        updateDoc(ref, {
+            title: title,
+            content: content,
+            updatedAt: serverTimestamp(),
+        }).then((res) => {
+            resolve(res);
+        }).catch((error) => {
+            reject(error);
+        });
+    });
 }
 
 export function removePost(slug) {
