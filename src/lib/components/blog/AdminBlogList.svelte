@@ -31,6 +31,6 @@
     {#each posts as post}
         <AdminBlogCard title={post.data.title} slug={post.id} on:deletePost={deletePost} />
     {:else}
-        <h2>No blog posts</h2>
+        <h4>No blog posts</h4>
     {/each}
 {/if}
