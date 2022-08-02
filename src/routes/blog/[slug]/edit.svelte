@@ -11,6 +11,7 @@
     let posting;
     let loading = true;
     let title = "Loading...";
+    let _title;
     let content;
     let el = {};
 
@@ -19,6 +20,7 @@
 
         loading = false;
 
+        _title = post.data.title;
         el.title.value = post.data.title;
         el.content.value = post.data.content;
     });
@@ -45,9 +47,8 @@
 
 <SEO title="Editor - {title}" desc="Blog edtior" />
 
-<h1>Blog Editor</h1>
+<h1>{loading ? "Loading..." : `Editing ${_title}`}</h1>
 <div class="text-left">
-    <h2>Edit</h2>
     <div class="[&>*]:w-full">
         <input
             id="title"
