@@ -7,11 +7,15 @@
     import AdminBlogList from "$lib/components/blog/AdminBlogList.svelte";
     import Markdown from "$lib/components/Markdown.svelte";
     import ActionButton from "$lib/components/ActionButton.svelte";
+    import Icon from "svelte-awesome";
+    import expand from "svelte-awesome/icons/expand";
+    import compress from "svelte-awesome/icons/compress";
 
     let preview = "";
     $: loggedIn = !!$user;
     let posting;
     let blogsComp;
+    let expanded = false;
     let el = {};
 
     function updatePreview() {
@@ -32,6 +36,10 @@
                 posting = false;
             });
     }
+
+    function toggleExpand() {
+        expanded = !expanded;
+    }
 </script>
 
 <SEO title="Admin Console" desc="Admin Console" />
@@ -42,15 +50,28 @@
     <p>Welcome, <b>{$user.email}</b></p>
     <button on:click={signOut}>Sign Out</button>
 
-    <div class="[&>div]:float-left [&>div]:w-1/2 [&>div]:p-2">
-        <div>
-            <h2>Blog posts</h2>
-            <AdminBlogList bind:this={blogsComp} />
-        </div>
-        <div>
+    <div class="flex [&>div]:flex-1 [&>div]:p-2 items-stretch">
+        {#if !expanded}
+            <div>
+                <h2>Blog posts</h2>
+                <AdminBlogList bind:this={blogsComp} />
+            </div>
+        {/if}
+        <div class="relative transition-all">
+            <div
+                on:click={toggleExpand}
+                class="absolute top-0 right-0 w-5 h-5 flex justify-center items-center cursor-pointer select-none"
+            >
+                <Icon data={expanded ? compress : expand} />
+            </div>
             <h2>Create a Blog Post</h2>
             <div class="[&>*]:w-full">
-                <input id="title" bind:this={el.title} placeholder="Title" class="mb-1 !p-2" />
+                <input
+                    id="title"
+                    bind:this={el.title}
+                    placeholder="Title"
+                    class="mb-1 !p-2"
+                />
                 <textarea
                     id="content"
                     placeholder="Content"
