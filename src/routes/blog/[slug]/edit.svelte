@@ -48,25 +48,23 @@
 <h1>Blog Editor</h1>
 <div class="text-left">
     <h2>Edit</h2>
-    <div class="border border-black rounded p-5">
-        <div class="[&>*]:w-full">
-            <input
-                id="title"
-                placeholder="Title"
-                class="mb-1 !p-2"
-                disabled={loading}
-                bind:this={el.title}
-                on:input={updatePreview}
-            />
-            <textarea
-                id="content"
-                placeholder="Content"
-                class="!px-2 !py-2 resize-y min-h-[24em]"
-                disabled={loading}
-                bind:this={el.content}
-                on:input={updatePreview}
-            />
-        </div>
+    <div class="[&>*]:w-full">
+        <input
+            id="title"
+            placeholder="Title"
+            class="mb-1 !p-2"
+            disabled={loading}
+            bind:this={el.title}
+            on:input={updatePreview}
+        />
+        <textarea
+            id="content"
+            placeholder="Content"
+            class="!px-2 !py-2 resize-y min-h-[24em]"
+            disabled={loading}
+            bind:this={el.content}
+            on:input={updatePreview}
+        />
     </div>
 </div>
 <div class="text-left">
