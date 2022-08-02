@@ -57,7 +57,7 @@
                 <AdminBlogList bind:this={blogsComp} />
             </div>
         {/if}
-        <div class="relative transition-all">
+        <div class="relative">
             <div
                 on:click={toggleExpand}
                 class="absolute top-0 right-0 w-5 h-5 flex justify-center items-center cursor-pointer select-none"
