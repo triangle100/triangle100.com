@@ -18,6 +18,6 @@
     {#if loading}
         <Loading />
     {:else}
-        <h2>No blog posts</h2>
+        <h4>No blog posts</h4>
     {/if}
 {/each}
