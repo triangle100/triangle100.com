@@ -16,7 +16,7 @@
 
 {#each posts as post}
     <div
-        class="flex justify-between lg:w-96 md:w-5/6 mx-auto text-2xl rounded border p-2 hover:bg-neutral-100 cursor-pointer"
+        class="flex justify-between lg:w-4/6 md:w-full mx-auto text-2xl rounded border p-2 hover:bg-neutral-100 cursor-pointer"
         on:click={() => goto(`blog/${post.id}`)}
     >
         <span>{post.data.title}</span>
