@@ -1,109 +1,29 @@
 <script>
-    import { fly, fade } from "svelte/transition";
-    import { createEventDispatcher } from "svelte";
-    import ToolIcon from "$lib/components/ToolIcon.svelte";
+    import { fade } from "svelte/transition";
 
-    const dispatch = createEventDispatcher();
+    export let state = false;
 
-    /** @type {boolean} */
-    export let modalOpen;
+    export function close() {
+        state = false;
+    }
 
-    function closeModal() {
-        modalOpen = false;
-        dispatch("closeModal", { modalOpen });
+    export function open() {
+        state = true;
     }
 </script>
 
-{#if modalOpen}
-    <div out:fade>
-        <div id="background" in:fade on:click={closeModal} />
-        <div id="modal" in:fly={{ y: 25, duration: 500 }}>
-            <div id="body">
-                <h2>Tech Stack</h2>
-                <p>I'm using these tools for my WIP fullstack project.</p>
-            </div>
-            <div id="tool-icons">
-                <ToolIcon
-                    label="Firebase"
-                    src="https://static.cdnlogo.com/logos/f/11/firebase.svg"
-                    target="https://firebase.google.com/"
-                />
-                <ToolIcon
-                    label="Google Cloud"
-                    src="https://static.cdnlogo.com/logos/g/1/google-cloud.svg"
-                    target="https://cloud.google.com/"
-                />
-                <ToolIcon
-                    label="Svelte"
-                    src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Svelte_Logo.svg"
-                    target="https://svelte.dev/"
-                />
-                <ToolIcon
-                    label="Sass"
-                    src="https://sass-lang.com/assets/img/styleguide/seal-color-aef0354c.png"
-                    target="https://sass-lang.com/"
-                />
-                <ToolIcon
-                    label="Vite"
-                    src="https://vitejs.dev/logo.svg"
-                    target="https://vitejs.dev/"
-                />
-                <ToolIcon
-                    label="Node.js"
-                    src="https://static.cdnlogo.com/logos/n/94/nodejs-icon.svg"
-                    target="https://nodejs.dev/"
-                />
+{#if state}
+    <div class="fixed z-40 top-0 left-0 w-screen h-screen">
+        <div transition:fade={{ duration: 300 }}>
+            <div
+                class="w-screen h-screen bg-black bg-opacity-20"
+                on:click={close}
+            />
+            <div
+                class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 m-0 bg-white drop-shadow-xl rounded-2xl px-8 py-6"
+            >
+                <slot />
             </div>
         </div>
     </div>
 {/if}
-
-<svelte:window
-    on:keydown={(e) => {
-        if (e.code == "Escape") {
-            closeModal();
-        }
-    }}
-/>
-
-<style lang="scss">
-    #background {
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-
-        background-color: rgba(0, 0, 0, 0.2);
-    }
-
-    #modal {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-        z-index: 2;
-        padding: 10px 20px;
-        text-align: center;
-
-        background: white;
-        box-shadow: 0px 0px 50px 15px rgba(0, 0, 0, 0.1);
-        border-radius: 15px;
-
-        #body {
-            margin-top: 10px;
-            margin-bottom: 20px;
-
-            h2,
-            p {
-                margin: 5px 0px;
-            }
-        }
-    }
-
-    #tool-icons {
-        user-select: none;
-    }
-</style>
