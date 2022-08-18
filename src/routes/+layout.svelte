@@ -8,7 +8,7 @@
 
 <SEO />
 
-<main class="relative text-center w-[60vw] min-h-screen mx-auto flex flex-col">
+<main class="relative text-center lg:w-[60vw] md:w-[95vw] min-h-screen mx-auto flex flex-col">
     <Navbar />
     <div>
         <slot />
