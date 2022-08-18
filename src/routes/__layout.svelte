@@ -1,0 +1,30 @@
+<script>
+    import "../app.css";
+    import "$lib/services/firebase/auth";
+    import SEO from "$lib/components/SEO.svelte";
+    import Navbar from "$lib/components/Navbar.svelte";
+    import BuildNumber from "$lib/components/BuildNumber.svelte";
+    import "highlight.js/styles/stackoverflow-light.css";
+</script>
+
+<SEO />
+
+<main class="relative text-center w-[60vw] min-h-screen mx-auto flex flex-col">
+    <Navbar />
+    <div>
+        <slot />
+    </div>
+
+    <div class="h-24" />
+    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 w-full text-center">
+        <span>
+            Build
+            <a
+                href="https://github.com/triangle100/triangle100-com/releases"
+                target="_blank"
+            >
+                <BuildNumber />
+            </a>
+        </span>
+    </div>
+</main>

@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    @apply w-screen overflow-x-hidden;
+}
+
+body {
+    @apply bg-[#fafafa] text-[#303030];
+}
+
+h1 {
+    @apply text-4xl my-3 font-medium;
+}
+
+h2 {
+    @apply text-3xl my-3 font-medium;
+}
+
+h3 {
+    @apply text-2xl font-medium;
+}
+
+h4 {
+    @apply text-xl;
+}
+
+h5 {
+    @apply text-lg;
+}
+
+h6 {
+    @apply text-base;
+}
+
+p {
+    @apply block my-4;
+}
+
+a,
+.link {
+    @apply text-blue-600 border-b-2 border-dotted border-blue-600 cursor-pointer transition hover:border-blue-400 hover:text-blue-400;
+}
+
+a[target="_blank"]:not([data-noglyph])::after {
+    @apply relative -top-1 left-0.5 content-[url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==)];
+}
+
+ul,
+ol {
+    @apply list-outside pl-10 mb-2;
+}
+
+ul {
+    @apply list-disc;
+}
+
+ol {
+    @apply list-decimal;
+}
+
+button {
+    @apply border border-black px-2 rounded bg-white hover:bg-gray-100;
+}
+
+input {
+    @apply border border-black rounded px-1;
+}
+
+textarea {
+    @apply border border-black p-1 block rounded;
+}
+
+hr {
+    @apply my-4 mx-auto w-11/12 border-black border-t border-b-0 border-l-0 border-r-0;
+}
+
+code {
+    @apply text-base rounded-md bg-gray-200 px-1 py-0.5;
+}

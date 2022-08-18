@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<!-- <url>
+		<loc>https://triangle100.com/blog/</loc>
+		<lastmod>2022-07-07</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1.0</priority>
+	</url> -->
+	<url>
+		<loc>https://triangle100.com/</loc>
+	</url>
+    <url>
+		<loc>https://status.triangle100.com/</loc>
+		<changefreq>always</changefreq>
+	</url>
+</urlset>
