@@ -21,10 +21,11 @@
         {/if}
     </div>
     <div class="ml-auto">
+        <a href="/contact" class="mr-2 border-none my-10">Contact</a>
         <a
             href="https://github.com/triangle100/triangle100-com"
             target="_blank"
-            class="border-none"
+            class="border-none leading-loose"
             title="Source Code"
             data-noglyph
         >
