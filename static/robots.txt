@@ -1,8 +1,0 @@
-User-Agent: *
-
-Disallow: /admin
-Disallow: /edit
-
-Allow: /
-
-Sitemap: https://triangle100.com/sitemap.xml
