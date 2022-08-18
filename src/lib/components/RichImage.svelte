@@ -16,12 +16,14 @@
         loading = true;
 
         img.onload = () => {
-            loading = false;
-            loaded = true;
+            setTimeout(() => {
+                loading = false;
+                loaded = true;
+            }, 5000);
         };
         img.onerror = () => {
-            loading = false;
-            failed = true;
+            // loading = false;
+            // failed = true;
         };
     });
 </script>
@@ -31,5 +33,5 @@
 {:else if failed}
     <img src={errorImage} alt="Not Found" />
 {:else if loading}
-    <Loading />
+    <Loading style="!p-2" />
 {/if}
