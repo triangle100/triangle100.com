@@ -1,5 +1,9 @@
+<script>
+    export let style = null;
+</script>
+
 <svg
-    class="animate-spin w-16 h-16 p-4 mx-auto"
+    class="{style} animate-spin max-w-16 max-h-16 p-4 mx-auto"
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"

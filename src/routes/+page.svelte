@@ -19,7 +19,7 @@
 <Modal bind:this={modal}>
     <div class="text-center">
         <h2 class="m-0">Tech Stack</h2>
-        <p>I'm using these tools for my WIP fullstack project.</p>
+        <p>These are the tools I'm using for this WIP fullstack project</p>
         <div class="mt-4 flex justify-center gap-x-3">
             <TechIcon
                 label="Firebase"
@@ -27,14 +27,14 @@
                 target="https://firebase.google.com/"
             />
             <TechIcon
+                label="Netlify"
+                src="https://www.netlify.com/v3/img/components/logomark.svg"
+                target="https://www.netlify.com/"
+            />
+            <TechIcon
                 label="Svelte"
                 src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Svelte_Logo.svg"
                 target="https://svelte.dev/"
-            />
-            <TechIcon
-                label="Sass"
-                src="https://sass-lang.com/assets/img/styleguide/seal-color-aef0354c.png"
-                target="https://sass-lang.com/"
             />
             <TechIcon
                 label="Tailwind"

@@ -6,30 +6,26 @@
     export let src;
     export let alt;
 
-    let loaded = false;
     let failed = false;
-    let loading = false;
+    let loading = true;
 
     onMount(() => {
         const img = new Image();
         img.src = src;
-        loading = true;
 
         img.onload = () => {
             loading = false;
-            loaded = true;
         };
         img.onerror = () => {
-            loading = false;
             failed = true;
         };
     });
 </script>
 
-{#if loaded}
-    <img class="max-w-full max-h-full" {src} {alt} />
-{:else if failed}
+{#if failed}
     <img src={errorImage} alt="Not Found" />
 {:else if loading}
-    <Loading />
+    <Loading style="!p-2" />
+{:else}
+    <img class="max-w-full max-h-full" {src} {alt} />
 {/if}
