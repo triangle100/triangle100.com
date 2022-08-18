@@ -19,12 +19,17 @@
 <Modal bind:this={modal}>
     <div class="text-center">
         <h2 class="m-0">Tech Stack</h2>
-        <p>I'm using these tools for my WIP fullstack project.</p>
+        <p>These are the tools I'm using for this WIP fullstack project</p>
         <div class="mt-4 flex justify-center gap-x-3">
             <TechIcon
                 label="Firebase"
                 src="https://static.cdnlogo.com/logos/f/11/firebase.svg"
                 target="https://firebase.google.com/"
+            />
+            <TechIcon
+                label="Netlify"
+                src="https://www.netlify.com/v3/img/components/logomark.svg"
+                target="https://www.netlify.com/"
             />
             <TechIcon
                 label="Svelte"
