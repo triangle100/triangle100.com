@@ -1,27 +1,11 @@
-<script context="module">
-    throw new Error("@migration task: Replace error load function (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3293209)");
-
-    // /** @type {import('@sveltejs/kit').Load} */
-    // export function load({ error, status }) {
-    //     return {
-    //         props: { error, status },
-    //     };
-    // }
-</script>
-
 <script>
+    import { page } from '$app/stores';
     import SEO from "$lib/components/SEO.svelte";
-
-    /** @type {number} */
-    export let status;
-
-    /** @type {Error & {frame?: string} & {loc?: object}} */
-    export let error;
 </script>
 
-<SEO title={status.toString()} />
+<SEO title={$page.status.toString()} />
 
-{#if status == 402}
+{#if $page.status == 402}
     <h1>Page not found!</h1>
     <h3>Sorry, I couldn't find the page you requested.</h3>
     <p>
@@ -29,14 +13,14 @@
         to be here, you can <a href="/contact" target="_blank">contact</a> me.
     </p>
 {:else}
-    <h1 class="mb-0">{status}</h1>
-    <h2 class="mt-0">{error.message}</h2>
+    <h1 class="mb-0">{$page.status}</h1>
+    <h2 class="mt-0">{$page.error.message}</h2>
     <div class="mx-auto mb-4 w-4/5 max-h-[50vh] overflow-y-auto text-left">
-        {#if error.frame}
-            <pre>{error.frame}</pre>
+        {#if $page.error.frame}
+            <pre>{$page.error.frame}</pre>
         {/if}
-        {#if error.stack}
-            <pre>{error.stack}</pre>
+        {#if $page.error.stack}
+            <pre>{$page.error.stack}</pre>
         {/if}
     </div>
     <p>
