@@ -38,6 +38,10 @@ p {
     @apply block my-4 dark:text-neutral-400;
 }
 
+span {
+    @apply dark:text-neutral-400;
+}
+
 a,
 .link {
     @apply text-blue-600 dark:text-blue-400 border-b-2 border-dotted border-blue-600 dark:border-blue-400 cursor-pointer transition hover:border-blue-400 dark:hover:border-blue-300 hover:text-blue-400 dark:hover:text-blue-300;
