@@ -25,12 +25,12 @@
 </script>
 
 <div
-    class="flex h-16 justify-between flex-row items-center bg-white border border-black rounded mx-auto mb-5 px-5 box-border"
+    class="flex h-16 justify-between flex-row items-center bg-white dark:bg-neutral-800 border border-black dark:border-neutral-700 rounded mx-auto mb-5 px-5 box-border"
 >
     <div class="min-w-0">
         <h3
             use:tippy={props}
-            class="whitespace-nowrap overflow-hidden overflow-ellipsis select-none"
+            class="truncate select-none"
         >
             {title}
         </h3>
@@ -52,7 +52,10 @@
 <Modal bind:this={modal}>
     <div class="text-center">
         <h2 class="m-0">Confirmation</h2>
-        <p>Are you sure you want to delete this post?<br />This cannot be undone.</p>
+        <p>
+            Are you sure you want to delete this post?<br />
+            This cannot be undone.
+        </p>
         <button on:click={() => deletePost(slug)}>Delete</button>
     </div>
 </Modal>

@@ -10,17 +10,20 @@
 
     $: title = loading
         ? "Loading..."
-        : post
+        : post.data
         ? post.data.title
         : "No blog post found!";
-    $: content = loading ? "Loading..." : post ? post.data.content : "";
+    $: content = loading ? "Loading..." : post.data ? post.data.content : "";
 </script>
 
 {#if loading}
     <Loading />
 {:else if post.data}
     <div class="text-left">
-        <h1>{title}</h1>
+        <div class="[&>*]:inline-block mt-4 mb-8">
+            <h1 class="my-0">{title}</h1>
+            <span class="ml-1">by <b>{post.data.author}</b></span>
+        </div>
         <Markdown raw={content} />
     </div>
 {:else}

@@ -62,7 +62,7 @@
                 on:click={toggleExpand}
                 class="absolute top-0 right-0 w-5 h-5 flex justify-center items-center cursor-pointer select-none"
             >
-                <Icon data={expanded ? compress : expand} />
+                <Icon data={expanded ? compress : expand} class="dark:text-neutral-600" />
             </div>
             <h2>Create a Blog Post</h2>
             <div class="[&>*]:w-full">
@@ -83,7 +83,7 @@
             <div class="text-left">
                 <h4 class="mt-6 mb-2">Preview</h4>
                 <div
-                    class="!mb-2 px-2 min-h-[8em] border border-black bg-white rounded"
+                    class="!mb-2 px-2 min-h-[8em] border border-black bg-white dark:bg-neutral-800 dark:border-neutral-700 rounded"
                 >
                     <Markdown raw={preview} />
                 </div>

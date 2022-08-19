@@ -16,15 +16,22 @@
 
 {#each posts as post}
     <div
-        class="flex justify-between lg:w-4/6 md:w-full mx-auto text-2xl rounded border p-2 hover:bg-neutral-100 cursor-pointer"
+        class="flex justify-between lg:w-4/6 md:w-full mx-auto text-2xl rounded border dark:border-2 mb-2 p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:border-neutral-800 cursor-pointer"
         on:click={() => goto(`blog/${post.id}`)}
     >
-        <span>{post.data.title}</span>
-        <span>
-            {DateTime.fromSeconds(
-                post.data.createdAt.seconds
-            ).toRelativeCalendar()}
-        </span>
+        <div class="min-w-0">
+            <span class="truncate max-w-[200px]">{post.data.title}</span>
+            <span class="text-base">by {post.data.author}</span>
+        </div>
+        <div
+            class="min-w-fit [&>*]:ml-3 [&>*]:border-none select-none [&>*]:select-auto"
+        >
+            <span>
+                {DateTime.fromSeconds(
+                    post.data.createdAt.seconds
+                ).toRelativeCalendar()}
+            </span>
+        </div>
     </div>
 {:else}
     {#if loading}
