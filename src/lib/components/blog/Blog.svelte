@@ -10,10 +10,10 @@
 
     $: title = loading
         ? "Loading..."
-        : post
+        : post.data
         ? post.data.title
         : "No blog post found!";
-    $: content = loading ? "Loading..." : post ? post.data.content : "";
+    $: content = loading ? "Loading..." : post.data ? post.data.content : "";
 </script>
 
 {#if loading}
