@@ -30,7 +30,7 @@
     <div class="min-w-0">
         <h3
             use:tippy={props}
-            class="whitespace-nowrap overflow-hidden overflow-ellipsis select-none"
+            class="truncate select-none"
         >
             {title}
         </h3>
