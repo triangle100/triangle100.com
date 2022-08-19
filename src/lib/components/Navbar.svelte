@@ -31,7 +31,7 @@
             title="Source Code"
             data-noglyph
         >
-            <Icon data={github} scale={2} class="text-gray-800 dark:text-neutral-200" />
+            <Icon data={github} scale={2} class="text-gray-800 hover:text-gray-700 dark:text-neutral-200 dark:hover:text-neutral-400 transition-colors" />
         </a>
     </div>
 </nav>
