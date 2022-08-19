@@ -1,9 +1,10 @@
 import { app } from "$lib/services/firebase/app";
 import { getFirestore, collection, doc, getDocs, getDoc, query, orderBy, setDoc, serverTimestamp, deleteDoc, updateDoc } from "firebase/firestore";
 import { generateSlug } from "$lib/utils/slugGenerator";
+import { get } from "svelte/store";
+import { user as userStore } from "$lib/stores/userStore";
 
 export const db = getFirestore(app);
-
 
 export function newPost(title, content) {
     const slug = generateSlug(title);
@@ -13,6 +14,7 @@ export function newPost(title, content) {
         if (!content) reject("missing_content");
 
         setDoc(doc(db, "blogs", slug), {
+            author: get(userStore).displayName,
             slug: slug,
             title: title,
             content: content,
