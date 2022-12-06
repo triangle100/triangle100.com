@@ -21,4 +21,8 @@
 
 <SEO {title} desc="A blog I use to post updates on what I'm working on at the moment" />
 
-<Blog {post} {loading} bind:title={title} bind:content={content} />
+<div class="flex justify-center">
+    <div class="lg:w-full xl:w-4/6">
+        <Blog {post} {loading} bind:title={title} bind:content={content} />
+    </div>
+</div>
