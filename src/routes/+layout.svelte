@@ -5,23 +5,29 @@
 	import Navbar from "$lib/components/Navbar.svelte";
 	import Modal from "$lib/components/Modal.svelte";
 	import "highlight.js/styles/stackoverflow-light.css";
-	import { navigating } from "$app/stores";
+	import { page } from "$app/stores";
 	import webhook from "webhook-discord";
+	import { onMount } from "svelte";
 
 	const hook = new webhook.Webhook(
-		"https://discord.com/api/webhooks/1059483335707078727/34DnQeyTiBIBMkkKSfiDmMYZK2Mp4uS3DRvP1aZePpC7YtnIQkg9nRMPW-Btb_YgX6ap"
-	);
+		"https://discord.com/api/webhooks/1059488740034236537/srkd43KCsE78AWRBBfL-D9drjMVcEaEOfIaPzSg6bh4Eyehq6QiDp4" + "_281dLhHNrqa99"
+	); // I don't care ¯\_(ツ)_/¯
+	const isOldLink = $page.url.searchParams.has("oldurl");
 	let oldLinkModal;
 
-	$: if ($navigating) {
-		const referrer = document.referrer.split("/")[2];
-		if (referrer != null) {
-			console.log(`Referred by '${referrer}'`);
-			if (referrer == "triangle100.xyz") {
-				oldLinkModal.open();
-			}
+	onMount(() => {
+		if (isOldLink) {
+			oldLinkModal.open();
+
+			$page.url.searchParams.delete("oldurl");
+			const newStr = $page.url.searchParams.toString();
+			window.history.replaceState(
+				{},
+				"",
+				window.location.pathname + `${newStr ? `?${newStr}` : ""}`
+			);
 		}
-	}
+	});
 
 	function handleSubmit(e) {
 		oldLinkModal.close();
@@ -65,16 +71,16 @@
 					type="text"
 					name="input"
 					placeholder="i.e. Twitter profile"
-					class="form-input block w-full py-2 px-3 rounded-md bg-neutral-200 text-neutral-800 font-bold"
+					class="form-input block w-full py-2 px-3 rounded-md bg-neutral-100 text-neutral-800 font-bold"
 				/>
 				<button
 					type="submit"
-					class="absolute top-0 right-0 m-1.5 p-1 border-0 hover:bg-green-500 group"
+					class="absolute top-0 right-0 m-1.5 p-1 border-0 hover:bg-green-500 group transition-colors"
 				>
 					<svg
 						fill="currentColor"
 						viewBox="0 0 20 20"
-						class="w-5 h-5 text-green-500 group-hover:text-white"
+						class="w-5 h-5 text-green-500 group-hover:text-white transition-colors"
 					>
 						<path
 							d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM6.7 9.29L9 11.6l4.3-4.3 1.4 1.42L9 14.4l-3.7-3.7 1.4-1.42z"
