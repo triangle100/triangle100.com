@@ -15,7 +15,7 @@
 </script>
 
 {#each posts as post}
-    <div
+    <button
         class="flex justify-between lg:w-4/6 md:w-full mx-auto text-2xl rounded mb-2 p-2 hover:bg-bluegray-100 bg-bluegray-700 dark:hover:bg-bluegray-600 transition-colors cursor-pointer"
         on:click={() => goto(`blog/${post.id}`)}
     >
@@ -32,7 +32,7 @@
                 ).toRelativeCalendar()}
             </span>
         </div>
-    </div>
+    </button>
 {:else}
     {#if loading}
         <Loading />

@@ -58,12 +58,12 @@
             </div>
         {/if}
         <div class="relative">
-            <div
+            <button
                 on:click={toggleExpand}
-                class="absolute top-0 right-0 w-5 h-5 flex justify-center items-center cursor-pointer select-none"
+                class="absolute top-0 right-0 w-8 h-8 flex justify-center items-center cursor-pointer select-none"
             >
                 <Icon data={expanded ? compress : expand} class="dark:text--600" />
-            </div>
+            </button>
             <h2>Create a Blog Post</h2>
             <div class="[&>*]:w-full">
                 <input

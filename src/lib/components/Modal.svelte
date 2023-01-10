@@ -17,7 +17,7 @@
         <div transition:fade={{ duration: 300 }}>
             <div
                 class="w-screen h-screen bg-black bg-opacity-20"
-                on:click={close}
+                on:mousedown={close}
             />
             <div
                 class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 m-0 bg-white dark:bg-bluegray-800 drop-shadow-xl rounded-2xl px-8 py-6"
