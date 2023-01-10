@@ -7,8 +7,8 @@
 	$: loggedIn = !!$user;
 </script>
 
-<div class="py-8 mb-2 flex items-center border-neutral-300">
-	<div class="justify-start flex grow basis-0 [&>*]:text-neutral-500">
+<div class="py-8 mb-2 flex items-center border-bluegray-300">
+	<div class="justify-start flex grow basis-0 [&>*]:text-bluegray-500">
 		<NavbarButton to="/">triangle100</NavbarButton>
 	</div>
 	<nav class="flex gap-8 cursor-default">
@@ -32,7 +32,7 @@
 			<Icon
 				data={github}
 				scale={2}
-				class="hover:text-neutral-500 dark:hover:text-neutral-300 text-neutral-700 dark:text-white transition-colors"
+				class="hover:text-bluegray-500 dark:hover:text-bluegray-300 text-bluegray-700 dark:text-white transition-colors"
 			/>
 		</a>
 	</div>

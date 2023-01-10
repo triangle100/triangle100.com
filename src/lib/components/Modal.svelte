@@ -20,7 +20,7 @@
                 on:click={close}
             />
             <div
-                class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 m-0 bg-white dark:bg-neutral-800 drop-shadow-xl rounded-2xl px-8 py-6"
+                class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 m-0 bg-white dark:bg-bluegray-800 drop-shadow-xl rounded-2xl px-8 py-6"
             >
                 <slot />
             </div>

@@ -77,7 +77,7 @@
     </div>
     <div class="text-left mb-2">
         <h2>Preview</h2>
-        <div class="border border-black dark:border-neutral-700 rounded p-5">
+        <div class="border border-black dark:border--700 rounded p-5">
             <Blog {post} {loading} bind:title bind:content />
         </div>
     </div>

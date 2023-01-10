@@ -7,7 +7,7 @@ html {
 }
 
 body {
-    @apply bg-[#fafafa] dark:bg-neutral-900 text-[#303030] dark:text-neutral-200;
+    @apply bg-bluegray-50 dark:bg-bluegray-800 text-bluegray-700 dark:text-white;
 }
 
 h1 {
@@ -26,20 +26,12 @@ h4 {
     @apply text-xl;
 }
 
-h5 {
-    @apply text-lg;
-}
-
-h6 {
-    @apply text-base;
-}
-
 p {
-    @apply block my-4 dark:text-neutral-400;
+    @apply block my-4 dark:text-bluegray-200;
 }
 
 span {
-    @apply dark:text-neutral-400;
+    @apply dark:text-bluegray-200;
 }
 
 a,
@@ -53,7 +45,7 @@ a[target="_blank"]:not([data-noglyph])::after {
 
 ul,
 ol {
-    @apply list-outside pl-10 mb-2 dark:text-neutral-400;
+    @apply list-outside pl-10 mb-2 dark:text-bluegray-400;
 }
 
 ul {
@@ -65,15 +57,15 @@ ol {
 }
 
 button {
-    @apply border border-black dark:bg-neutral-800 dark:border-neutral-700 px-2 rounded bg-white hover:bg-gray-100 dark:hover:bg-neutral-700;
+    @apply border border-black dark:border-0 dark:bg-bluegray-700 px-2 rounded bg-white hover:bg-bluegray-100 dark:hover:bg-bluegray-600;
 }
 
 input {
-    @apply border border-black dark:bg-neutral-800 dark:border-neutral-700 rounded px-1;
+    @apply border border-black dark:bg-bluegray-700 dark:border-bluegray-700 rounded px-1;
 }
 
 textarea {
-    @apply border border-black dark:bg-neutral-800 dark:border-neutral-700 p-1 block rounded;
+    @apply border border-black dark:bg-bluegray-700 dark:border-bluegray-700 p-1 block rounded;
 }
 
 hr {
@@ -81,9 +73,9 @@ hr {
 }
 
 code {
-    @apply text-base rounded-md dark:text-neutral-300 bg-gray-200 dark:bg-neutral-800 px-1 py-0.5;
+    @apply text-base rounded-md dark:text-bluegray-300 bg-bluegray-200 dark:bg-bluegray-700 px-1 py-0.5;
 }
 
 table, th, td {
-    @apply dark:text-neutral-400 border-2 border-neutral-300 dark:border-neutral-700 px-2;
+    @apply dark:text-bluegray-400 border-2 border-bluegray-300 dark:border-bluegray-700 px-2;
 }

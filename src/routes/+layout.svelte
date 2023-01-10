@@ -71,7 +71,7 @@
 					type="text"
 					name="input"
 					placeholder="i.e. Twitter profile"
-					class="form-input block w-full py-2 px-3 rounded-md bg-neutral-100 text-neutral-800 font-bold"
+					class="form-input block w-full py-2 px-3 rounded-md bg-bluegray-100 font-bold"
 				/>
 				<button
 					type="submit"

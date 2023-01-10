@@ -16,7 +16,7 @@
 
 {#each posts as post}
     <div
-        class="flex justify-between lg:w-4/6 md:w-full mx-auto text-2xl rounded border dark:border-2 mb-2 p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:border-neutral-800 cursor-pointer"
+        class="flex justify-between lg:w-4/6 md:w-full mx-auto text-2xl rounded mb-2 p-2 hover:bg-bluegray-100 bg-bluegray-700 dark:hover:bg-bluegray-600 transition-colors cursor-pointer"
         on:click={() => goto(`blog/${post.id}`)}
     >
         <div class="min-w-0">

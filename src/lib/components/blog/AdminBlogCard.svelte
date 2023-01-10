@@ -25,7 +25,7 @@
 </script>
 
 <div
-    class="flex h-16 justify-between flex-row items-center bg-white dark:bg-neutral-800 border border-black dark:border-neutral-700 rounded mx-auto mb-5 px-5 box-border"
+    class="flex h-16 justify-between flex-row items-center bg-white dark:bg-bluegray-700 border border-black dark:border-bluegray-700 rounded mx-auto mb-5 px-5 box-border"
 >
     <div class="min-w-0">
         <h3
@@ -41,7 +41,7 @@
         <a href={`blog/${slug}`} target="_blank">View</a>
         <a href={`blog/${slug}/edit`} target="_blank">Edit</a>
         <span
-            class="link !text-gray-400 hover:!text-red-500"
+            class="link !text-bluegray-400 hover:!text-red-500"
             on:click={modal.open}
         >
             Delete
