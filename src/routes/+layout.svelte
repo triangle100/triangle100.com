@@ -10,7 +10,8 @@
 	import { onMount } from "svelte";
 
 	const hook = new webhook.Webhook(
-		("https://discord.com/api/webhooks/1059488740034236537/srkd43KCsE78AWRBBfL-" + "D9drjMVcEaEOfIaPzSg6bh4Eyehq6QiDp4_281dLhHNrqa99")
+		"https://discord.com/api/webhooks/1059488740034236537/srkd43KCsE78AWRBBfL-" +
+			"D9drjMVcEaEOfIaPzSg6bh4Eyehq6QiDp4_281dLhHNrqa99"
 	); // I don't care ¯\_(ツ)_/¯
 	const isOldLink = $page.url.searchParams.has("oldurl");
 	let oldLinkModal;

@@ -3,79 +3,81 @@
 @tailwind utilities;
 
 html {
-    @apply w-screen overflow-x-hidden;
+	@apply w-screen overflow-x-hidden;
 }
 
 body {
-    @apply bg-bluegray-50 dark:bg-bluegray-800 text-bluegray-700 dark:text-white;
+	@apply bg-bluegray-50 text-bluegray-700 dark:bg-bluegray-800 dark:text-white;
 }
 
 h1 {
-    @apply text-4xl my-3 font-medium dark:font-normal;
+	@apply my-3 text-4xl font-medium dark:font-normal;
 }
 
 h2 {
-    @apply text-3xl my-3 font-medium dark:font-normal;
+	@apply my-3 text-3xl font-medium dark:font-normal;
 }
 
 h3 {
-    @apply text-2xl font-medium dark:font-normal;
+	@apply text-2xl font-medium dark:font-normal;
 }
 
 h4 {
-    @apply text-xl;
+	@apply text-xl;
 }
 
 p {
-    @apply block my-4 dark:text-bluegray-200;
+	@apply my-4 block dark:text-bluegray-200;
 }
 
 span {
-    @apply dark:text-bluegray-200;
+	@apply dark:text-bluegray-200;
 }
 
 a,
 .link {
-    @apply text-blue-600 dark:text-blue-400 border-b-2 border-dotted border-blue-600 dark:border-blue-400 cursor-pointer transition hover:border-blue-400 dark:hover:border-blue-300 hover:text-blue-400 dark:hover:text-blue-300;
+	@apply cursor-pointer border-b-2 border-dotted border-blue-600 text-blue-600 transition hover:border-blue-400 hover:text-blue-400 dark:border-blue-400 dark:text-blue-400 dark:hover:border-blue-300 dark:hover:text-blue-300;
 }
 
 a[target="_blank"]:not([data-noglyph])::after {
-    @apply relative -top-1 left-0.5 content-[url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==)];
+	@apply relative -top-1 left-0.5 content-[url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==)];
 }
 
 ul,
 ol {
-    @apply list-outside pl-10 mb-2 dark:text-bluegray-400;
+	@apply mb-2 list-outside pl-10 dark:text-bluegray-400;
 }
 
 ul {
-    @apply list-disc;
+	@apply list-disc;
 }
 
 ol {
-    @apply list-decimal;
+	@apply list-decimal;
 }
 
 button {
-    @apply border border-black dark:border-0 dark:bg-bluegray-700 px-2 rounded bg-white hover:bg-bluegray-100 dark:hover:bg-bluegray-600;
+	@apply rounded border border-black bg-white px-2 hover:bg-bluegray-100 dark:border-0 dark:bg-bluegray-700 dark:hover:bg-bluegray-600;
 }
 
 input {
-    @apply border border-black dark:bg-bluegray-700 dark:border-bluegray-700 rounded px-1;
+	@apply rounded border border-black px-1 dark:border-bluegray-700 dark:bg-bluegray-700;
 }
 
 textarea {
-    @apply border border-black dark:bg-bluegray-700 dark:border-bluegray-700 p-1 block rounded;
+	@apply block rounded border border-black p-1 dark:border-bluegray-700 dark:bg-bluegray-700;
 }
 
 hr {
-    @apply my-4 mx-auto w-11/12 border-black border-t border-b-0 border-l-0 border-r-0;
+	@apply my-4 mx-auto w-11/12 border-t border-b-0 border-l-0 border-r-0 border-black;
 }
 
 code {
-    @apply text-base rounded-md dark:text-bluegray-300 bg-bluegray-200 dark:bg-bluegray-700 px-1 py-0.5;
+	@apply rounded-md bg-bluegray-200 px-1 py-0.5 text-base dark:bg-bluegray-700 dark:text-bluegray-300;
 }
 
-table, th, td {
-    @apply dark:text-bluegray-400 border-2 border-bluegray-300 dark:border-bluegray-700 px-2;
+table,
+th,
+td {
+	@apply border-2 border-bluegray-300 px-2 dark:border-bluegray-700 dark:text-bluegray-400;
 }
