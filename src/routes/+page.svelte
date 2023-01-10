@@ -14,7 +14,7 @@
 	Meanwhile, you can check out this project's tech stack below.
 </p>
 
-<button on:click={modal.open}>View tech stack</button>
+<button class="button" on:click={modal.open}>View tech stack</button>
 
 <Modal bind:this={modal}>
 	<div class="text-center">

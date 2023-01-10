@@ -53,6 +53,6 @@
 			Are you sure you want to delete this post?<br />
 			This cannot be undone.
 		</p>
-		<button on:click={() => deletePost(slug)}>Delete</button>
+		<button class="button" on:click={() => deletePost(slug)}>Delete</button>
 	</div>
 </Modal>

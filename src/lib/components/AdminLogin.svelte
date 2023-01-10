@@ -71,7 +71,8 @@
 		on:click={onSubmit}
 		action={submitting}
 		actionText="Working..."
-		buttonClass="block ml-auto"
-		>Sign In
+		buttonClass="button block ml-auto"
+	>
+		Sign In
 	</ActionButton>
 </div>

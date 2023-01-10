@@ -48,7 +48,7 @@
 
 {#if loggedIn}
 	<p>Welcome, <b>{$user.email}</b></p>
-	<button on:click={signOut}>Sign Out</button>
+	<button class="button" on:click={signOut}>Sign Out</button>
 
 	<div class="flex items-stretch [&>div]:flex-1 [&>div]:p-2">
 		{#if !expanded}

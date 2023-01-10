@@ -76,7 +76,7 @@
 				/>
 				<button
 					type="submit"
-					class="group absolute top-0 right-0 m-1.5 border-0 p-1 transition-colors hover:bg-green-500"
+					class="group absolute top-0 right-0 m-1.5 rounded-md border-0 p-1 transition-colors hover:bg-green-500"
 				>
 					<svg
 						fill="currentColor"

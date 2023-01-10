@@ -7,31 +7,27 @@ html {
 }
 
 body {
-	@apply bg-bluegray-50 text-lg text-bluegray-700 dark:bg-bluegray-800 dark:text-white;
+	@apply bg-bluegray-50 text-lg text-bluegray-700 dark:bg-bluegray-800 dark:text-bluegray-200;
 }
 
 h1 {
-	@apply my-3 text-4xl font-medium dark:font-normal;
+	@apply my-3 text-4xl font-medium dark:font-normal dark:text-white;
 }
 
 h2 {
-	@apply my-3 text-3xl font-medium dark:font-normal;
+	@apply my-3 text-3xl font-medium dark:font-normal dark:text-white;
 }
 
 h3 {
-	@apply text-2xl font-medium dark:font-normal;
+	@apply text-2xl font-medium dark:font-normal dark:text-white;
 }
 
 h4 {
-	@apply text-xl;
+	@apply text-xl dark:text-white;
 }
 
 p {
-	@apply my-4 block dark:text-bluegray-200;
-}
-
-span {
-	@apply dark:text-bluegray-200;
+	@apply my-4 block;
 }
 
 a,
@@ -56,12 +52,12 @@ ol {
 	@apply list-decimal;
 }
 
-button {
-	@apply rounded border border-black bg-white px-2 hover:bg-bluegray-100 dark:border-0 dark:bg-bluegray-700 dark:hover:bg-bluegray-600;
+.button {
+	@apply rounded border border-black bg-white px-2 py-1 text-base transition-colors hover:bg-bluegray-100 dark:border-0 dark:bg-bluegray-700 dark:hover:bg-bluegray-600;
 }
 
 input {
-	@apply rounded border border-black px-1 dark:border-bluegray-700 dark:bg-bluegray-700;
+	@apply rounded border border-black px-1 text-base dark:border-bluegray-700 dark:bg-bluegray-700;
 }
 
 textarea {
