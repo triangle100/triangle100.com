@@ -1,37 +1,39 @@
 <script>
-    import { user } from "$lib/stores/userStore";
-    import Icon from "svelte-awesome";
-    import github from "svelte-awesome/icons/github";
+	import NavbarButton from "$lib/components/NavbarButton.svelte";
+	import { user } from "$lib/stores/userStore";
+	import Icon from "svelte-awesome";
+	import github from "svelte-awesome/icons/github";
 
-    $: loggedIn = !!$user;
+	$: loggedIn = !!$user;
 </script>
 
-<nav
-    class="mh-12 py-4 mb-2 flex items-center border-b border-gray-300 dark:border-neutral-800"
->
-    <div class="w-12 mr-4 rounded-md bg-gray-200 dark:bg-neutral-800">
-        <a href="/" sveltekit:reload title="triangle100">
-            <img src="/favicon.png" alt="Site logo" />
-        </a>
-    </div>
-    <div class="cursor-default [&>*]:mr-2 [&>*]:border-none">
-        <a href="/">Home</a>
-        <a href="/projects">Projects</a>
-        <a href="/blog">Blog</a>
-        {#if loggedIn}
-            <a href="/admin">Console</a>
-        {/if}
-    </div>
-    <div class="ml-auto">
-        <a href="/contact" class="mr-2 border-none my-10">Contact</a>
-        <a
-            href="https://github.com/triangle100/triangle100-com"
-            target="_blank"
-            class="border-none leading-loose"
-            title="Source Code"
-            data-noglyph
-        >
-            <Icon data={github} scale={2} class="text-gray-800 hover:text-gray-700 dark:text-neutral-200 dark:hover:text-neutral-400 transition-colors" />
-        </a>
-    </div>
-</nav>
+<div class="py-8 mb-2 flex items-center border-neutral-300">
+	<div class="justify-start flex grow basis-0 [&>*]:text-neutral-500">
+		<NavbarButton to="/">triangle100</NavbarButton>
+	</div>
+	<nav class="flex gap-8 cursor-default">
+		<NavbarButton to="/">Home</NavbarButton>
+		<NavbarButton to="/projects">Projects</NavbarButton>
+		<NavbarButton to="/blog">Blog</NavbarButton>
+		<NavbarButton to="/contact">Contact</NavbarButton>
+		{#if loggedIn}
+			<NavbarButton to="/admin">Console</NavbarButton>
+		{/if}
+	</nav>
+	<div class="justify-end flex grow basis-0">
+		<a
+			href="https://github.com/triangle100/triangle100-com"
+			target="_blank"
+			rel="noreferrer"
+			class="border-none leading-loose"
+			title="Source Code"
+			data-noglyph
+		>
+			<Icon
+				data={github}
+				scale={2}
+				class="hover:text-neutral-500 dark:hover:text-neutral-300 text-neutral-700 dark:text-white transition-colors"
+			/>
+		</a>
+	</div>
+</div>
