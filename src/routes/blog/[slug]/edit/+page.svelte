@@ -68,16 +68,16 @@
 			<textarea
 				id="content"
 				placeholder="Content"
-				class="!px-2 !py-2 resize-y min-h-[24em]"
+				class="min-h-[24em] resize-y !px-2 !py-2"
 				disabled={loading}
 				bind:this={el.content}
 				on:input={updatePreview}
 			/>
 		</div>
 	</div>
-	<div class="text-left mb-2">
+	<div class="mb-2 text-left">
 		<h2>Preview</h2>
-		<div class="border border-black dark:border-bluegray-700 rounded p-5">
+		<div class="rounded border border-black p-5 dark:border-bluegray-700">
 			<Blog {post} {loading} bind:title bind:content />
 		</div>
 	</div>

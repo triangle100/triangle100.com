@@ -3,7 +3,7 @@
 </script>
 
 <svg
-	class="{style} animate-spin max-w-16 max-h-16 p-4 mx-auto"
+	class="{style} max-w-16 mx-auto max-h-16 animate-spin p-4"
 	xmlns="http://www.w3.org/2000/svg"
 	fill="none"
 	viewBox="0 0 24 24"

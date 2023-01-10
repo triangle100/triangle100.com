@@ -15,7 +15,7 @@
 {:else}
 	<h1 class="mb-0">{$page.status}</h1>
 	<h2 class="mt-0">{$page.error.message}</h2>
-	<div class="mx-auto mb-4 w-4/5 max-h-[50vh] overflow-y-auto text-left">
+	<div class="mx-auto mb-4 max-h-[50vh] w-4/5 overflow-y-auto text-left">
 		{#if $page.error.frame}
 			<pre>{$page.error.frame}</pre>
 		{/if}

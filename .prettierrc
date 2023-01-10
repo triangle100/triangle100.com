@@ -1,5 +1,4 @@
 {
 	"tabWidth": 4,
-	"useTabs": true,
-	"tailwindConfig": "./tailwind.config.cjs"
+	"useTabs": true
 }

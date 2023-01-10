@@ -25,15 +25,15 @@
 </script>
 
 <div
-	class="flex h-16 justify-between flex-row items-center bg-white dark:bg-bluegray-700 border border-black dark:border-bluegray-700 rounded mx-auto mb-5 px-5 box-border"
+	class="mx-auto mb-5 box-border flex h-16 flex-row items-center justify-between rounded border border-black bg-white px-5 dark:border-bluegray-700 dark:bg-bluegray-700"
 >
 	<div class="min-w-0">
-		<h3 use:tippy={props} class="truncate select-none">
+		<h3 use:tippy={props} class="select-none truncate">
 			{title}
 		</h3>
 	</div>
 	<div
-		class="min-w-fit [&>*]:ml-3 [&>*]:border-none select-none [&>*]:select-auto"
+		class="min-w-fit select-none [&>*]:ml-3 [&>*]:select-auto [&>*]:border-none"
 	>
 		<a href={`blog/${slug}`} target="_blank" rel="noreferrer">View</a>
 		<a href={`blog/${slug}/edit`} target="_blank" rel="noreferrer">Edit</a>

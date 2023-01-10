@@ -50,7 +50,7 @@
 	<p>Welcome, <b>{$user.email}</b></p>
 	<button on:click={signOut}>Sign Out</button>
 
-	<div class="flex [&>div]:flex-1 [&>div]:p-2 items-stretch">
+	<div class="flex items-stretch [&>div]:flex-1 [&>div]:p-2">
 		{#if !expanded}
 			<div>
 				<h2>Blog posts</h2>
@@ -60,7 +60,7 @@
 		<div class="relative">
 			<button
 				on:click={toggleExpand}
-				class="absolute top-0 right-0 w-8 h-8 flex justify-center items-center cursor-pointer select-none"
+				class="absolute top-0 right-0 flex h-8 w-8 cursor-pointer select-none items-center justify-center"
 			>
 				<Icon data={expanded ? compress : expand} />
 			</button>
@@ -75,7 +75,7 @@
 				<textarea
 					id="content"
 					placeholder="Content"
-					class="!px-2 !py-2 resize-y min-h-[16em]"
+					class="min-h-[16em] resize-y !px-2 !py-2"
 					bind:this={el.content}
 					on:input={updatePreview}
 				/>
@@ -83,7 +83,7 @@
 			<div class="text-left">
 				<h4 class="mt-6 mb-2">Preview</h4>
 				<div
-					class="!mb-2 px-2 min-h-[8em] border border-black bg-white dark:bg-bluegray-700 dark:border-bluegray-700 rounded"
+					class="!mb-2 min-h-[8em] rounded border border-black bg-white px-2 dark:border-bluegray-700 dark:bg-bluegray-700"
 				>
 					<Markdown raw={preview} />
 				</div>

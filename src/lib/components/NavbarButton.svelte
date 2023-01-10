@@ -4,7 +4,7 @@
 
 <a
 	href={to}
-	class="border-none font-bold text-bluegray-700 dark:text-white hover:text-bluegray-500 dark:hover:text-bluegray-300"
+	class="border-none font-bold text-bluegray-700 hover:text-bluegray-500 dark:text-white dark:hover:text-bluegray-300"
 >
 	<slot />
 </a>

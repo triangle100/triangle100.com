@@ -30,5 +30,8 @@
 		"vite": "^4.0.4",
 		"webhook-discord": "^3.7.8"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"prettier-plugin-svelte": "^2.9.0"
+	}
 }

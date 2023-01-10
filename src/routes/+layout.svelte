@@ -47,7 +47,7 @@
 <SEO />
 
 <main
-	class="relative text-center lg:w-[60vw] md:w-[95vw] min-h-screen mx-auto flex flex-col"
+	class="relative mx-auto flex min-h-screen flex-col text-center md:w-[95vw] lg:w-[60vw]"
 >
 	<Navbar />
 	<div>
@@ -56,9 +56,9 @@
 </main>
 
 <Modal bind:this={oldLinkModal}>
-	<div class="text-center w-80 py-2 flex flex-col gap-6">
+	<div class="flex w-80 flex-col gap-6 py-2 text-center">
 		<div class="flex flex-col gap-3">
-			<h2 class="text-yellow-300 font-bold m-0">
+			<h2 class="m-0 font-bold text-yellow-300">
 				You found an outdated link!
 			</h2>
 			<span>
@@ -67,21 +67,21 @@
 			</span>
 		</div>
 		<form on:submit|preventDefault={handleSubmit}>
-			<div class="relative rounded-md flex h-10">
+			<div class="relative flex h-10 rounded-md">
 				<input
 					type="text"
 					name="input"
 					placeholder="i.e. Twitter profile"
-					class="form-input block w-full py-2 px-3 rounded-md bg-bluegray-100 font-bold"
+					class="form-input block w-full rounded-md bg-bluegray-100 py-2 px-3 font-bold"
 				/>
 				<button
 					type="submit"
-					class="absolute top-0 right-0 m-1.5 p-1 border-0 hover:bg-green-500 group transition-colors"
+					class="group absolute top-0 right-0 m-1.5 border-0 p-1 transition-colors hover:bg-green-500"
 				>
 					<svg
 						fill="currentColor"
 						viewBox="0 0 20 20"
-						class="w-5 h-5 text-green-500 group-hover:text-white transition-colors"
+						class="h-5 w-5 text-green-500 transition-colors group-hover:text-white"
 					>
 						<path
 							d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM6.7 9.29L9 11.6l4.3-4.3 1.4 1.42L9 14.4l-3.7-3.7 1.4-1.42z"

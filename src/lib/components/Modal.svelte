@@ -13,14 +13,14 @@
 </script>
 
 {#if state}
-	<div class="fixed z-40 top-0 left-0 w-screen h-screen">
+	<div class="fixed top-0 left-0 z-40 h-screen w-screen">
 		<div transition:fade={{ duration: 300 }}>
 			<div
-				class="w-screen h-screen bg-black bg-opacity-20"
+				class="h-screen w-screen bg-black bg-opacity-20"
 				on:mousedown={close}
 			/>
 			<div
-				class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 m-0 bg-white dark:bg-bluegray-800 drop-shadow-xl rounded-2xl px-8 py-6"
+				class="fixed top-1/2 left-1/2 m-0 -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-white px-8 py-6 drop-shadow-xl dark:bg-bluegray-800"
 			>
 				<slot />
 			</div>

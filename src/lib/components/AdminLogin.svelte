@@ -45,7 +45,7 @@
 </script>
 
 <div class="mx-auto w-96">
-	<div class="flex mb-2 text-left items-center justify-between">
+	<div class="mb-2 flex items-center justify-between text-left">
 		<label for="email">Email</label>
 		<input
 			type="email"
@@ -56,7 +56,7 @@
 			on:change={handleChange}
 		/>
 	</div>
-	<div class="flex mb-2 text-left items-center justify-between">
+	<div class="mb-2 flex items-center justify-between text-left">
 		<label for="password">Password</label>
 		<input
 			type="password"

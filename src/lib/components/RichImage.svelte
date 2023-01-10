@@ -27,5 +27,5 @@
 {:else if loading}
 	<Loading style="!p-2" />
 {:else}
-	<img class="max-w-full max-h-full" {src} {alt} />
+	<img class="max-h-full max-w-full" {src} {alt} />
 {/if}

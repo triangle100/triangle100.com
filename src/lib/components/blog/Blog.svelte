@@ -20,7 +20,7 @@
 	<Loading />
 {:else if post.data}
 	<div class="text-left">
-		<div class="[&>*]:inline-block mt-4 mb-8">
+		<div class="mt-4 mb-8 [&>*]:inline-block">
 			<h1 class="my-0">{title}</h1>
 			<span class="ml-1">by <b>{post.data.author}</b></span>
 		</div>

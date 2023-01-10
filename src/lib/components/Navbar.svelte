@@ -7,11 +7,11 @@
 	$: loggedIn = !!$user;
 </script>
 
-<div class="py-8 mb-2 flex items-center border-bluegray-300">
-	<div class="justify-start flex grow basis-0 [&>*]:text-bluegray-500">
+<div class="mb-2 flex items-center border-bluegray-300 py-8">
+	<div class="flex grow basis-0 justify-start [&>*]:text-bluegray-500">
 		<NavbarButton to="/">triangle100</NavbarButton>
 	</div>
-	<nav class="flex gap-8 cursor-default">
+	<nav class="flex cursor-default gap-8">
 		<NavbarButton to="/">Home</NavbarButton>
 		<NavbarButton to="/projects">Projects</NavbarButton>
 		<NavbarButton to="/blog">Blog</NavbarButton>
@@ -20,7 +20,7 @@
 			<NavbarButton to="/admin">Console</NavbarButton>
 		{/if}
 	</nav>
-	<div class="justify-end flex grow basis-0">
+	<div class="flex grow basis-0 justify-end">
 		<a
 			href="https://github.com/triangle100/triangle100-com"
 			target="_blank"
@@ -32,7 +32,7 @@
 			<Icon
 				data={github}
 				scale={2}
-				class="hover:text-bluegray-500 dark:hover:text-bluegray-300 text-bluegray-700 dark:text-white transition-colors"
+				class="text-bluegray-700 transition-colors hover:text-bluegray-500 dark:text-white dark:hover:text-bluegray-300"
 			/>
 		</a>
 	</div>
