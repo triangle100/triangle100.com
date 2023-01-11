@@ -47,7 +47,7 @@
 <SEO />
 
 <main
-	class="relative mx-auto flex min-h-screen flex-col text-center md:w-[95vw] lg:w-[60vw]"
+	class="relative mx-auto flex min-h-screen flex-col text-center max-w-[1150px] px-10"
 >
 	<Navbar />
 	<div>
