@@ -23,7 +23,7 @@
 
 <div use:tippy={props}>
 	<button
-		class="button relative inline-flex h-16 w-16 items-center justify-center border-none bg-bluegray-100 !p-3 !transition duration-300 ease-in-out hover:scale-110 hover:bg-bluegray-200 dark:bg-bluegray-700 dark:hover:bg-bluegray-600"
+		class="rounded relative inline-flex h-16 w-16 items-center justify-center border-none bg-bluegray-100 !p-3 !transition duration-300 ease-in-out hover:scale-110 hover:bg-bluegray-200 dark:bg-bluegray-700 dark:hover:bg-bluegray-600"
 		on:click={openLink}
 	>
 		<Icon

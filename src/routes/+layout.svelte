@@ -58,7 +58,7 @@
 <Modal bind:this={oldLinkModal}>
 	<div class="flex w-80 flex-col gap-6 py-2 text-center">
 		<div class="flex flex-col gap-3">
-			<h2 class="m-0 font-bold text-yellow-300">
+			<h2 class="m-0 font-bold text-violet-500">
 				You found an outdated link!
 			</h2>
 			<span>
