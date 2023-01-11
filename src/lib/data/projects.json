@@ -1,0 +1,44 @@
+[
+	{
+		"title": "Advent of Code",
+		"repo": {
+			"name": "zaneshaw/AdventofCode",
+			"generateMeta": true
+		}
+	},
+	{
+		"title": "SIMG to PNG",
+		"repo": {
+			"name": "zaneshaw/SIMG2PNG",
+			"generateMeta": true
+		}
+	},
+	{
+		"title": "Stat Panel",
+		"repo": {
+			"name": "zaneshaw/stat-panel",
+			"generateMeta": true
+		}
+	},
+	{
+		"title": "King of the Hill",
+		"repo": {
+			"name": "zaneshaw/koth",
+			"generateMeta": true
+		}
+	},
+	{
+		"title": "PostureMinder Plus",
+		"repo": {
+			"name": "zaneshaw/PostureMinderPlus",
+			"generateMeta": true
+		}
+	},
+	{
+		"title": "Task Tracker",
+		"repo": {
+			"name": "zaneshaw/TaskTracker",
+			"generateMeta": true
+		}
+	}
+]

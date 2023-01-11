@@ -1,42 +1,46 @@
 <script>
-    import { onMount } from "svelte";
-    import { goto } from "$app/navigation";
-    import { getPosts } from "$lib/services/firebase/db";
-    import Loading from "$lib/components/Loading.svelte";
-    import { DateTime } from "luxon";
+	import { onMount } from "svelte";
+	import { goto } from "$app/navigation";
+	import { getPosts } from "$lib/services/firebase/db";
+	import Loading from "$lib/components/Loading.svelte";
+	import { DateTime } from "luxon";
 
-    let posts = [];
-    let loading = true;
+	let posts = [];
+	let loading = true;
 
-    onMount(async () => {
-        posts = await getPosts();
-        loading = false;
-    });
+	onMount(async () => {
+		posts = await getPosts();
+		loading = false;
+	});
 </script>
 
-{#each posts as post}
-    <div
-        class="flex justify-between lg:w-4/6 md:w-full mx-auto text-2xl rounded border dark:border-2 mb-2 p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:border-neutral-800 cursor-pointer"
-        on:click={() => goto(`blog/${post.id}`)}
-    >
-        <div class="min-w-0">
-            <span class="truncate max-w-[200px]">{post.data.title}</span>
-            <span class="text-base">by {post.data.author}</span>
-        </div>
-        <div
-            class="min-w-fit [&>*]:ml-3 [&>*]:border-none select-none [&>*]:select-auto"
-        >
-            <span>
-                {DateTime.fromSeconds(
-                    post.data.createdAt.seconds
-                ).toRelativeCalendar()}
-            </span>
-        </div>
-    </div>
+{#if loading}
+	<Loading />
 {:else}
-    {#if loading}
-        <Loading />
-    {:else}
-        <h4>No blog posts</h4>
-    {/if}
-{/each}
+	<div
+		class="mx-auto flex flex-col gap-[1px] bg-bluegray-200 dark:bg-bluegray-700 md:w-full lg:w-4/6"
+	>
+		{#each posts as post}
+			<button
+				class="flex w-full cursor-pointer items-center gap-4 bg-bluegray-50 p-3 transition-colors hover:bg-bluegray-100 dark:bg-bluegray-800 dark:hover:bg-bluegray-700"
+				on:click={() => goto(`blog/${post.id}`)}
+			>
+				<span class="dim shrink-0 text-sm">
+					{DateTime.fromSeconds(
+						post.data.createdAt.seconds
+					).toRelativeCalendar()}
+				</span>
+				<span class="truncate">
+					{post.data.title}
+				</span>
+				<span
+					class="dim ml-auto min-w-fit select-none items-center text-sm [&>*]:select-auto"
+				>
+					{post.data.author}
+				</span>
+			</button>
+		{:else}
+			<h4>No blog posts</h4>
+		{/each}
+	</div>
+{/if}

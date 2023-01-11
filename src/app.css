@@ -3,87 +3,77 @@
 @tailwind utilities;
 
 html {
-    @apply w-screen overflow-x-hidden;
+	@apply w-screen overflow-x-hidden;
 }
 
 body {
-    @apply bg-[#fafafa] dark:bg-neutral-900 text-[#303030] dark:text-neutral-200;
+	@apply bg-bluegray-50 text-lg text-bluegray-700 dark:bg-bluegray-800 dark:text-bluegray-200;
 }
 
 h1 {
-    @apply text-4xl my-3 font-medium dark:font-normal;
+	@apply my-3 text-4xl font-bold dark:text-white;
 }
 
 h2 {
-    @apply text-3xl my-3 font-medium dark:font-normal;
+	@apply my-3 text-3xl font-medium dark:font-normal dark:text-white;
 }
 
 h3 {
-    @apply text-2xl font-medium dark:font-normal;
+	@apply text-2xl font-medium dark:font-normal dark:text-white;
 }
 
 h4 {
-    @apply text-xl;
-}
-
-h5 {
-    @apply text-lg;
-}
-
-h6 {
-    @apply text-base;
+	@apply text-xl dark:text-white;
 }
 
 p {
-    @apply block my-4 dark:text-neutral-400;
-}
-
-span {
-    @apply dark:text-neutral-400;
+	@apply my-4 block;
 }
 
 a,
 .link {
-    @apply text-blue-600 dark:text-blue-400 border-b-2 border-dotted border-blue-600 dark:border-blue-400 cursor-pointer transition hover:border-blue-400 dark:hover:border-blue-300 hover:text-blue-400 dark:hover:text-blue-300;
-}
-
-a[target="_blank"]:not([data-noglyph])::after {
-    @apply relative -top-1 left-0.5 content-[url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==)];
+	@apply cursor-pointer border-b border-violet-600 text-violet-600 transition hover:border-violet-400 hover:text-violet-400 dark:border-violet-500 dark:text-violet-500;
 }
 
 ul,
 ol {
-    @apply list-outside pl-10 mb-2 dark:text-neutral-400;
+	@apply mb-2 list-outside pl-10 dark:text-bluegray-400;
 }
 
 ul {
-    @apply list-disc;
+	@apply list-disc;
 }
 
 ol {
-    @apply list-decimal;
-}
-
-button {
-    @apply border border-black dark:bg-neutral-800 dark:border-neutral-700 px-2 rounded bg-white hover:bg-gray-100 dark:hover:bg-neutral-700;
+	@apply list-decimal;
 }
 
 input {
-    @apply border border-black dark:bg-neutral-800 dark:border-neutral-700 rounded px-1;
+	@apply border-thin rounded px-1 text-base dark:bg-bluegray-700;
 }
 
 textarea {
-    @apply border border-black dark:bg-neutral-800 dark:border-neutral-700 p-1 block rounded;
-}
-
-hr {
-    @apply my-4 mx-auto w-11/12 border-black border-t border-b-0 border-l-0 border-r-0;
+	@apply border-thin block rounded p-1 text-base dark:bg-bluegray-700;
 }
 
 code {
-    @apply text-base rounded-md dark:text-neutral-300 bg-gray-200 dark:bg-neutral-800 px-1 py-0.5;
+	@apply rounded-md bg-bluegray-200 px-1 py-0.5 text-base dark:bg-bluegray-700 dark:text-bluegray-300;
 }
 
-table, th, td {
-    @apply dark:text-neutral-400 border-2 border-neutral-300 dark:border-neutral-700 px-2;
+table,
+th,
+td {
+	@apply border-thin px-2 dark:text-bluegray-400;
+}
+
+.button {
+	@apply border-thin inline-flex items-center gap-1 rounded bg-white px-2 py-1 text-base transition-colors hover:bg-bluegray-100 dark:border-0 dark:bg-bluegray-700 dark:hover:bg-bluegray-600;
+}
+
+.dim {
+	@apply text-bluegray-500 dark:text-bluegray-400;
+}
+
+.border-thin {
+	@apply border border-bluegray-400 dark:border-bluegray-700;
 }

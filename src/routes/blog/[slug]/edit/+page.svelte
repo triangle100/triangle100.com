@@ -1,91 +1,96 @@
 <script>
-    import { page } from "$app/stores";
-    import { goto } from "$app/navigation";
-    import { user } from "$lib/stores/userStore";
-    import { onMount } from "svelte";
-    import { getPost, editPost } from "$lib/services/firebase/db";
-    import SEO from "$lib/components/SEO.svelte";
-    import Blog from "$lib/components/blog/Blog.svelte";
-    import ActionButton from "$lib/components/ActionButton.svelte";
+	import { page } from "$app/stores";
+	import { goto } from "$app/navigation";
+	import { user } from "$lib/stores/userStore";
+	import { onMount } from "svelte";
+	import { getPost, editPost } from "$lib/services/firebase/db";
+	import SEO from "$lib/components/SEO.svelte";
+	import Blog from "$lib/components/blog/Blog.svelte";
+	import ActionButton from "$lib/components/ActionButton.svelte";
 
-    let post;
-    let posting;
-    let loading = true;
-    let title = "Loading...";
-    let _title;
-    let content;
-    let el = {};
-    $: loggedIn = !!$user;
+	let post;
+	let posting;
+	let loading = true;
+	let title = "Loading...";
+	let _title;
+	let content;
+	let el = {};
+	$: loggedIn = !!$user;
 
-    onMount(async () => {
-        if (!loading && !loggedIn) {
-            goto("/admin");
-        }
+	onMount(async () => {
+		if (!loading && !loggedIn) {
+			goto("/admin");
+		}
 
-        post = await getPost($page.params.slug);
+		post = await getPost($page.params.slug);
 
-        loading = false;
+		loading = false;
 
-        _title = post.data.title;
-        el.title.value = post.data.title;
-        el.content.value = post.data.content;
-    });
+		_title = post.data.title;
+		el.title.value = post.data.title;
+		el.content.value = post.data.content;
+	});
 
-    function updatePreview() {
-        title = el.title.value;
-        content = el.content.value;
-    }
+	function updatePreview() {
+		title = el.title.value;
+		content = el.content.value;
+	}
 
-    function handleSubmit() {
-        posting = true;
+	function handleSubmit() {
+		posting = true;
 
-        editPost($page.params.slug, title, content)
-            .then((res) => {
-                const path = $page.url.pathname;
+		editPost($page.params.slug, title, content)
+			.then((res) => {
+				const path = $page.url.pathname;
 
-                goto(path.substring(0, path.lastIndexOf("/")));
-            })
-            .finally(() => {
-                posting = false;
-            });
-    }
+				goto(path.substring(0, path.lastIndexOf("/")));
+			})
+			.finally(() => {
+				posting = false;
+			});
+	}
 </script>
 
 <SEO title="Editor - {title}" desc="Blog edtior" />
 
 {#if loggedIn}
-    <h1>{loading ? "Loading..." : `Editing ${_title}`}</h1>
-    <div class="text-left">
-        <div class="[&>*]:w-full">
-            <input
-                id="title"
-                placeholder="Title"
-                class="mb-1 !p-2"
-                disabled={loading}
-                bind:this={el.title}
-                on:input={updatePreview}
-            />
-            <textarea
-                id="content"
-                placeholder="Content"
-                class="!px-2 !py-2 resize-y min-h-[24em]"
-                disabled={loading}
-                bind:this={el.content}
-                on:input={updatePreview}
-            />
-        </div>
-    </div>
-    <div class="text-left mb-2">
-        <h2>Preview</h2>
-        <div class="border border-black dark:border-neutral-700 rounded p-5">
-            <Blog {post} {loading} bind:title bind:content />
-        </div>
-    </div>
-    <ActionButton
-        on:click={handleSubmit}
-        action={posting}
-        actionText="Posting..."
-        buttonClass="float-right"
-        >Post
-    </ActionButton>
+	<div class="flex justify-center">
+		<div class="!mx-5 max-w-[600px]">
+			<h1>{loading ? "Loading..." : `Editing '${_title}'`}</h1>
+			<div class="text-left">
+				<div class="[&>*]:w-full">
+					<input
+						id="title"
+						placeholder="Title"
+						class="mb-1 !p-2"
+						disabled={loading}
+						bind:this={el.title}
+						on:input={updatePreview}
+					/>
+					<textarea
+						id="content"
+						placeholder="Content"
+						class="min-h-[24em] resize-y !px-2 !py-2"
+						disabled={loading}
+						bind:this={el.content}
+						on:input={updatePreview}
+					/>
+				</div>
+			</div>
+			<div class="mb-2">
+				<h2>Preview</h2>
+				<div class="border-thin rounded p-5">
+					<Blog {post} {loading} bind:title bind:content />
+				</div>
+			</div>
+			<div class="float-right">
+				<ActionButton
+					on:click={handleSubmit}
+					action={posting}
+					actionText="Posting..."
+					>Post
+				</ActionButton>
+			</div>
+		</div>
+	</div>
 {/if}
