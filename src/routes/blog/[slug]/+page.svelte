@@ -25,7 +25,7 @@
 />
 
 <div class="flex justify-center">
-	<div class="lg:w-full xl:w-4/6">
+	<div class="w-[600px] px-5">
 		<Blog {post} {loading} bind:title bind:content />
 	</div>
 </div>

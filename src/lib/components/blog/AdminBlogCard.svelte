@@ -25,7 +25,7 @@
 </script>
 
 <div
-	class="mx-auto mb-5 box-border flex h-16 flex-row items-center justify-between rounded border border-black bg-white px-5 dark:border-bluegray-700 dark:bg-bluegray-700"
+	class="border-thin mx-auto mb-5 box-border flex h-16 flex-row items-center justify-between rounded bg-white px-5 dark:bg-bluegray-700"
 >
 	<div class="min-w-0">
 		<h3 use:tippy={props} class="select-none truncate">

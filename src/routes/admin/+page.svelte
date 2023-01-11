@@ -83,7 +83,7 @@
 			<div class="text-left">
 				<h4 class="mt-6 mb-2">Preview</h4>
 				<div
-					class="!mb-2 min-h-[8em] rounded border border-black bg-white px-2 dark:border-bluegray-700 dark:bg-bluegray-700"
+					class="border-thin !mb-2 min-h-[8em] rounded bg-white px-2 dark:bg-bluegray-700"
 				>
 					<Markdown raw={preview} />
 				</div>

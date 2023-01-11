@@ -32,7 +32,7 @@
 			<span>{post.data.author}</span>
 		</div>
 	</div>
-	<div class="mx-auto w-[600px] text-left">
+	<div class="mx-auto text-left">
 		<Markdown raw={content} />
 	</div>
 {:else}

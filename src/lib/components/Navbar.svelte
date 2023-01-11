@@ -7,7 +7,7 @@
 	$: loggedIn = !!$user;
 </script>
 
-<div class="mb-2 flex items-center border-bluegray-300 py-8 [&>*]:text-base">
+<div class="mb-2 flex items-center py-8 [&>*]:text-base">
 	<div class="flex grow basis-0 justify-start [&>*]:text-bluegray-500">
 		<NavbarButton to="/">triangle100</NavbarButton>
 	</div>

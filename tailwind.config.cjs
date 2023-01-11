@@ -19,7 +19,7 @@ const config = {
 		},
 	},
 	plugins: [],
-	darkMode: "media",
+	darkMode: "class",
 };
 
 module.exports = config;
