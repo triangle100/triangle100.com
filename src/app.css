@@ -11,7 +11,7 @@ body {
 }
 
 h1 {
-	@apply my-3 text-4xl font-medium dark:font-normal dark:text-white;
+	@apply my-3 text-4xl font-bold dark:text-white;
 }
 
 h2 {

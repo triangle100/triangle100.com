@@ -21,7 +21,7 @@
 	<Loading />
 {:else if post.data}
 	<div class="mt-4 mb-8 flex flex-col">
-		<h1 class="my-0 font-bold">{title}</h1>
+		<h1 class="my-0">{title}</h1>
 		<div class="flex justify-center gap-2 text-bluegray-400">
 			<span>
 				{DateTime.fromSeconds(post.data.createdAt.seconds).toFormat(
