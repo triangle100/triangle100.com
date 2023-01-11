@@ -54,39 +54,43 @@
 <SEO title="Editor - {title}" desc="Blog edtior" />
 
 {#if loggedIn}
-	<h1>{loading ? "Loading..." : `Editing ${_title}`}</h1>
-	<div class="text-left">
-		<div class="[&>*]:w-full">
-			<input
-				id="title"
-				placeholder="Title"
-				class="mb-1 !p-2"
-				disabled={loading}
-				bind:this={el.title}
-				on:input={updatePreview}
-			/>
-			<textarea
-				id="content"
-				placeholder="Content"
-				class="min-h-[24em] resize-y !px-2 !py-2"
-				disabled={loading}
-				bind:this={el.content}
-				on:input={updatePreview}
-			/>
+	<div class="flex justify-center">
+		<div class="!mx-5 max-w-[600px]">
+			<h1>{loading ? "Loading..." : `Editing '${_title}'`}</h1>
+			<div class="text-left">
+				<div class="[&>*]:w-full">
+					<input
+						id="title"
+						placeholder="Title"
+						class="mb-1 !p-2"
+						disabled={loading}
+						bind:this={el.title}
+						on:input={updatePreview}
+					/>
+					<textarea
+						id="content"
+						placeholder="Content"
+						class="min-h-[24em] resize-y !px-2 !py-2"
+						disabled={loading}
+						bind:this={el.content}
+						on:input={updatePreview}
+					/>
+				</div>
+			</div>
+			<div class="mb-2">
+				<h2>Preview</h2>
+				<div class="border-thin rounded p-5">
+					<Blog {post} {loading} bind:title bind:content />
+				</div>
+			</div>
+			<div class="float-right">
+				<ActionButton
+					on:click={handleSubmit}
+					action={posting}
+					actionText="Posting..."
+					>Post
+				</ActionButton>
+			</div>
 		</div>
-	</div>
-	<div class="mb-2 text-left">
-		<h2>Preview</h2>
-		<div class="rounded border border-black p-5 dark:border-bluegray-700">
-			<Blog {post} {loading} bind:title bind:content />
-		</div>
-	</div>
-	<div class="float-right">
-		<ActionButton
-			on:click={handleSubmit}
-			action={posting}
-			actionText="Posting..."
-			>Post
-		</ActionButton>
 	</div>
 {/if}
