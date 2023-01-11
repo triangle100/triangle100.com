@@ -48,10 +48,6 @@ ol {
 	@apply list-decimal;
 }
 
-.button {
-	@apply inline-flex items-center gap-1 rounded border border-black bg-white px-2 py-1 text-base transition-colors hover:bg-bluegray-100 dark:border-0 dark:bg-bluegray-700 dark:hover:bg-bluegray-600;
-}
-
 input {
 	@apply rounded border border-black px-1 text-base dark:border-bluegray-700 dark:bg-bluegray-700;
 }
@@ -68,4 +64,12 @@ table,
 th,
 td {
 	@apply border-2 border-bluegray-300 px-2 dark:border-bluegray-700 dark:text-bluegray-400;
+}
+
+.button {
+	@apply inline-flex items-center gap-1 rounded border border-black bg-white px-2 py-1 text-base transition-colors hover:bg-bluegray-100 dark:border-0 dark:bg-bluegray-700 dark:hover:bg-bluegray-600;
+}
+
+.dim {
+	@apply text-bluegray-500 dark:text-bluegray-400;
 }

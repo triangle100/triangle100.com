@@ -18,14 +18,14 @@
 	<Loading />
 {:else}
 	<div
-		class="mx-auto flex flex-col gap-[1px] bg-bluegray-700 md:w-full lg:w-4/6"
+		class="mx-auto flex flex-col gap-[1px] bg-bluegray-200 dark:bg-bluegray-700 md:w-full lg:w-4/6"
 	>
 		{#each posts as post}
 			<button
-				class="flex w-full cursor-pointer items-center gap-4 bg-bluegray-800 p-3 transition-colors hover:bg-bluegray-100 dark:hover:bg-bluegray-700"
+				class="flex w-full cursor-pointer items-center gap-4 bg-bluegray-50 p-3 transition-colors hover:bg-bluegray-100 dark:bg-bluegray-800 dark:hover:bg-bluegray-700"
 				on:click={() => goto(`blog/${post.id}`)}
 			>
-				<span class="text-sm text-bluegray-400 shrink-0">
+				<span class="dim shrink-0 text-sm">
 					{DateTime.fromSeconds(
 						post.data.createdAt.seconds
 					).toRelativeCalendar()}
@@ -34,7 +34,7 @@
 					{post.data.title}
 				</span>
 				<span
-					class="min-w-fit select-none items-center text-sm text-bluegray-400 [&>*]:select-auto ml-auto"
+					class="dim ml-auto min-w-fit select-none items-center text-sm [&>*]:select-auto"
 				>
 					{post.data.author}
 				</span>

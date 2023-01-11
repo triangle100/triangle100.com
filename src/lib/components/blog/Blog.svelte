@@ -22,7 +22,7 @@
 {:else if post.data}
 	<div class="mt-4 mb-8 flex flex-col">
 		<h1 class="my-0">{title}</h1>
-		<div class="flex justify-center gap-2 text-bluegray-400">
+		<div class="dim flex justify-center gap-2">
 			<span>
 				{DateTime.fromSeconds(post.data.createdAt.seconds).toFormat(
 					"DDD"
@@ -32,7 +32,7 @@
 			<span>{post.data.author}</span>
 		</div>
 	</div>
-	<div class="text-left w-[600px] mx-auto">
+	<div class="mx-auto w-[600px] text-left">
 		<Markdown raw={content} />
 	</div>
 {:else}
