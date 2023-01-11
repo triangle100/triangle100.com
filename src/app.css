@@ -61,7 +61,7 @@ input {
 }
 
 textarea {
-	@apply block rounded border border-black p-1 dark:border-bluegray-700 dark:bg-bluegray-700;
+	@apply block rounded border border-black p-1 text-base dark:border-bluegray-700 dark:bg-bluegray-700;
 }
 
 hr {
