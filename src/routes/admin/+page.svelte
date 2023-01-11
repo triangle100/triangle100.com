@@ -88,13 +88,14 @@
 					<Markdown raw={preview} />
 				</div>
 			</div>
-			<ActionButton
-				on:click={handleSubmit}
-				action={posting}
-				actionText="Posting..."
-				buttonClass="float-right"
-				>Post
-			</ActionButton>
+			<div class="float-right">
+				<ActionButton
+					on:click={handleSubmit}
+					action={posting}
+					actionText="Posting..."
+					>Post
+				</ActionButton>
+			</div>
 		</div>
 	</div>
 {:else}

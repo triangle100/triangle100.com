@@ -81,11 +81,12 @@
 			<Blog {post} {loading} bind:title bind:content />
 		</div>
 	</div>
-	<ActionButton
-		on:click={handleSubmit}
-		action={posting}
-		actionText="Posting..."
-		buttonClass="float-right"
-		>Post
-	</ActionButton>
+	<div class="float-right">
+		<ActionButton
+			on:click={handleSubmit}
+			action={posting}
+			actionText="Posting..."
+			>Post
+		</ActionButton>
+	</div>
 {/if}

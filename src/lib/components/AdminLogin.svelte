@@ -67,12 +67,13 @@
 			on:change={handleChange}
 		/>
 	</div>
-	<ActionButton
-		on:click={onSubmit}
-		action={submitting}
-		actionText="Working..."
-		buttonClass="button block ml-auto"
-	>
-		Sign In
-	</ActionButton>
+	<div class="float-right">
+		<ActionButton
+			on:click={onSubmit}
+			action={submitting}
+			actionText="Working..."
+		>
+			Sign In
+		</ActionButton>
+	</div>
 </div>
