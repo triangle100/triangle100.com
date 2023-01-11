@@ -10,7 +10,7 @@
 	<h3>Sorry, I couldn't find the page you requested.</h3>
 	<p>
 		Check your spelling and try again. If you believe something is supposed
-		to be here, you can <a href="/contact" target="_blank">contact</a> me.
+		to be here, you can <a href="/contact">contact</a> me.
 	</p>
 {:else}
 	<h1 class="mb-0">{$page.status}</h1>
@@ -24,10 +24,9 @@
 		{/if}
 	</div>
 	<p>
-		If you believe this error is my fault, you can <a
-			href="/contact"
-			target="_blank">contact</a
-		> me.
+		If you believe this error is my fault, you can
+		<a href="/contact">contact</a>
+		me.
 	</p>
 {/if}
 

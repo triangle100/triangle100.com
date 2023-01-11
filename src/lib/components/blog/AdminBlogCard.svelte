@@ -35,8 +35,8 @@
 	<div
 		class="min-w-fit select-none [&>*]:ml-3 [&>*]:select-auto [&>*]:border-none"
 	>
-		<a href={`blog/${slug}`} target="_blank" rel="noreferrer">View</a>
-		<a href={`blog/${slug}/edit`} target="_blank" rel="noreferrer">Edit</a>
+		<a href={`blog/${slug}`}>View</a>
+		<a href={`blog/${slug}/edit`}>Edit</a>
 		<button
 			class="link !text-bluegray-400 hover:!text-red-500"
 			on:click={modal.open}

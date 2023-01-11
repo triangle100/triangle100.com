@@ -1,7 +1,8 @@
 <script>
 	import Icon from "svelte-awesome";
-	import clipboard from "svelte-awesome/icons/clipboard";
-	import externalLink from "svelte-awesome/icons/externalLink";
+	import email from "svelte-awesome/icons/envelope";
+	import github from "svelte-awesome/icons/github";
+	import twitter from "svelte-awesome/icons/twitter";
 
 	const copyToClip = function (text) {
 		navigator.clipboard.writeText(text).then(() => {
@@ -16,17 +17,23 @@
 
 <h1>Contact</h1>
 <p>This page is a work in progress. Here are some buttons for now :D</p>
-<div class="[&>*]:inline-block">
+<div class="flex justify-center gap-2">
 	<button class="button" on:click={() => copyToClip("admin@triangle100.com")}>
+		<Icon data={email} />
 		Email
-		<Icon data={clipboard} />
 	</button>
-	<button class="button" on:click={() => openLink("https://github.com/squidee100")}>
+	<button
+		class="button"
+		on:click={() => openLink("https://github.com/squidee100")}
+	>
+		<Icon data={github} />
 		GitHub
-		<Icon data={externalLink} />
 	</button>
-	<button class="button" on:click={() => openLink("https://twitter.com/_triangle100")}>
+	<button
+		class="button"
+		on:click={() => openLink("https://twitter.com/_triangle100")}
+	>
+		<Icon data={twitter} />
 		Twitter
-		<Icon data={externalLink} />
 	</button>
 </div>

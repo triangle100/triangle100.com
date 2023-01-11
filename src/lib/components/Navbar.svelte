@@ -23,8 +23,6 @@
 	<div class="flex grow basis-0 justify-end">
 		<a
 			href="https://github.com/triangle100/triangle100-com"
-			target="_blank"
-			rel="noreferrer"
 			class="border-none leading-loose"
 			title="Source Code"
 			data-noglyph
