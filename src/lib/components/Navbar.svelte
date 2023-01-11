@@ -8,7 +8,7 @@
 </script>
 
 <div class="mb-2 flex items-center py-8 [&>*]:text-base">
-	<div class="flex grow basis-0 justify-start [&>*]:text-bluegray-500">
+	<div class="flex grow basis-0 justify-start [&>a]:text-bluegray-500 [&>a]:hover:text-violet-500">
 		<NavbarButton to="/">triangle100</NavbarButton>
 	</div>
 	<nav class="flex cursor-default gap-8">
