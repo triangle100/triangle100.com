@@ -1,7 +1,6 @@
 [
 	{
 		"title": "Advent of Code",
-		"link": "https://github.com/zaneshaw/AdventofCode",
 		"repo": {
 			"name": "zaneshaw/AdventofCode",
 			"generateMeta": true
@@ -9,20 +8,36 @@
 	},
 	{
 		"title": "SIMG to PNG",
-		"desc": "Simple image parser",
-		"thumb": "https://via.placeholder.com/600x300",
 		"repo": {
 			"name": "zaneshaw/SIMG2PNG",
 			"generateMeta": true
 		}
 	},
 	{
-		"title": "stat-panel",
-		"desc": "Web server for monitoring system information",
-		"thumb": "https://via.placeholder.com/600x300",
-		"link": "https://github.com/zaneshaw/stat-panel",
+		"title": "Stat Panel",
 		"repo": {
 			"name": "zaneshaw/stat-panel",
+			"generateMeta": true
+		}
+	},
+	{
+		"title": "King of the Hill",
+		"repo": {
+			"name": "zaneshaw/koth",
+			"generateMeta": true
+		}
+	},
+	{
+		"title": "PostureMinder Plus",
+		"repo": {
+			"name": "zaneshaw/PostureMinderPlus",
+			"generateMeta": true
+		}
+	},
+	{
+		"title": "Task Tracker",
+		"repo": {
+			"name": "zaneshaw/TaskTracker",
 			"generateMeta": true
 		}
 	}

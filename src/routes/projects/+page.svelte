@@ -1,11 +1,13 @@
 <script>
 	import SEO from "$lib/components/SEO.svelte";
 	import ProjectCard from "$lib/components/ProjectCard.svelte";
+	import Loading from "$lib/components/Loading.svelte";
 	import { onMount } from "svelte";
 	import projectsRaw from "$lib/data/projects.json";
 	import { DateTime } from "luxon";
 
 	let projects = [];
+	let loading = true;
 
 	onMount(async function () {
 		const _projects = [];
@@ -51,6 +53,7 @@
 		projects = _projects.sort((a, b) =>
 			b.createdAt > a.createdAt ? 1 : -1
 		);
+		loading = false;
 	});
 </script>
 
@@ -60,10 +63,16 @@
 />
 
 <h1>Projects</h1>
-<div
-	class="grid grid-cols-1 gap-4 px-6 md:grid-cols-2 lg:grid-cols-3"
->
-	{#each projects as project}
-		<ProjectCard {project} />
-	{/each}
-</div>
+
+{#if loading}
+	<Loading />
+{:else if projects.length > 0}
+	<div class="grid grid-cols-1 gap-4 px-6 md:grid-cols-2 lg:grid-cols-3">
+		{#each projects as project}
+			<ProjectCard {project} />
+		{/each}
+	</div>
+	<p>and ~70 private repositories</p>
+{:else}
+	<h4>No projects</h4>
+{/if}
