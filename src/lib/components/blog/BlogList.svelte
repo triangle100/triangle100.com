@@ -14,29 +14,33 @@
 	});
 </script>
 
-{#each posts as post}
-	<button
-		class="mx-auto mb-2 flex cursor-pointer justify-between rounded bg-bluegray-700 p-2 text-2xl transition-colors hover:bg-bluegray-100 dark:hover:bg-bluegray-600 md:w-full lg:w-4/6"
-		on:click={() => goto(`blog/${post.id}`)}
-	>
-		<div class="min-w-0">
-			<span class="max-w-[200px] truncate">{post.data.title}</span>
-			<span class="text-base">by {post.data.author}</span>
-		</div>
-		<div
-			class="min-w-fit select-none [&>*]:ml-3 [&>*]:select-auto [&>*]:border-none"
-		>
-			<span>
-				{DateTime.fromSeconds(
-					post.data.createdAt.seconds
-				).toRelativeCalendar()}
-			</span>
-		</div>
-	</button>
+{#if loading}
+	<Loading />
 {:else}
-	{#if loading}
-		<Loading />
-	{:else}
-		<h4>No blog posts</h4>
-	{/if}
-{/each}
+	<div
+		class="mx-auto flex flex-col gap-[1px] bg-bluegray-700 md:w-full lg:w-4/6"
+	>
+		{#each posts as post}
+			<button
+				class="flex w-full cursor-pointer items-center gap-4 bg-bluegray-800 p-3 transition-colors hover:bg-bluegray-100 dark:hover:bg-bluegray-700"
+				on:click={() => goto(`blog/${post.id}`)}
+			>
+				<span class="text-sm text-bluegray-400 shrink-0">
+					{DateTime.fromSeconds(
+						post.data.createdAt.seconds
+					).toRelativeCalendar()}
+				</span>
+				<span class="truncate">
+					{post.data.title}
+				</span>
+				<span
+					class="min-w-fit select-none items-center text-sm text-bluegray-400 [&>*]:select-auto ml-auto"
+				>
+					{post.data.author}
+				</span>
+			</button>
+		{:else}
+			<h4>No blog posts</h4>
+		{/each}
+	</div>
+{/if}
