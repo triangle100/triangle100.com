@@ -49,7 +49,7 @@ ol {
 }
 
 input {
-	@apply border-thin rounded px-1 text-base dark:bg-bluegray-700;
+	@apply border-thin rounded px-1 text-base text-bluegray-700 dark:bg-bluegray-700;
 }
 
 textarea {
