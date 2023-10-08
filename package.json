@@ -17,7 +17,7 @@
 		"highlight.js": "^11.8.0",
 		"luxon": "^3.4.3",
 		"markdown-it": "^13.0.1",
-		"postcss": "^8.4.30",
+		"postcss": "^8.4.31",
 		"postcss-load-config": "^4.0.1",
 		"prettier": "^2.8.8",
 		"prettier-plugin-tailwindcss": "^0.2.8",
